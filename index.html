@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Satya Group - Style Guide</title>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="shortcut icon" href="assets/images/logo/satya-logo.png" type="image/x-icon">
+    <!-- 1. Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 2. Fonts (Bold & Clear) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- 3. Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- 4. Animations (GSAP & Lenis) - YE BAHUT ZAROORI HAI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+    <nav class="satya-navbar">
+        <div class="container navbar-container">
+
+            <!-- LOGO -->
+            <a href="#" class="brand-logo">
+                <img src="assets/images/logo/satya-logo.png" alt="The Satya Group Logo">
+            </a>
+
+            <!-- MENU -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-text="Home"><span>Home</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-text="About Us"><span>About Us</span></a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <ul class="submenu">
+                        <li><a href="#">Company Profile</a></li>
+                        <li><a href="#">Leadership</a></li>
+                        <li><a href="#">Vision & Mission</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-text="Products"><span>Products</span></a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <ul class="submenu">
+                        <li><a href="#">Aluminium Extrusions</a></li>
+                        <li><a href="#">Industrial Profiles</a></li>
+                        <li><a href="#">Solar Structures</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-text="Infrastructure"><span>Infrastructure</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-text="Sustainability"><span>Sustainability</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-text="Contact"><span>Contact</span></a>
+                </li>
+
+                <!-- Mobile Button -->
+                <li class="nav-item d-none d-lg-none mobile-btn-container">
+                    <a href="#" class="btn-industrial">Get a Quote</a>
+                </li>
+            </ul>
+
+            <!-- DESKTOP BUTTON -->
+            <div class="d-none d-lg-block btn-quote-desktop">
+                <a href="#" class="btn-industrial">Get a Quote</a>
+            </div>
+
+            <!-- HAMBURGER -->
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+        </div>
+    </nav>
+
+
+
+
+
+    <!-- CINEMATIC HERO SECTION -->
+    <header id="hero-section">
+
+        <!-- THE BLACK CURTAIN (Added to fix black bleed) -->
+        <div class="hero-black-curtain"></div>
+
+        <!-- 1. Intro Animation Sequence -->
+        <div class="hero-intro-text">
+            <span class="intro-word">PRECISION</span>
+            <span class="intro-word">INNOVATION</span>
+            <span class="intro-word" style="color: var(--satya-gold);">EXCELLENCE</span>
+        </div>
+
+        <!-- 2. Video Reveal Layer -->
+        <div class="video-wrapper">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="assets/images/video/satya-vd.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+
+        <!-- 3. Final Hero Content -->
+        <div class="container hero-content-final">
+            <h1 class="hero-title">
+                FORGING THE <br> <span style="color: var(--satya-gold);">FUTURE OF METAL</span>
+            </h1>
+            <p class="hero-subtitle">
+                World-class aluminium extrusion profiles designed for precision, durability, and global infrastructure.
+            </p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#" class="btn-industrial" style="padding: 15px 40px; font-size: 16px;">Explore Products</a>
+                <a href="#" class="btn-industrial" style="background: transparent; border: 1px solid rgba(255,255,255,0.3);">
+                    View Infrastructure
+                </a>
+            </div>
+        </div>
+
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- REFINED INDUSTRIAL GRID ABOUT SECTION -->
+    <section id="industrial-about">
+
+        <!-- Vertical Lines BG -->
+        <div class="grid-lines">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <div class="container">
+
+            <!-- Header -->
+            <div class="section-header">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="overflow-hidden">
+                            <span class="eyebrow anim-text-reveal">Since 1990</span>
+                        </div>
+                        <h2 class="display-title">
+                            <div class="overflow-hidden"><span class="d-block anim-text-reveal">Forging <span style="color: var(--satya-blue);">Strength.</span></span>
+                            </div>
+                            <div class="overflow-hidden"><span class="d-block anim-text-reveal">Delivering <span style="color: var(--satya-gold);">Trust.</span></span>
+                            </div>
+                        </h2>
+                    </div>
+                    <div class="col-lg-5 d-flex align-items-end justify-content-lg-end">
+                        <p class="anim-fade-in" style="max-width: 350px; text-align: right; color: var(--satya-blue); margin-bottom: 10px; font-weight: 600; font-size: 19px;">
+                            We transform raw aluminium into the infrastructure of tomorrow with precision engineering.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Grid -->
+            <div class="grid-layout">
+
+                <!-- 1. Main Image (Tall) -->
+                <div class="grid-item-main-img anim-scale-up">
+                    <div class="video-overlay" style="background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, transparent 100%);"></div>
+                    <img src="assets/images/banners/Satya Metals 05.jpg" class="grid-img" alt="Factory Floor">
+                    <div class="img-overlay-content">
+                        <h3 class="img-overlay-title">State of the Art<br>Facility</h3>
+                        <a href="#" class="btn-industrial" style="padding: 12px 30px; font-size: 12px;">View Infrastructure</a>
+                    </div>
+                </div>
+
+                <!-- 2. Blue Content Block -->
+                <div class="grid-item-blue anim-slide-left">
+                    <h3 style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.8rem; margin-bottom: 20px; position: relative; z-index: 2;">OUR MISSION</h3>
+                    <p class="blue-desc">
+                        To redefine the standards of aluminium extrusion through precision engineering and sustainable practices. We are not just manufacturers; we are innovators building the future frame by frame.
+                    </p>
+                    <a href="#" style="color: white; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; display: flex; align-items: center; gap: 10px; position: relative; z-index: 2;">
+                        Read Full Story <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- 3. Gold Stats Block -->
+                <div class="grid-item-stats anim-slide-up">
+                    <div class="tech-stat">
+                        <span class="stat-num" data-count="30">0</span>
+                        <span class="stat-txt">Years of<br>Excellence</span>
+                    </div>
+                    <div class="tech-stat">
+                        <span class="stat-num" data-count="5000">0</span>
+                        <span class="stat-txt">Projects<br>Completed</span>
+                    </div>
+                    <div class="tech-stat" style="border: none; margin-bottom: 0;">
+                        <span class="stat-num" data-count="100">0</span>
+                        <span class="stat-txt">Global<br>Clients</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- REFINED VELOCITY SCROLL SECTION -->
+    <section id="velocity-scroll-section">
+        <!-- Text duplicated to ensure full coverage without empty spaces -->
+        <div class="velocity-wrapper">
+            <div class="velocity-line" id="v-line-1">INNOVATION &nbsp;•&nbsp; PRECISION &nbsp;•&nbsp; QUALITY &nbsp;•&nbsp; INNOVATION &nbsp;•&nbsp; PRECISION &nbsp;•&nbsp; QUALITY &nbsp;•&nbsp;</div>
+        </div>
+        <div class="velocity-wrapper">
+            <div class="velocity-line outline-text" id="v-line-2">ENGINEERING &nbsp;•&nbsp; DURABILITY &nbsp;•&nbsp; STRENGTH &nbsp;•&nbsp; ENGINEERING &nbsp;•&nbsp; DURABILITY &nbsp;•&nbsp; STRENGTH &nbsp;•&nbsp;</div>
+        </div>
+        <div class="velocity-wrapper">
+            <div class="velocity-line" id="v-line-3">GLOBAL &nbsp;•&nbsp; SUSTAINABLE &nbsp;•&nbsp; FUTURE &nbsp;•&nbsp; GLOBAL &nbsp;•&nbsp; SUSTAINABLE &nbsp;•&nbsp; FUTURE &nbsp;•&nbsp;</div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- NEW HORIZONTAL PRODUCTS SHOWCASE -->
+    <section id="product-showcase">
+        <div class="products-container">
+
+            <!-- PANEL 1: ARCHITECTURAL -->
+            <div class="product-panel panel-1">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">01. Architecture</span>
+                        <h2 class="prod-title">Structural<br>Elegance</h2>
+                        <p class="prod-desc">High-precision aluminium profiles for windows, doors, facades, and curtain walls. Designed for aesthetics and engineered for strength.</p>
+                        <ul class="prod-specs-list">
+                            <li>Curtain Walls & Facades</li>
+                            <li>Modular Window Systems</li>
+                            <li>Luxury Door Frames</li>
+                        </ul>
+                        <a href="#" class="btn-industrial">View Catalogue</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="https://lh5.googleusercontent.com/proxy/Dh9OJKnIZqU3tqa19r0zdBEvwdjoXlCbKbBSW6LJiqB2yUTFINWMZL_eBH68DEXyq8VU0Wsscb6qtdPoHWHchXkyfwX42ExdSWi60l7Q2ieeIYkR" class="prod-img" alt="Architecture">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANEL 2: INDUSTRIAL -->
+            <div class="product-panel panel-2">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">02. Industrial</span>
+                        <h2 class="prod-title">Heavy<br>Engineering</h2>
+                        <p class="prod-desc">Robust profiles for automation, heat sinks, conveyor systems, and heavy machinery. Built to withstand extreme conditions.</p>
+                        <ul class="prod-specs-list">
+                            <li>Heat Sinks & Electronics</li>
+                            <li>Conveyor Belts</li>
+                            <li>Automotive Chassis</li>
+                        </ul>
+                        <a href="#" class="btn-industrial">View Specs</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/heavy-eng.jpg" class="prod-img" alt="Industrial">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6061 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANEL 3: SOLAR -->
+            <div class="product-panel panel-3">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">03. Renewable</span>
+                        <h2 class="prod-title">Solar<br>Structures</h2>
+                        <p class="prod-desc">Lightweight yet durable mounting structures for solar panels. Enabling the green revolution with corrosion-resistant aluminium.</p>
+                        <ul class="prod-specs-list">
+                            <li>Module Mounting</li>
+                            <li>Roof Rails</li>
+                            <li>Ground Mounts</li>
+                        </ul>
+                        <a href="#" class="btn-industrial">Solar Solutions</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/solar-tructures.jpg" class="prod-img" alt="Solar">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6005 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANEL 4: TRANSPORT (Dark Mode) -->
+            <div class="product-panel panel-4">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">04. Transport</span>
+                        <h2 class="prod-title">Future<br>Mobility</h2>
+                        <p class="prod-desc">Critical components for EVs, Railway coaches, and Aerospace. Reducing weight while maximizing safety.</p>
+                        <ul class="prod-specs-list">
+                            <li>EV Battery Casings</li>
+                            <li>Railway Interiors</li>
+                            <li>Truck Bodies</li>
+                        </ul>
+                        <a href="#" class="btn-industrial">Explore Transport</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/future-mobility.jpg" class="prod-img" alt="Transport">
+                        <div class="blueprint-overlay" style="background: rgba(0,0,0,0.7);">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 7075 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- NEW REFINED "GOLDEN HORIZON" CTA SECTION -->
+    <section id="portal-cta">
+
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline class="portal-bg-video">
+            <source src="assets/images/backgrounds/0_Steel_Mill_Factory_1920x1080.mp4" type="video/mp4">
+        </video>
+
+        <div class="portal-overlay"></div>
+
+        <div class="portal-card">
+            <div class="portal-line"></div>
+
+            <div style="overflow: hidden;">
+                <span class="portal-subtitle anim-cta-sub">The Future Awaits</span>
+            </div>
+
+            <div style="overflow: hidden;">
+                <h2 class="portal-title anim-cta-title">
+                    Start Your<br> Legacy Today
+                </h2>
+            </div>
+
+            <p class="portal-desc anim-cta-desc">
+                Join the league of global leaders powered by precision engineering. Let's create something monumental together.
+            </p>
+
+            <div class="cta-btn-group anim-cta-btn">
+                <a href="#contact-section" class="btn-gold-outline">
+                    Connect With Us <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- NEW INFRASTRUCTURE SECTION -->
+    <section id="infra-stack-section">
+        <div class="container">
+
+            <div class="infra-header">
+                <span class="infra-label">The Backbone</span>
+                <h2 class="infra-title">World Class <br>Infrastructure</h2>
+            </div>
+
+            <div class="stack-container">
+
+                <!-- CARD 1: CASTING -->
+                <div class="stack-card card-1">
+                    <div class="card-content">
+                        <div class="process-num">01</div>
+                        <h3 class="process-title">Hot Top Casting</h3>
+                        <p class="process-desc">
+                            The journey begins with premium quality billets. Our automated Hot Top Casting facility ensures homogenous alloy composition, free from impurities, setting the foundation for high-strength extrusion.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag">Automated</span>
+                            <span class="tag">Zero-Defect</span>
+                            <span class="tag">Pure Alloy</span>
+                        </div>
+                    </div>
+                    <div class="card-image-wrapper">
+                        <!-- Molten Metal / Casting Image -->
+                        <img src="assets/images/backbone/hot-top-casting.jpg" class="card-img" alt="Casting Process">
+                    </div>
+                </div>
+
+                <!-- CARD 2: EXTRUSION -->
+                <div class="stack-card card-2">
+                    <div class="card-content">
+                        <div class="process-num">02</div>
+                        <h3 class="process-title" style="color: var(--satya-gold);">Precision Extrusion</h3>
+                        <p class="process-desc">
+                            Equipped with high-tonnage PLC-controlled presses (up to 4000 MT), we extrude complex profiles with microscopic precision. Our systems ensure uniform grain structure and superior surface finish.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag" style="border-color: var(--satya-gold); color: var(--satya-gold);">4000 MT Press</span>
+                            <span class="tag" style="border-color: var(--satya-gold); color: var(--satya-gold);">PLC Control</span>
+                        </div>
+                    </div>
+                    <div class="card-image-wrapper">
+                        <!-- Extrusion Press Image -->
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop" class="card-img" alt="Extrusion Press">
+                    </div>
+                </div>
+
+                <!-- CARD 3: FINISHING -->
+                <div class="stack-card card-3">
+                    <div class="card-content">
+                        <div class="process-num">03</div>
+                        <h3 class="process-title">Surface Finishing</h3>
+                        <p class="process-desc">
+                            From Anodizing to Powder Coating, our finishing lines provide durability and aesthetics. We use eco-friendly chemicals to ensure a finish that lasts decades against the elements.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag">Anodizing</span>
+                            <span class="tag">Powder Coating</span>
+                            <span class="tag">Wood Finish</span>
+                        </div>
+                    </div>
+                    <div class="card-image-wrapper">
+                        <!-- Finished Metal / Lab Image -->
+                        <img src="assets/images/backbone/surface-finishing.jpg" class="card-img" alt="Quality Lab">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Lenis Init
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smooth: true
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            // ANIMATION: STACKING CARDS
+            // The cards stick automatically via CSS (position: sticky), 
+            // but we add a scale effect for extra polish as they stack.
+
+            const cards = gsap.utils.toArray(".stack-card");
+
+            cards.forEach((card, index) => {
+                // Scale down previous cards slightly as new ones come on top
+                // This gives a nice "Depth" feel
+                gsap.to(card, {
+                    scale: 0.95,
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 100px", // When card hits sticky position
+                        end: "bottom top",
+                        scrub: true,
+                        // Apply only if it's not the last card
+                        toggleActions: "restart none none reverse"
+                    }
+                });
+            });
+
+            // Reveal Title
+            gsap.from(".infra-title", {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".infra-header",
+                    start: "top 80%"
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- NEW SUSTAINABILITY SECTION -->
+    <section id="sustainability-section">
+
+        <!-- Decoration -->
+        <img src="https://cdn-icons-png.flaticon.com/512/892/892926.png" class="floating-leaf" style="top: 5%; right: 5%; rotate: 45deg;" alt="leaf">
+
+        <div class="sus-container">
+
+            <!-- Left Sticky Text -->
+            <div class="sus-text-col">
+                <span class="sus-eyebrow">Green Initiative</span>
+
+                <div class="sus-heading-wrapper">
+                    <span class="sus-word" id="word-1">RESPONSIBLE.</span>
+                    <span class="sus-word" id="word-2">RENEWABLE.</span>
+                    <span class="sus-word" id="word-3">RECYCLABLE.</span>
+                </div>
+
+                <div class="sus-leaf-icon">
+                    <i class="fa-solid fa-leaf"></i> <span>Commitment to Net Zero</span>
+                </div>
+            </div>
+
+            <!-- Right Scrollable Images -->
+            <div class="sus-image-col">
+
+                <!-- Card 1 -->
+                <div class="sus-card" data-target="word-1">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2013&auto=format&fit=crop" class="sus-img" alt="Green Manufacturing">
+                    <div class="sus-card-overlay">
+                        <h3 class="sus-card-title">Zero Discharge</h3>
+                        <p class="sus-card-desc">Advanced effluent treatment plants ensure zero liquid discharge, protecting our soil resources.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="sus-card" data-target="word-2">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop" class="sus-img" alt="Solar Power">
+                    <div class="sus-card-overlay">
+                        <h3 class="sus-card-title">Solar Powered</h3>
+                        <p class="sus-card-desc">30% of energy consumption is met through captive solar power plants.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="sus-card" data-target="word-3">
+                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070&auto=format&fit=crop" class="sus-img" alt="Recycling">
+                    <div class="sus-card-overlay">
+                        <h3 class="sus-card-title">Infinite Recycling</h3>
+                        <p class="sus-card-desc">Aluminium is the green metal. Our advanced recycling unit minimizes mining impact.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- JS -->
+    <script>
+        // SCROLL ANIMATION
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#portal-cta",
+                start: "top 60%", // Triggers when section is in view
+            }
+        });
+
+        tl.from(".portal-line", {
+                height: 0,
+                duration: 1,
+                ease: "power3.inOut"
+            })
+            .from(".anim-cta-sub", {
+                y: 20,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            }, "-=0.5")
+            .from(".anim-cta-title", {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            }, "-=0.6")
+            .from(".anim-cta-desc", {
+                y: 20,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            }, "-=0.6")
+            .from(".anim-cta-btn", {
+                scale: 0.9,
+                opacity: 0,
+                duration: 0.8,
+                ease: "back.out(1.7)"
+            }, "-=0.4");
+
+        // Parallax Effect on Mouse Move (Subtle)
+        const section = document.querySelector("#portal-cta");
+        section.addEventListener("mousemove", (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.02;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.02;
+            gsap.to(".portal-card", {
+                x: moveX,
+                y: moveY,
+                duration: 1
+            });
+            gsap.to(".portal-bg-video", {
+                x: -moveX * 2,
+                y: -moveY * 2,
+                duration: 1
+            }); // Opposite direction for depth
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+    <!-- NEW GLOBAL TRUST TICKER -->
+    <section id="global-trust">
+        <div class="trust-container">
+            <span class="trust-label">Trusted By Industry Leaders</span>
+            <div class="logo-ticker">
+                <div class="ticker-track">
+                    <!-- Placeholder Names for Clients -->
+                    <div class="client-item">TATA PROJECTS</div>
+                    <div class="client-item">SIEMENS</div>
+                    <div class="client-item">L&T CONSTRUCTION</div>
+                    <div class="client-item">GODREJ</div>
+                    <div class="client-item">SAMSUNG C&T</div>
+                    <div class="client-item">ABB</div>
+                    <div class="client-item">ALSTOM</div>
+                    <div class="client-item">HYUNDAI</div>
+                    <!-- Duplicated for seamless loop -->
+                    <div class="client-item">TATA PROJECTS</div>
+                    <div class="client-item">SIEMENS</div>
+                    <div class="client-item">L&T CONSTRUCTION</div>
+                    <div class="client-item">GODREJ</div>
+                    <div class="client-item">SAMSUNG C&T</div>
+                    <div class="client-item">ABB</div>
+                    <div class="client-item">ALSTOM</div>
+                    <div class="client-item">HYUNDAI</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        // INFINITE TICKER ANIMATION
+        const track = document.querySelector(".ticker-track");
+        // Clone content to ensure seamless loop if needed, though HTML has duplicates
+        // Simple GSAP infinite loop
+        gsap.to(".ticker-track", {
+            xPercent: -50, // Move half way (since we duplicated content)
+            ease: "none",
+            duration: 20, // Speed
+            repeat: -1
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- NEW PREMIUM FOOTER -->
+    <footer id="contact-footer">
+        <div class="footer-wrapper">
+
+            <div class="footer-top-grid">
+
+                <!-- Left: Info -->
+                <div class="footer-info anim-up">
+                    <span class="footer-label">Partner With Us</span>
+                    <h2 class="footer-heading">Let's build the<br>future together.</h2>
+                    <p class="footer-sub">Have a project in mind? We provide world-class aluminium solutions tailored to your engineering needs.</p>
+
+                    <div class="contact-details-grid">
+                        <div class="contact-item">
+                            <h5>Address</h5>
+                            <p>Plot No. 12, Industrial Area,<br>Bhiwadi, Rajasthan - 301019</p>
+                        </div>
+                        <div class="contact-item">
+                            <h5>Contact</h5>
+                            <a href="mailto:info@satyagroup.in">info@satyagroup.in</a>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                        </div>
+                        <div class="contact-item">
+                            <h5>Socials</h5>
+                            <div style="display:flex; gap:15px; margin-top:5px;">
+                                <a href="#">LinkedIn</a>
+                                <a href="#">Instagram</a>
+                                <a href="#">Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="footer-form anim-up">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control-custom" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-custom" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-custom" placeholder="Company" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control-custom" rows="2" placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Submit Inquiry</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Bottom: Brand & Links -->
+            <div class="footer-bottom">
+                <div class="big-footer-text anim-fade">SATYA GROUP</div>
+
+                <div class="footer-meta">
+                    <div>© 2024 The Satya Group.</div>
+                    <div class="footer-nav">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                        <a href="#">Site Credit</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smooth: true
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            // Footer Animations
+            gsap.utils.toArray(".anim-up").forEach((elem, i) => {
+                gsap.from(elem, {
+                    y: 50,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                    delay: i * 0.1,
+                    scrollTrigger: {
+                        trigger: "#contact-footer",
+                        start: "top 70%"
+                    }
+                });
+            });
+
+            gsap.from(".big-footer-text", {
+                y: 100,
+                opacity: 0,
+                duration: 1.5,
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: "#contact-footer",
+                    start: "top 80%"
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <!-- JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+            }
+
+            // --- ANIMATION LOGIC ---
+            const cards = document.querySelectorAll('.sus-card');
+
+            cards.forEach((card, index) => {
+                ScrollTrigger.create({
+                    trigger: card,
+                    start: "top 60%",
+                    end: "bottom 60%",
+                    onEnter: () => activate(card),
+                    onEnterBack: () => activate(card),
+                    onLeave: () => deactivate(card),
+                    onLeaveBack: () => deactivate(card)
+                });
+            });
+
+            function activate(card) {
+                // Activate Card
+                card.classList.add('active');
+
+                // Activate Text
+                let targetId = card.getAttribute('data-target');
+                document.querySelectorAll('.sus-word').forEach(w => w.classList.remove('active'));
+                const targetText = document.getElementById(targetId);
+                if (targetText) targetText.classList.add('active');
+            }
+
+            function deactivate(card) {
+                card.classList.remove('active');
+            }
+
+            // Initial State Activation (First item active by default if at top)
+            ScrollTrigger.refresh();
+
+            // Icon Animation
+            gsap.to(".sus-leaf-icon", {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                delay: 0.5,
+                scrollTrigger: {
+                    trigger: "#sustainability-section",
+                    start: "top 60%"
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+    <script>
+        // Only run on Desktop (>991px) for horizontal scroll
+        if (window.innerWidth > 991) {
+            const raceContainer = document.querySelector(".products-container");
+
+            // Get total scroll amount needed (Total Width - One Screen Width)
+            function getScrollAmount() {
+                let raceWidth = raceContainer.scrollWidth;
+                return -(raceWidth - window.innerWidth);
+            }
+
+            const tween = gsap.to(raceContainer, {
+                x: getScrollAmount,
+                ease: "none",
+            });
+
+            ScrollTrigger.create({
+                trigger: "#product-showcase",
+                start: "top top",
+                end: () => `+=${getScrollAmount() * -1}`, // Scroll distance matching width
+                pin: true,
+                animation: tween,
+                scrub: 1,
+                invalidateOnRefresh: true,
+            });
+        }
+    </script>
+
+
+
+
+
+
+
+
+    <script>
+        /* * ==========================================
+         * SCROLL FIX & NEW ANIMATIONS
+         * ========================================== */
+
+        // 1. Re-Initialize Lenis with Smoother Settings
+        // Ensure only ONE instance runs. If previous exists, it might need cleanup (handled by browser reload usually)
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth ease
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false, // Fix for mobile touch jerkiness
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // 2. Navbar Scroll Effect
+        window.addEventListener("scroll", function() {
+            const navbar = document.querySelector(".satya-navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+
+        // 3. Mobile Menu Logic with Animations
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+
+            // Staggered Animation for Links using GSAP
+            if (navMenu.classList.contains("active")) {
+                // Reset and Animate
+                gsap.set(".nav-item", {
+                    y: 30,
+                    opacity: 0
+                });
+                gsap.to(".nav-item", {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.5,
+                    stagger: 0.1,
+                    delay: 0.2,
+                    ease: "power2.out"
+                });
+            }
+        });
+
+        // Dropdown Click for Mobile
+        if (window.innerWidth <= 1024) {
+            const dropdowns = document.querySelectorAll('.nav-item');
+            dropdowns.forEach(item => {
+                const link = item.querySelector('.nav-link');
+                const submenu = item.querySelector('.submenu');
+
+                // Only prevent default if it has a submenu
+                if (submenu) {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+
+                        // Close other submenus (Optional - keeps it cleaner)
+                        document.querySelectorAll('.submenu').forEach(sub => {
+                            if (sub !== submenu) sub.classList.remove('show');
+                        });
+
+                        submenu.classList.toggle('show');
+
+                        // Force layout recalculation if needed or simple slide
+                    });
+                }
+            });
+
+            // Show Mobile Button
+            const mobileBtn = document.querySelector('.mobile-btn-container');
+            if (mobileBtn) mobileBtn.classList.remove('d-none');
+        }
+
+        // Ensure Hamburger color is black
+        gsap.set(".bar", {
+            backgroundColor: "#000"
+        });
+    </script>
+
+
+
+
+    <script>
+        /* * ==========================================
+         * HERO ANIMATION SEQUENCE (GSAP)
+         * ========================================== 
+         */
+
+        const introTl = gsap.timeline();
+
+        // 1. Word Sequence (Fades in and out)
+        introTl
+            .to(".intro-word:nth-child(1)", {
+                opacity: 1,
+                duration: 0.5,
+                ease: "power2.out"
+            })
+            .to(".intro-word:nth-child(1)", {
+                opacity: 0,
+                scale: 1.1,
+                filter: "blur(10px)",
+                duration: 0.5,
+                delay: 0.5
+            })
+
+        .to(".intro-word:nth-child(2)", {
+                opacity: 1,
+                duration: 0.5,
+                ease: "power2.out"
+            })
+            .to(".intro-word:nth-child(2)", {
+                opacity: 0,
+                scale: 1.1,
+                filter: "blur(10px)",
+                duration: 0.5,
+                delay: 0.5
+            })
+
+        .to(".intro-word:nth-child(3)", {
+                opacity: 1,
+                duration: 0.5,
+                ease: "power2.out"
+            })
+            .to(".intro-word:nth-child(3)", {
+                opacity: 0,
+                scale: 1.1,
+                filter: "blur(10px)",
+                duration: 0.5,
+                delay: 0.5
+            })
+
+        // 2. The Big Reveal (Video Curtain)
+        .to(".video-wrapper", {
+            clipPath: "circle(200% at 50% 50%)",
+            duration: 1.5,
+            ease: "power2.inOut"
+        }, "-=0.2")
+
+        // FIX: COMPLETELY HIDE THE BLACK CURTAIN DIV
+        .to(".hero-black-curtain", {
+            autoAlpha: 0,
+            duration: 0.1
+        }, "-=1.5")
+
+        // 3. Final Content Landing
+        .to(".hero-content-final", {
+            opacity: 1,
+            y: -20, // Slide up slightly
+            duration: 1,
+            ease: "power3.out"
+        }, "-=0.5");
+    </script>
+
+
+
+
+
+
+
+    <script>
+        // 2. Text Reveals
+        gsap.utils.toArray(".anim-text-reveal").forEach(elem => {
+            gsap.from(elem, {
+                scrollTrigger: {
+                    trigger: elem,
+                    start: "top 90%"
+                },
+                y: 100,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power4.out",
+                stagger: 0.1
+            });
+        });
+
+        gsap.from(".anim-fade-in", {
+            scrollTrigger: {
+                trigger: ".anim-fade-in",
+                start: "top 90%"
+            },
+            opacity: 0,
+            duration: 1.5,
+            delay: 0.3
+        });
+
+        // 3. Grid Item Animations
+        gsap.from(".grid-item-blue", {
+            scrollTrigger: {
+                trigger: ".grid-item-blue",
+                start: "top 85%"
+            },
+            x: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.from(".grid-item-main-img", {
+            scrollTrigger: {
+                trigger: ".grid-item-main-img",
+                start: "top 80%"
+            },
+            scale: 0.95,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power3.out"
+        });
+
+        gsap.from(".grid-item-stats", {
+            scrollTrigger: {
+                trigger: ".grid-item-stats",
+                start: "top 85%"
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            delay: 0.2,
+            ease: "power3.out"
+        });
+
+        // 4. Parallax Image
+        gsap.to(".grid-img", {
+            yPercent: 15,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".grid-item-main-img",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+        // 5. Stats Counter (SYNCED & FIXED)
+        const statNumbers = document.querySelectorAll('.stat-num');
+        statNumbers.forEach(stat => {
+            let targetVal = parseInt(stat.getAttribute('data-count'));
+            // Create a dedicated proxy object for each counter
+            let proxy = {
+                value: 0
+            };
+
+            ScrollTrigger.create({
+                trigger: stat,
+                start: "top 85%",
+                once: true, // Run only once
+                onEnter: () => {
+                    gsap.to(proxy, {
+                        value: targetVal,
+                        duration: 3,
+                        ease: "power1.out",
+                        onUpdate: () => {
+                            // Update the text content from the proxy
+                            stat.innerText = Math.ceil(proxy.value).toLocaleString() + "+";
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+
+
+
+    <script>
+        // VELOCITY SCROLL ANIMATION (Improved Readability & Loop)
+        // Starts slightly offset so text is visible immediately
+        gsap.fromTo("#v-line-1", {
+            xPercent: 0
+        }, {
+            xPercent: -10,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#velocity-scroll-section",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1
+            }
+        });
+
+        gsap.fromTo("#v-line-2", {
+                xPercent: -20
+            }, // Starts left, moves right
+            {
+                xPercent: -5,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#velocity-scroll-section",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1
+                }
+            }
+        );
+
+        gsap.fromTo("#v-line-3", {
+            xPercent: -5
+        }, {
+            xPercent: -15,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#velocity-scroll-section",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
