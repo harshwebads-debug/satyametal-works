@@ -1770,6 +1770,85 @@ ul {
 }
 
 
+/* ===============================
+   INFRA STACK – RESPONSIVE FIX
+   =============================== */
+
+
+/* ---------- TABLET & BELOW ---------- */
+
+@media (max-width: 991px) {
+    #infra-stack-section {
+        padding-bottom: 60px;
+    }
+    .infra-header {
+        padding: 70px 0 40px;
+    }
+    .infra-title {
+        font-size: 36px;
+        line-height: 1.1;
+    }
+    /* Disable sticky stack */
+    .stack-container {
+        padding-bottom: 0;
+    }
+    .stack-card {
+        position: relative;
+        top: 0 !important;
+        height: auto;
+        margin-bottom: 40px;
+        grid-template-columns: 1fr;
+        transform: none !important;
+    }
+    .card-content {
+        padding: 30px 20px;
+        order: 2;
+    }
+    .process-num {
+        font-size: 56px;
+        margin-bottom: -10px;
+    }
+    .process-title {
+        font-size: 28px;
+    }
+    .process-desc {
+        font-size: 15px;
+        max-width: 100%;
+    }
+    .tech-tags {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .card-image-wrapper {
+        height: 240px;
+        order: 1;
+    }
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 576px) {
+    .infra-title {
+        font-size: 30px;
+    }
+    .process-title {
+        font-size: 24px;
+    }
+    .process-desc {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    .card-image-wrapper {
+        height: 200px;
+    }
+    .tag {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+}
+
+
 /* * ==========================================
          * NEW SUSTAINABILITY SECTION (YOUR DESIGN - STYLING FIXED)
          * ========================================== */
