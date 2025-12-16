@@ -43,9 +43,7 @@ body {
     margin: 0;
 }
 
-html,
-body {
-    width: 100%;
+html body {
     overflow-x: hidden !important;
 }
 
