@@ -1303,6 +1303,105 @@ ul {
 }
 
 
+/* ===============================
+   RESPONSIVE FIX – TABLET & MOBILE
+   =============================== */
+
+
+/* ---------- TABLET (991px – 768px) ---------- */
+
+@media (max-width: 991px) {
+    #product-showcase {
+        height: auto;
+        overflow: visible;
+        padding: 40px 0;
+    }
+    .products-container {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+    }
+    .product-panel {
+        width: 100%;
+        height: auto;
+        padding: 70px 40px;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    .panel-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 100%;
+    }
+    .prod-title {
+        font-size: clamp(28px, 5vw, 42px);
+        line-height: 1.1;
+    }
+    .prod-desc {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+    .prod-img-wrapper {
+        height: 420px;
+        order: -1;
+        /* Image top */
+    }
+}
+
+
+/* ---------- MOBILE (≤ 767px) ---------- */
+
+@media (max-width: 767px) {
+    .product-panel {
+        padding: 60px 20px;
+    }
+    .prod-cat-label {
+        font-size: 13px;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+    }
+    .prod-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .prod-desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+    .btn-industrial {
+        padding: 12px 26px;
+        font-size: 14px;
+    }
+    .prod-img-wrapper {
+        height: 300px;
+        border-radius: 3px;
+    }
+    .blueprint-details {
+        padding: 20px;
+    }
+    .blueprint-details h4 {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+    .blueprint-details p {
+        font-size: 13px;
+    }
+}
+
+
+/* ---------- SMALL MOBILE (≤ 480px) ---------- */
+
+@media (max-width: 480px) {
+    .prod-title {
+        font-size: 24px;
+    }
+    .prod-img-wrapper {
+        height: 260px;
+    }
+}
+
+
 /* * ==========================================
          * REFINED "GOLDEN PORTAL" CTA SECTION
          * ========================================== */
