@@ -1059,6 +1059,276 @@
 
 
 
+
+
+
+
+
+
+
+
+    <!-- VISUAL INTERACTIVE FAQ -->
+    <section id="faq-visual">
+
+        <!-- Background Images (Change on Active) -->
+        <div class="bg-image-container">
+            <div class="bg-overlay"></div>
+            <img src="https://cdn.mos.cms.futurecdn.net/knyUJBrqzjGBUpgw4f9MCE-1200-80.png" class="bg-img img-1 active" alt="Alloys">
+            <img src="https://www.shutterstock.com/image-photo/top-down-shot-directly-over-600nw-2231120631.jpg" class="bg-img img-2" alt="Dies">
+            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop" class="bg-img img-3" alt="Capacity">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" class="bg-img img-4" alt="Finishing">
+            <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=2069&auto=format&fit=crop" class="bg-img img-5" alt="Export">
+        </div>
+
+        <div class="container-faq">
+
+            <div class="section-header">
+                <span class="section-tag">Expertise Unfolded</span>
+                <h2 class="section-title">Common Questions</h2>
+            </div>
+
+            <div class="faq-items">
+
+                <!-- Item 1 -->
+                <div class="faq-item active" data-img="img-1">
+                    <button class="faq-trigger">
+                        <span class="faq-num">01</span>
+                        <span class="faq-q-text">What aluminium alloys do you specialize in?</span>
+                        <div class="faq-icon"><div class="line-h"></div><div class="line-v"></div></div>
+                    </button>
+                    <div class="faq-answer" style="height: auto;">
+                        <p>We specialize in 6000 series (6063, 6061, 6005) for architectural use and 7000 series (7075) for high-strength industrial applications.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="faq-item" data-img="img-2">
+                    <button class="faq-trigger">
+                        <span class="faq-num">02</span>
+                        <span class="faq-q-text">Do you offer custom dies?</span>
+                        <div class="faq-icon"><div class="line-h"></div><div class="line-v"></div></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, our in-house tool room equipped with CNC technology allows us to design and manufacture custom dies based on your specific drawings.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="faq-item" data-img="img-3">
+                    <button class="faq-trigger">
+                        <span class="faq-num">03</span>
+                        <span class="faq-q-text">What is your production capacity?</span>
+                        <div class="faq-icon"><div class="line-h"></div><div class="line-v"></div></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We operate with an annual capacity of over 50,000 MT, supported by 11 extrusion presses ranging from 650 MT to 4000 MT.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="faq-item" data-img="img-4">
+                    <button class="faq-trigger">
+                        <span class="faq-num">04</span>
+                        <span class="faq-q-text">What finishes are available?</span>
+                        <div class="faq-icon"><div class="line-h"></div><div class="line-v"></div></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We provide Anodizing (Matte/Gloss), Powder Coating (RAL shades), and Wood Grain finishes for premium aesthetics and durability.</p>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="faq-item" data-img="img-5">
+                    <button class="faq-trigger">
+                        <span class="faq-num">05</span>
+                        <span class="faq-q-text">Do you export globally?</span>
+                        <div class="faq-icon"><div class="line-h"></div><div class="line-v"></div></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we are ISO 9001:2015 certified and export high-precision aluminium profiles to various international markets.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- JS Logic -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Entrance Animation
+                gsap.from(".section-header", {
+                    y: 50,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: "#faq-visual",
+                        start: "top 70%"
+                    }
+                });
+
+                gsap.from(".faq-item", {
+                    y: 50,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: "#faq-visual",
+                        start: "top 70%"
+                    }
+                });
+            }
+
+            const items = document.querySelectorAll('.faq-item');
+            const bgImages = document.querySelectorAll('.bg-img');
+
+            items.forEach((item, index) => {
+                const trigger = item.querySelector('.faq-trigger');
+                const answer = item.querySelector('.faq-answer');
+                const targetImgClass = item.getAttribute('data-img');
+
+                trigger.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+
+                    // 1. Handle Accordion
+                    items.forEach(other => {
+                        if (other !== item) {
+                            other.classList.remove('active');
+                            gsap.to(other.querySelector('.faq-answer'), {
+                                height: 0,
+                                duration: 0.4,
+                                ease: "power2.inOut"
+                            });
+                        }
+                    });
+
+                    if (!isActive) {
+                        item.classList.add('active');
+                        gsap.set(answer, {
+                            height: "auto"
+                        });
+                        gsap.from(answer, {
+                            height: 0,
+                            duration: 0.4,
+                            ease: "power2.inOut"
+                        });
+
+                        // 2. Handle Background Image Change
+                        bgImages.forEach(img => img.classList.remove('active'));
+                        const targetImg = document.querySelector(`.${targetImgClass}`);
+                        if (targetImg) targetImg.classList.add('active');
+                    } else {
+                        // Optional: Close on second click (Keep image of last active or reset)
+                        item.classList.remove('active');
+                        gsap.to(answer, {
+                            height: 0,
+                            duration: 0.4,
+                            ease: "power2.inOut"
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- NEW CHAT WIDGET -->
+    <div id="chat-widget-container">
+        <!-- Chat Window -->
+        <div class="chat-window">
+            <div class="chat-header">
+                <div class="bot-info">
+                    <div class="bot-avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="bot-text">
+                        <h4>Satya Assistant</h4>
+                        <span>Online | Replies instantly</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-xmark close-chat" onclick="toggleChat()"></i>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <div class="msg bot">
+                    Hello! Welcome to Satya Metal Industries. <br>How can we assist you with your aluminium requirements today?
+                </div>
+                <div class="chat-options">
+                    <div class="chat-option-btn" onclick="sendOption('Product Inquiry')">Product Inquiry</div>
+                    <div class="chat-option-btn" onclick="sendOption('Download Catalogue')">Catalogue</div>
+                    <div class="chat-option-btn" onclick="sendOption('Connect Sales')">Connect Sales</div>
+                </div>
+                <div class="typing" id="typing-indicator">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" class="chat-input" id="user-input" placeholder="Type a message..." onkeypress="handleEnter(event)">
+                <button class="send-btn" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <div class="chat-toggle-btn" onclick="toggleChat()">
+            <i class="fa-solid fa-comment-dots"></i>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- NEW GLOBAL TRUST TICKER -->
     <section id="global-trust">
         <div class="trust-container">
@@ -1671,7 +1941,60 @@
 
 
 
+    <script>
+        // CHATBOT FUNCTIONS
+        function toggleChat() {
+            const chatWindow = document.querySelector('.chat-window');
+            chatWindow.classList.toggle('active');
+        }
 
+        function handleEnter(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('user-input');
+            const message = input.value.trim();
+            if (message) {
+                addMessage(message, 'user');
+                input.value = '';
+                showTyping();
+                setTimeout(() => {
+                    hideTyping();
+                    addMessage("Thanks for reaching out! Our team will contact you shortly via email.", 'bot');
+                }, 1500);
+            }
+        }
+
+        function sendOption(option) {
+            addMessage(option, 'user');
+            showTyping();
+            setTimeout(() => {
+                hideTyping();
+                if (option === 'Product Inquiry') addMessage("Great! Please describe your requirement or the alloy grade you need.", 'bot');
+                else if (option === 'Download Catalogue') addMessage("You can download our latest brochure from the Products section.", 'bot');
+                else addMessage("Please email us at info@satyametal.com for direct sales.", 'bot');
+            }, 1000);
+        }
+
+        function addMessage(text, sender) {
+            const chatBody = document.getElementById('chat-body');
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('msg', sender);
+            msgDiv.innerText = text;
+            chatBody.insertBefore(msgDiv, document.getElementById('typing-indicator'));
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function showTyping() {
+            document.getElementById('typing-indicator').style.display = 'flex';
+            document.getElementById('chat-body').scrollTop = document.getElementById('chat-body').scrollHeight;
+        }
+
+        function hideTyping() {
+            document.getElementById('typing-indicator').style.display = 'none';
+        }
+    </script>
 
 
 

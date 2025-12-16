@@ -43,9 +43,7 @@ body {
     margin: 0;
 }
 
-html,
-body {
-    width: 100%;
+html body {
     overflow-x: hidden !important;
 }
 
@@ -710,42 +708,6 @@ ul {
 }
 
 
-/* ===============================
-   INTRO TEXT – MOBILE SAFE FIX
-   =============================== */
-
-.intro-word {
-    max-width: 100%;
-    padding: 0 12px;
-    /* screen edge se safe */
-    text-align: center;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-    .intro-word {
-        white-space: normal;
-        /* ✅ wrap allowed */
-        font-size: clamp(22px, 8vw, 46px);
-        line-height: 1.05;
-        word-break: break-word;
-        /* safety for long words */
-    }
-}
-
-
-/* VERY SMALL MOBILE */
-
-@media (max-width: 480px) {
-    .intro-word {
-        font-size: clamp(20px, 9vw, 38px);
-        letter-spacing: -0.3px;
-    }
-}
-
-
 /* * ==========================================
          * REFINED "INDUSTRIAL GRID" ABOUT SECTION
          * ========================================== */
@@ -982,62 +944,6 @@ ul {
     color: var(--text-grey);
     text-align: right;
     font-size: 0.85rem;
-}
-
-
-/* ===============================
-   STATS COUNTER – NO LAYOUT SHIFT
-   =============================== */
-
-.stat-num {
-    min-width: 120px;
-    /* FIXED WIDTH */
-    text-align: left;
-    display: inline-block;
-    font-variant-numeric: tabular-nums;
-    will-change: contents;
-}
-
-
-/* Prevent grid compression */
-
-.grid-item-stats {
-    min-width: 280px;
-}
-
-
-/* Tablet balance fix */
-
-@media (max-width: 1200px) {
-    .grid-layout {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-
-/* Tablet & below */
-
-@media (max-width: 991px) {
-    .grid-item-stats {
-        padding: 35px;
-    }
-    .stat-num {
-        font-size: 2.6rem;
-        min-width: 100px;
-    }
-    .stat-txt {
-        font-size: 0.8rem;
-    }
-}
-
-
-/* Mobile */
-
-@media (max-width: 576px) {
-    .stat-num {
-        font-size: 2.3rem;
-        min-width: 90px;
-    }
 }
 
 
@@ -1864,85 +1770,6 @@ ul {
 }
 
 
-/* ===============================
-   INFRA STACK – RESPONSIVE FIX
-   =============================== */
-
-
-/* ---------- TABLET & BELOW ---------- */
-
-@media (max-width: 991px) {
-    #infra-stack-section {
-        padding-bottom: 60px;
-    }
-    .infra-header {
-        padding: 70px 0 40px;
-    }
-    .infra-title {
-        font-size: 36px;
-        line-height: 1.1;
-    }
-    /* Disable sticky stack */
-    .stack-container {
-        padding-bottom: 0;
-    }
-    .stack-card {
-        position: relative;
-        top: 0 !important;
-        height: auto;
-        margin-bottom: 40px;
-        grid-template-columns: 1fr;
-        transform: none !important;
-    }
-    .card-content {
-        padding: 30px 20px;
-        order: 2;
-    }
-    .process-num {
-        font-size: 56px;
-        margin-bottom: -10px;
-    }
-    .process-title {
-        font-size: 28px;
-    }
-    .process-desc {
-        font-size: 15px;
-        max-width: 100%;
-    }
-    .tech-tags {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    .card-image-wrapper {
-        height: 240px;
-        order: 1;
-    }
-}
-
-
-/* ---------- MOBILE ---------- */
-
-@media (max-width: 576px) {
-    .infra-title {
-        font-size: 30px;
-    }
-    .process-title {
-        font-size: 24px;
-    }
-    .process-desc {
-        font-size: 14px;
-        line-height: 1.6;
-    }
-    .card-image-wrapper {
-        height: 200px;
-    }
-    .tag {
-        font-size: 11px;
-        padding: 6px 12px;
-    }
-}
-
-
 /* * ==========================================
          * NEW SUSTAINABILITY SECTION (YOUR DESIGN - STYLING FIXED)
          * ========================================== */
@@ -2162,111 +1989,6 @@ ul {
         height: 350px;
         transform: scale(1);
         filter: grayscale(0%);
-    }
-}
-
-
-/* ===============================
-   SUSTAINABILITY – RESPONSIVE FIX
-   =============================== */
-
-
-/* ---------- TABLET (≤ 991px) ---------- */
-
-@media (max-width: 991px) {
-    #sustainability-section {
-        padding: 80px 0;
-    }
-    .sus-container {
-        flex-direction: column;
-    }
-    /* LEFT TEXT */
-    .sus-text-col {
-        width: 100%;
-        height: auto;
-        position: relative;
-        padding-right: 0;
-        margin-bottom: 50px;
-    }
-    .sus-heading-wrapper {
-        font-size: clamp(32px, 6vw, 42px);
-        line-height: 1.1;
-    }
-    .sus-word {
-        opacity: 1;
-        transform: none;
-    }
-    .sus-leaf-icon {
-        opacity: 1;
-        transform: none;
-        margin-top: 20px;
-    }
-    /* RIGHT CARDS */
-    .sus-image-col {
-        width: 100%;
-        padding: 0;
-        gap: 50px;
-    }
-    .sus-card {
-        height: 360px;
-        transform: scale(1);
-        filter: grayscale(0%);
-    }
-}
-
-
-/* ---------- MOBILE (≤ 767px) ---------- */
-
-@media (max-width: 767px) {
-    #sustainability-section {
-        padding: 60px 0;
-    }
-    .sus-text-col {
-        text-align: left;
-        margin-bottom: 40px;
-    }
-    .sus-eyebrow {
-        font-size: 12px;
-        letter-spacing: 2px;
-        margin-bottom: 14px;
-    }
-    .sus-heading-wrapper {
-        font-size: 30px;
-        margin-bottom: 20px;
-    }
-    .sus-leaf-icon {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-    /* Cards */
-    .sus-card {
-        height: 300px;
-        border-radius: 12px;
-    }
-    .sus-card-overlay {
-        padding: 24px;
-    }
-    .sus-card-title {
-        font-size: 20px;
-    }
-    .sus-card-desc {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-}
-
-
-/* ---------- SMALL MOBILE (≤ 480px) ---------- */
-
-@media (max-width: 480px) {
-    .sus-heading-wrapper {
-        font-size: 26px;
-    }
-    .sus-card {
-        height: 260px;
-    }
-    .sus-card-desc {
-        font-size: 13px;
     }
 }
 
@@ -2592,5 +2314,566 @@ ul {
     .footer-big-text {
         font-size: 18vw;
         letter-spacing: -1px;
+    }
+}
+
+
+/* * ==========================================
+         * 10. PREMIUM CHATBOT WIDGET
+         * ========================================== */
+
+#chat-widget-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    font-family: 'Manrope', sans-serif;
+}
+
+
+/* 1. Toggle Button */
+
+.chat-toggle-btn {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--satya-blue), var(--satya-blue-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 10px 30px rgba(0, 71, 171, 0.4);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.chat-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 40px rgba(197, 160, 89, 0.4);
+}
+
+.chat-toggle-btn::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    border: 2px solid var(--satya-gold);
+    opacity: 0;
+    animation: pulse-gold 2s infinite;
+}
+
+@keyframes pulse-gold {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+
+/* 2. Chat Window */
+
+.chat-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 350px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transform-origin: bottom right;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-window.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+/* Header */
+
+.chat-header {
+    background: linear-gradient(135deg, var(--satya-blue), var(--satya-blue-dark));
+    padding: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bot-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bot-avatar {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--satya-blue);
+    font-size: 20px;
+}
+
+.bot-text h4 {
+    margin: 0;
+    font-family: 'Syne';
+    font-size: 16px;
+    color: white;
+}
+
+.bot-text span {
+    font-size: 11px;
+    opacity: 0.8;
+    display: block;
+}
+
+.close-chat {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.close-chat:hover {
+    opacity: 1;
+}
+
+
+/* Body */
+
+.chat-body {
+    height: 350px;
+    padding: 20px;
+    background: #f9f9f9;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* Messages */
+
+.msg {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+}
+
+.msg.bot {
+    background: white;
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.msg.user {
+    background: var(--satya-blue);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+
+/* Quick Options */
+
+.chat-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.chat-option-btn {
+    background: white;
+    border: 1px solid var(--satya-blue);
+    color: var(--satya-blue);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.chat-option-btn:hover {
+    background: var(--satya-blue);
+    color: white;
+}
+
+
+/* Footer */
+
+.chat-footer {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    background: white;
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input {
+    flex: 1;
+    border: none;
+    background: #f0f2f5;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+}
+
+.send-btn {
+    background: var(--satya-gold);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    transform: scale(1.1);
+}
+
+
+/* Typing Indicator */
+
+.typing {
+    display: none;
+    gap: 4px;
+    padding: 10px;
+    background: white;
+    width: fit-content;
+    border-radius: 12px;
+    border-bottom-left-radius: 2px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: #ccc;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+
+/* * ==========================================
+         * THE VISUAL INTERACTIVE FAQ (FULL RESPONSIVE)
+         * ========================================== */
+
+#faq-visual {
+    position: relative;
+    min-height: 100vh;
+    /* Full Screen on Desktop */
+    background-color: #000;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+}
+
+
+/* --- DYNAMIC BACKGROUND IMAGES --- */
+
+.bg-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, transform 8s linear;
+    transform: scale(1.1);
+}
+
+.bg-img.active {
+    opacity: 0.4;
+    transform: scale(1);
+    z-index: 1;
+}
+
+
+/* Dark Overlay */
+
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    backdrop-filter: blur(5px);
+}
+
+.container-faq {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+
+/* --- CONTENT STYLES --- */
+
+.section-header {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.section-tag {
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--satya-gold);
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 20px;
+    display: inline-block;
+    border-bottom: 2px solid var(--satya-gold);
+    padding-bottom: 5px;
+}
+
+.section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(32px, 5vw, 70px);
+    /* Responsive Font */
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+
+/* Accordion Items */
+
+.faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 0;
+    transition: background-color 0.3s;
+}
+
+.faq-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.faq-trigger {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 35px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-num {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    color: var(--satya-gold);
+    font-weight: 700;
+    margin-right: 30px;
+    opacity: 0.7;
+    min-width: 30px;
+    /* Prevent shifting */
+}
+
+.faq-q-text {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(18px, 2.5vw, 24px);
+    /* Responsive Question Size */
+    font-weight: 700;
+    color: #fff;
+    flex: 1;
+    padding-right: 15px;
+    /* Avoid collision with icon */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Icon */
+
+.faq-icon {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    /* Prevent icon shrinking */
+}
+
+.line-v,
+.line-h {
+    position: absolute;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+.line-h {
+    width: 100%;
+    height: 2px;
+}
+
+.line-v {
+    width: 2px;
+    height: 100%;
+}
+
+
+/* Active State Styles */
+
+.faq-item.active .faq-q-text {
+    color: var(--satya-gold);
+    transform: translateX(10px);
+}
+
+.faq-item.active .faq-num {
+    opacity: 1;
+}
+
+.faq-item.active .line-v {
+    transform: rotate(90deg);
+    opacity: 0;
+}
+
+.faq-item.active .line-h {
+    background-color: var(--satya-gold);
+}
+
+.faq-answer {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.faq-answer p {
+    padding-bottom: 35px;
+    padding-left: 60px;
+    /* Align with text desktop */
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 90%;
+}
+
+
+/* Responsive Styles */
+
+@media (max-width: 991px) {
+    #faq-visual {
+        min-height: auto;
+        /* Let content dictate height on mobile */
+        padding: 60px 0;
+    }
+    .container-faq {
+        padding: 0 20px;
+    }
+    .section-header {
+        margin-bottom: 40px;
+    }
+    .section-title {
+        font-size: 32px;
+    }
+    .faq-trigger {
+        padding: 20px 0;
+    }
+    .faq-num {
+        display: none;
+    }
+    /* Hide numbers on small screens to save space */
+    .faq-q-text {
+        font-size: 18px;
+        padding-left: 0;
+    }
+    .faq-item.active .faq-q-text {
+        transform: translateX(5px);
+    }
+    /* Smaller shift */
+    .faq-answer p {
+        padding-left: 0;
+        /* Remove left padding on mobile */
+        padding-bottom: 20px;
+        font-size: 15px;
+        max-width: 100%;
+    }
+    .bg-img.active {
+        opacity: 0.3;
+    }
+    /* Slightly darker image on mobile for better text visibility */
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 28px;
+    }
+    .faq-q-text {
+        font-size: 16px;
     }
 }
