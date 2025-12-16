@@ -154,6 +154,70 @@
 
     </header>
 
+    <!-- JS Logic -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Hero Animations
+                const introTl = gsap.timeline();
+                introTl
+                    .to(".intro-word:nth-child(1)", {
+                        opacity: 1,
+                        duration: 0.5,
+                        ease: "power2.out"
+                    })
+                    .to(".intro-word:nth-child(1)", {
+                        opacity: 0,
+                        scale: 1.1,
+                        filter: "blur(10px)",
+                        duration: 0.5,
+                        delay: 0.5
+                    })
+                    .to(".intro-word:nth-child(2)", {
+                        opacity: 1,
+                        duration: 0.5,
+                        ease: "power2.out"
+                    })
+                    .to(".intro-word:nth-child(2)", {
+                        opacity: 0,
+                        scale: 1.1,
+                        filter: "blur(10px)",
+                        duration: 0.5,
+                        delay: 0.5
+                    })
+                    .to(".intro-word:nth-child(3)", {
+                        opacity: 1,
+                        duration: 0.5,
+                        ease: "power2.out"
+                    })
+                    .to(".intro-word:nth-child(3)", {
+                        opacity: 0,
+                        scale: 1.1,
+                        filter: "blur(10px)",
+                        duration: 0.5,
+                        delay: 0.5
+                    })
+                    .to(".video-wrapper", {
+                        clipPath: "circle(200% at 50% 50%)",
+                        duration: 1.5,
+                        ease: "power2.inOut"
+                    }, "-=0.2")
+                    .to(".hero-black-curtain", {
+                        autoAlpha: 0,
+                        duration: 0.1
+                    }, "-=1.5")
+                    .to(".hero-content-final", {
+                        opacity: 1,
+                        y: -20,
+                        duration: 1,
+                        ease: "power3.out"
+                    }, "-=0.5");
+            }
+        });
+    </script>
+
 
 
 
