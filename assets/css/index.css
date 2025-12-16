@@ -44,6 +44,7 @@ body {
 }
 
 html body {
+    width: 100%;
     overflow-x: hidden !important;
 }
 
@@ -944,6 +945,62 @@ ul {
     color: var(--text-grey);
     text-align: right;
     font-size: 0.85rem;
+}
+
+
+/* ===============================
+   STATS COUNTER – NO LAYOUT SHIFT
+   =============================== */
+
+.stat-num {
+    min-width: 120px;
+    /* FIXED WIDTH */
+    text-align: left;
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
+    will-change: contents;
+}
+
+
+/* Prevent grid compression */
+
+.grid-item-stats {
+    min-width: 280px;
+}
+
+
+/* Tablet balance fix */
+
+@media (max-width: 1200px) {
+    .grid-layout {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* Tablet & below */
+
+@media (max-width: 991px) {
+    .grid-item-stats {
+        padding: 35px;
+    }
+    .stat-num {
+        font-size: 2.6rem;
+        min-width: 100px;
+    }
+    .stat-txt {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 576px) {
+    .stat-num {
+        font-size: 2.3rem;
+        min-width: 90px;
+    }
 }
 
 
