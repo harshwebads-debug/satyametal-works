@@ -750,19 +750,17 @@ ul {
 }
 
 
-/* * ==========================================
-         * REFINED "INDUSTRIAL GRID" ABOUT SECTION
-         * ========================================== */
+/* Section Padding */
 
 #industrial-about {
-    padding: 60px 0;
+    padding: 120px 0;
     background-color: #ffffff;
     position: relative;
     overflow: hidden;
 }
 
 
-/* Decorative Background Lines */
+/* Grid Lines */
 
 .grid-lines {
     position: absolute;
@@ -783,7 +781,7 @@ ul {
 }
 
 
-/* HEADER AREA */
+/* Header */
 
 .section-header {
     margin-bottom: 70px;
@@ -825,17 +823,19 @@ ul {
 }
 
 
-/* ASYMMETRICAL GRID */
+/* GRID LAYOUT - FIXED FOR DESKTOP */
 
 .grid-layout {
     display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
+    /* Changed to 1:1 ratio to give stats more room on desktop */
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    gap: 30px;
+    gap: 50px;
+    /* Increased gap */
 }
 
 
-/* 1. Large Image Block */
+/* Large Image */
 
 .grid-item-main-img {
     grid-row: 1 / 3;
@@ -856,9 +856,6 @@ ul {
     transition: transform 0.5s ease;
 }
 
-
-/* Hover Effect for Image */
-
 .grid-item-main-img:hover .grid-img {
     transform: scale(1.05);
 }
@@ -875,18 +872,19 @@ ul {
 .img-overlay-title {
     font-family: 'Syne', sans-serif;
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: clamp(24px, 2.5vw, 32px);
     margin-bottom: 15px;
     text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 
-/* 2. Blue Content Block (Upgraded) */
+/* Blue Block */
 
 .grid-item-blue {
     background: linear-gradient(135deg, var(--satya-blue) 0%, var(--satya-blue-dark) 100%);
     color: white;
-    padding: 50px;
+    padding: 60px;
+    /* More padding */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -895,49 +893,34 @@ ul {
     box-shadow: 0 20px 40px rgba(0, 71, 171, 0.15);
 }
 
-
-/* Subtle Pattern overlay */
-
-.grid-item-blue::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
-    opacity: 0.3;
-    pointer-events: none;
-}
-
 .grid-item-blue:hover {
     transform: translateY(-5px);
 }
 
 .blue-desc {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 30px;
     opacity: 0.95;
     font-weight: 300;
     position: relative;
     z-index: 2;
-    color: var(--satya-gold);
 }
 
 
-/* 3. Gold Stats Block */
+/* Stats Block */
 
 .grid-item-stats {
     background: #f8f9fa;
     border: 1px solid rgba(0, 0, 0, 0.05);
-    padding: 40px;
+    padding: 50px;
+    /* More padding */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
     transition: transform 0.4s ease;
+    overflow: hidden;
 }
 
 .grid-item-stats:hover {
@@ -962,20 +945,37 @@ ul {
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     padding-bottom: 15px;
     margin-bottom: 20px;
+    width: 100%;
+}
+
+
+/* FIX: Wider Wrappers for Desktop */
+
+.stat-num-wrapper {
+    width: 160px;
+    /* Safe width for standard numbers */
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.stat-num-wrapper.wide {
+    width: 260px;
+    /* Extra width for 50,000+ on Desktop */
 }
 
 .stat-num {
     font-family: 'Syne', sans-serif;
-    font-size: 3rem;
+    font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+    /* Responsive Font */
     font-weight: 800;
-    /* Metal Gradient for Text */
     background: linear-gradient(135deg, #333 0%, #000 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1;
-    display: inline-block;
-    min-width: 80px;
-    /* Prevent jitter */
+    display: block;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
 }
 
 .stat-txt {
@@ -985,30 +985,78 @@ ul {
     letter-spacing: 1px;
     color: var(--text-grey);
     text-align: right;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    flex: 1;
 }
 
 
-/* Responsive */
+/* RESPONSIVE STYLES (Mobile & Tablet) */
 
 @media (max-width: 991px) {
     #industrial-about {
-        padding: 40px 0;
+        padding: 60px 0;
     }
+    .section-header {
+        margin-bottom: 40px;
+    }
+    .section-header .d-flex {
+        justify-content: flex-start !important;
+        margin-top: 15px;
+        text-align: left !important;
+    }
+    .anim-fade-in {
+        text-align: left !important;
+        font-size: 16px !important;
+        max-width: 100% !important;
+    }
+    /* Stack Layout on Mobile */
     .grid-layout {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
     .grid-item-main-img {
-        height: 400px;
-        grid-row: auto;
-    }
-    .grid-item-blue {
-        padding: 40px;
+        height: 350px;
+        width: 100%;
     }
     .img-overlay-content {
-        bottom: 20px;
-        left: 20px;
+        bottom: 25px;
+        left: 25px;
+    }
+    .grid-item-blue {
+        padding: 30px;
+        width: 100%;
+    }
+    .blue-desc {
+        font-size: 1rem;
+    }
+    /* Stats Mobile Optimizations */
+    .grid-item-stats {
+        padding: 30px;
+        width: 100%;
+        height: auto;
+    }
+    .tech-stat {
+        /* Use Grid for perfect alignment on mobile */
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 15px;
+    }
+    .stat-num-wrapper,
+    .stat-num-wrapper.wide {
+        width: auto;
+        /* Let it take needed space */
+        min-width: 110px;
+        /* Minimum width for stability */
+    }
+    .stat-num {
+        font-size: 2.2rem;
+        text-align: left;
+    }
+    .stat-txt {
+        font-size: 0.8rem;
+        text-align: right;
     }
 }
 
@@ -2719,7 +2767,7 @@ ul {
 
 /* --- CONTENT STYLES --- */
 
-.section-header {
+.section-headerrr {
     margin-bottom: 60px;
     text-align: center;
 }
@@ -2877,7 +2925,7 @@ ul {
     .container-faq {
         padding: 0 20px;
     }
-    .section-header {
+    .section-headerrr {
         margin-bottom: 40px;
     }
     .section-title {
