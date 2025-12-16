@@ -1674,11 +1674,14 @@ ul {
          * NEW INFRASTRUCTURE STACK SECTION
          * ========================================== */
 
+
+/* Section Base */
+
 #infra-stack-section {
     background-color: #050505;
-    /* Dark Theme for heavy industry feel */
     color: white;
     padding-bottom: 100px;
+    position: relative;
 }
 
 .infra-header {
@@ -1713,55 +1716,47 @@ ul {
 .stack-container {
     position: relative;
     width: 100%;
-    /* Make this tall so we have room to scroll */
-    padding-bottom: 20vh;
+    padding-bottom: 10vh;
 }
 
 .stack-card {
-    /* Sticky positioning is the magic here */
     position: sticky;
-    top: 100px;
-    /* Offset from top */
+    top: 120px;
+    /* Space from top when sticking */
     width: 100%;
     max-width: 1300px;
     height: 550px;
     margin: 0 auto 40px auto;
-    /* Margin bottom creates stack gap */
     background: #111;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     overflow: hidden;
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
+    /* Image wider than text */
     box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.5);
-    /* Shadow on top to separate cards */
     transform-origin: center top;
+    transition: transform 0.3s ease;
 }
 
 
-/* Card 1 */
+/* Card Variations */
 
 .card-1 {
     background: #0F1012;
     border-top: 4px solid var(--satya-blue);
 }
 
-
-/* Card 2 */
-
 .card-2 {
     background: #141619;
     border-top: 4px solid var(--satya-gold);
-    top: 120px;
+    top: 140px;
 }
-
-
-/* Card 3 */
 
 .card-3 {
     background: #0F1012;
     border-top: 4px solid white;
-    top: 140px;
+    top: 160px;
 }
 
 
@@ -1772,6 +1767,8 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    order: 2;
+    /* Text on right by default */
 }
 
 .process-num {
@@ -1803,6 +1800,7 @@ ul {
 .tech-tags {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .tag {
@@ -1823,6 +1821,8 @@ ul {
     position: relative;
     height: 100%;
     overflow: hidden;
+    order: 1;
+    /* Image on left by default */
 }
 
 .card-img {
@@ -1837,25 +1837,59 @@ ul {
 }
 
 
-/* Responsive */
+/* RESPONSIVE FIXES */
 
 @media (max-width: 991px) {
-    .stack-card {
-        grid-template-columns: 1fr;
-        height: auto;
-        top: 80px !important;
-        /* Force simpler stack on mobile */
+    .infra-header {
+        padding: 60px 20px 40px;
     }
-    .card-content {
-        padding: 40px 20px;
-        order: 2;
+    .infra-title {
+        font-size: 36px;
+    }
+    .stack-card {
+        display: flex;
+        flex-direction: column;
+        /* Stack image on top of text */
+        height: auto;
+        /* Allow height to grow with content */
+        top: 100px !important;
+        /* Adjust sticky offset */
+        margin-bottom: 30px;
     }
     .card-image-wrapper {
         height: 250px;
-        order: 1;
+        /* Fixed height for image on mobile */
+        width: 100%;
     }
-    .infra-title {
-        font-size: 40px;
+    .card-content {
+        padding: 30px 20px;
+        /* Reduced padding */
+        width: 100%;
+    }
+    .process-num {
+        font-size: 50px;
+        /* Smaller number */
+        margin-bottom: -10px;
+    }
+    .process-title {
+        font-size: 28px;
+        /* Smaller title */
+        margin-bottom: 15px;
+    }
+    .process-desc {
+        font-size: 16px;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+    /* Adjust staggering for mobile stacking */
+    .card-1 {
+        top: 90px !important;
+    }
+    .card-2 {
+        top: 110px !important;
+    }
+    .card-3 {
+        top: 130px !important;
     }
 }
 
@@ -2079,6 +2113,12 @@ ul {
         height: 350px;
         transform: scale(1);
         filter: grayscale(0%);
+    }
+}
+
+@media (max-width: 450px) {
+    .sus-heading-wrapper {
+        font-size: 24px;
     }
 }
 
