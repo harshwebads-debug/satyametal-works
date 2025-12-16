@@ -1993,6 +1993,111 @@ ul {
 }
 
 
+/* ===============================
+   SUSTAINABILITY – RESPONSIVE FIX
+   =============================== */
+
+
+/* ---------- TABLET (≤ 991px) ---------- */
+
+@media (max-width: 991px) {
+    #sustainability-section {
+        padding: 80px 0;
+    }
+    .sus-container {
+        flex-direction: column;
+    }
+    /* LEFT TEXT */
+    .sus-text-col {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding-right: 0;
+        margin-bottom: 50px;
+    }
+    .sus-heading-wrapper {
+        font-size: clamp(32px, 6vw, 42px);
+        line-height: 1.1;
+    }
+    .sus-word {
+        opacity: 1;
+        transform: none;
+    }
+    .sus-leaf-icon {
+        opacity: 1;
+        transform: none;
+        margin-top: 20px;
+    }
+    /* RIGHT CARDS */
+    .sus-image-col {
+        width: 100%;
+        padding: 0;
+        gap: 50px;
+    }
+    .sus-card {
+        height: 360px;
+        transform: scale(1);
+        filter: grayscale(0%);
+    }
+}
+
+
+/* ---------- MOBILE (≤ 767px) ---------- */
+
+@media (max-width: 767px) {
+    #sustainability-section {
+        padding: 60px 0;
+    }
+    .sus-text-col {
+        text-align: left;
+        margin-bottom: 40px;
+    }
+    .sus-eyebrow {
+        font-size: 12px;
+        letter-spacing: 2px;
+        margin-bottom: 14px;
+    }
+    .sus-heading-wrapper {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .sus-leaf-icon {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    /* Cards */
+    .sus-card {
+        height: 300px;
+        border-radius: 12px;
+    }
+    .sus-card-overlay {
+        padding: 24px;
+    }
+    .sus-card-title {
+        font-size: 20px;
+    }
+    .sus-card-desc {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+
+/* ---------- SMALL MOBILE (≤ 480px) ---------- */
+
+@media (max-width: 480px) {
+    .sus-heading-wrapper {
+        font-size: 26px;
+    }
+    .sus-card {
+        height: 260px;
+    }
+    .sus-card-desc {
+        font-size: 13px;
+    }
+}
+
+
 /* * ==========================================
          * NEW GLOBAL TRUST TICKER (CLIENTS STRIP)
          * ========================================== */
