@@ -710,6 +710,42 @@ ul {
 }
 
 
+/* ===============================
+   INTRO TEXT – MOBILE SAFE FIX
+   =============================== */
+
+.intro-word {
+    max-width: 100%;
+    padding: 0 12px;
+    /* screen edge se safe */
+    text-align: center;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    .intro-word {
+        white-space: normal;
+        /* ✅ wrap allowed */
+        font-size: clamp(22px, 8vw, 46px);
+        line-height: 1.05;
+        word-break: break-word;
+        /* safety for long words */
+    }
+}
+
+
+/* VERY SMALL MOBILE */
+
+@media (max-width: 480px) {
+    .intro-word {
+        font-size: clamp(20px, 9vw, 38px);
+        letter-spacing: -0.3px;
+    }
+}
+
+
 /* * ==========================================
          * REFINED "INDUSTRIAL GRID" ABOUT SECTION
          * ========================================== */
