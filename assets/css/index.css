@@ -112,6 +112,206 @@ ul {
 
 
 /* * ==========================================
+     * FLOATING DOCK STYLES
+     * ========================================== */
+
+#contact-dock {
+    position: fixed;
+    left: 30px;
+    top: 70%;
+    transform: translateY(-50%);
+    z-index: 9990;
+    /* High z-index but below loader */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* Common Item Styles */
+
+.dock-item {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dock-icon {
+    font-size: 20px;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+
+/* Tooltip (Hidden label that slides out) */
+
+.dock-tooltip {
+    position: absolute;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-10px);
+    background: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Tiny arrow for tooltip */
+
+.dock-tooltip::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 8px;
+    height: 8px;
+    background: #fff;
+}
+
+
+/* --- SPECIFIC COLORS & HOVER EFFECTS --- */
+
+
+/* WhatsApp */
+
+.dock-item.whatsapp {
+    color: #25D366;
+    border-color: rgba(37, 211, 102, 0.3);
+}
+
+.dock-item.whatsapp:hover {
+    background: #25D366;
+    color: white;
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+}
+
+
+/* Call */
+
+.dock-item.call {
+    color: var(--satya-blue, #0047AB);
+    border-color: rgba(0, 71, 171, 0.3);
+}
+
+.dock-item.call:hover {
+    background: var(--satya-blue, #0047AB);
+    color: white;
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(0, 71, 171, 0.6);
+}
+
+
+/* Email */
+
+.dock-item.email {
+    color: var(--satya-gold, #C5A059);
+    border-color: rgba(197, 160, 89, 0.3);
+}
+
+.dock-item.email:hover {
+    background: var(--satya-gold, #C5A059);
+    color: white;
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.6);
+}
+
+
+/* Hover State Logic */
+
+.dock-item:hover .dock-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(15px);
+}
+
+
+/* Pulse Animation for WhatsApp */
+
+.dock-pulse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #25D366;
+    opacity: 0;
+    z-index: 0;
+    animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
+
+/* Stop pulse on hover */
+
+.dock-item.whatsapp:hover .dock-pulse {
+    animation: none;
+}
+
+
+/* --- RESPONSIVE --- */
+
+@media (max-width: 768px) {
+    #contact-dock {
+        left: 20px;
+        top: auto;
+        bottom: 30px;
+        /* Move to bottom left corner */
+        transform: none;
+        flex-direction: column-reverse;
+        /* Stack upwards */
+        gap: 15px;
+    }
+    .dock-item {
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.9);
+        /* Solid bg for visibility on mobile content */
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    .dock-tooltip {
+        display: none;
+        /* Hide tooltips on mobile to prevent clutter */
+    }
+}
+
+
+/* * ==========================================
          * NAVBAR STYLES
          * ========================================== */
 
@@ -907,6 +1107,7 @@ ul {
     font-weight: 300;
     position: relative;
     z-index: 2;
+    color: var(--satya-gold);
 }
 
 
