@@ -43,8 +43,13 @@ body {
     margin: 0;
 }
 
-html,
-body {}
+@media(max-width:750px) {
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+}
 
 
 /* ... existing styles ... */
