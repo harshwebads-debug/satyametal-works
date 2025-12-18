@@ -21,7 +21,7 @@
     --text-main: #0B0F19;
     --text-grey: #4B5563;
     /* Dimensions */
-    --nav-height: 90px;
+    --nav-height: 95px;
 }
 
 
@@ -110,6 +110,159 @@ a {
 
 ul {
     list-style: none;
+}
+
+
+/* * ==========================================
+         * PREMIUM CINEMATIC LOADER STYLES
+         * ========================================== */
+
+#premium-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--loader-bg);
+    z-index: 99999;
+    /* Highest priority */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    /* Extra safety */
+}
+
+.loader-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 0 20px;
+    /* Safety padding for mobile */
+}
+
+
+/* 1. Logo Container with Shine */
+
+.logo-box {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    padding: 5px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.loader-logo {
+    width: 220px;
+    /* Desktop Size */
+    max-width: 60vw;
+    /* Mobile Responsive Size */
+    height: auto;
+    display: block;
+    opacity: 0;
+}
+
+
+/* The Gold Shine Effect */
+
+.logo-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient( 120deg, transparent, rgba(197, 160, 89, 0.4), transparent);
+    transform: skewX(-20deg);
+    pointer-events: none;
+    z-index: 2;
+}
+
+
+/* 2. Progress Area */
+
+.progress-container {
+    width: 300px;
+    max-width: 80%;
+    /* Responsive width */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* Background Track */
+
+.progress-track {
+    width: 100%;
+    height: 3px;
+    background-color: rgba(0, 0, 0, 0.05);
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+
+/* The Moving Gold Laser */
+
+.progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: var(--brand-gold);
+    box-shadow: 0 0 15px var(--brand-gold), 0 0 5px var(--brand-gold);
+    border-radius: 10px;
+}
+
+
+/* Percentage Text */
+
+.progress-text {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text-color);
+    letter-spacing: 2px;
+    opacity: 0;
+}
+
+
+/* Background Pulse Circle */
+
+.bg-pulse {
+    position: absolute;
+    width: 80vw;
+    /* Responsive size */
+    height: 80vw;
+    max-width: 600px;
+    max-height: 600px;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    transform: scale(0);
+    pointer-events: none;
+}
+
+
+/* CONTENT HIDING CLASS */
+
+.site-wrapper {
+    opacity: 0;
+    visibility: hidden;
+    /* Prevents interaction underneath */
+    pointer-events: none;
+    height: 100vh;
+    overflow: hidden;
 }
 
 
@@ -324,16 +477,21 @@ ul {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: white;
+    background: transparent;
+    /* Transparent background initially */
     transition: all 0.4s ease;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
 }
 
+
+/* Scrolled State - White Glass Background */
+
 .satya-navbar.scrolled {
-    height: 70px;
-    background: var(--bg-glass);
+    height: 92px;
+    background: rgba(255, 255, 255, 0.95);
+    /* White glass on scroll */
     backdrop-filter: blur(12px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
@@ -350,7 +508,7 @@ ul {
 /* LOGO */
 
 .brand-logo img {
-    height: 65px;
+    height: 90px;
     /* Updated height from your code */
     width: auto;
     display: block;
@@ -378,21 +536,25 @@ ul {
 
 /* --- PREMIUM ROLLING TEXT EFFECT (FIXED: NO SIZE JUMP) --- */
 
+
+/* Nav Link Base Color (White) */
+
 .nav-link {
     font-family: 'Syne', sans-serif;
     font-weight: 700;
     font-size: 14px;
     text-transform: uppercase;
-    color: var(--text-main) !important;
+    color: #FFFFFF !important;
+    /* White text initially */
     text-decoration: none;
     padding: 0;
     position: relative;
     display: block;
     overflow: hidden;
     height: 20px;
-    /* Exact height lock */
     line-height: 20px;
     letter-spacing: 0.5px;
+    transition: color 0.3s ease;
 }
 
 .nav-link span {
@@ -584,10 +746,20 @@ ul {
 .bar {
     width: 30px;
     height: 2px;
-    background: #000;
+    /* background: #000; */
     margin: 6px 0;
     transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
     display: block;
+    background-color: #FFFFFF !important;
+    /* Force White initially */
+}
+
+
+/* Hamburger Menu Color Change on Scroll */
+
+.satya-navbar.scrolled .bar {
+    background-color: #000000 !important;
+    /* Becomes Black on scroll */
 }
 
 
@@ -746,6 +918,21 @@ ul {
 }
 
 
+/* Nav Link Scrolled Color (Black) - THIS IS THE FIX */
+
+.satya-navbar.scrolled .nav-link {
+    color: #000000 !important;
+    /* Becomes Black on scroll */
+}
+
+
+/* Hamburger Menu Color Change on Scroll */
+
+.satya-navbar.scrolled .bar {
+    background-color: #000000 !important;
+}
+
+
 /* HERO SECTION STYLES (Fixed to eliminate black bars and text overflow) */
 
 #hero-section {
@@ -845,15 +1032,15 @@ ul {
     left: 50%;
     transform: translate(-50%, -50%);
     /* Force dimensions to SLIGHTLY EXCEED viewport (100.5%) to kill sub-pixel black lines */
-    min-width: 100.5vw;
-    min-height: 100.5vh;
+    min-width: 100.9vw;
+    min-height: 100.9vh;
     width: auto;
     height: auto;
     /* Object fit cover is crucial here */
     object-fit: cover;
     opacity: 0.8;
     display: block;
-    background-color: #ffffff;
+    background-color: #ffffff !important;
     /* Ensure no black flicker */
 }
 
