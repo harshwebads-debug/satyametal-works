@@ -117,6 +117,8 @@ ul {
          * PREMIUM CINEMATIC LOADER STYLES
          * ========================================== */
 
+
+/* 
 #premium-loader {
     position: fixed;
     top: 0;
@@ -125,13 +127,13 @@ ul {
     height: 100%;
     background-color: var(--loader-bg);
     z-index: 99999;
-    /* Highest priority */
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     overflow: hidden;
-    /* Extra safety */
+
 }
 
 .loader-content-wrapper {
@@ -142,11 +144,11 @@ ul {
     z-index: 2;
     width: 100%;
     padding: 0 20px;
-    /* Safety padding for mobile */
+
 }
 
 
-/* 1. Logo Container with Shine */
+
 
 .logo-box {
     position: relative;
@@ -160,16 +162,16 @@ ul {
 
 .loader-logo {
     width: 220px;
-    /* Desktop Size */
+
     max-width: 60vw;
-    /* Mobile Responsive Size */
+
     height: auto;
     display: block;
     opacity: 0;
 }
 
 
-/* The Gold Shine Effect */
+
 
 .logo-shine {
     position: absolute;
@@ -184,12 +186,12 @@ ul {
 }
 
 
-/* 2. Progress Area */
+
 
 .progress-container {
     width: 300px;
     max-width: 80%;
-    /* Responsive width */
+
     position: relative;
     display: flex;
     flex-direction: column;
@@ -198,7 +200,7 @@ ul {
 }
 
 
-/* Background Track */
+
 
 .progress-track {
     width: 100%;
@@ -211,7 +213,7 @@ ul {
 }
 
 
-/* The Moving Gold Laser */
+
 
 .progress-fill {
     position: absolute;
@@ -225,7 +227,7 @@ ul {
 }
 
 
-/* Percentage Text */
+
 
 .progress-text {
     font-family: 'Rajdhani', sans-serif;
@@ -237,12 +239,11 @@ ul {
 }
 
 
-/* Background Pulse Circle */
 
 .bg-pulse {
     position: absolute;
     width: 80vw;
-    /* Responsive size */
+
     height: 80vw;
     max-width: 600px;
     max-height: 600px;
@@ -254,16 +255,15 @@ ul {
 }
 
 
-/* CONTENT HIDING CLASS */
 
 .site-wrapper {
     opacity: 0;
     visibility: hidden;
-    /* Prevents interaction underneath */
+
     pointer-events: none;
     height: 100vh;
     overflow: hidden;
-}
+} */
 
 
 /* * ==========================================
