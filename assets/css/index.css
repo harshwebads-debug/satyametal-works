@@ -936,7 +936,7 @@ ul {
 /* HERO SECTION STYLES (Fixed to eliminate black bars and text overflow) */
 
 #hero-section {
-    /* position: relative; */
+    position: relative;
     /* Use 100dvh for mobile browsers to fill full screen including address bar area */
     height: 100vh;
     height: 100dvh;
