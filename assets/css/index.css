@@ -477,7 +477,7 @@ ul {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: transparent;
+    background: #ffff;
     /* Transparent background initially */
     transition: all 0.4s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -544,7 +544,7 @@ ul {
     font-weight: 700;
     font-size: 14px;
     text-transform: uppercase;
-    color: #FFFFFF !important;
+    color: var(--text-main) !important;
     /* White text initially */
     text-decoration: none;
     padding: 0;
@@ -750,7 +750,7 @@ ul {
     margin: 6px 0;
     transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
     display: block;
-    background-color: #FFFFFF !important;
+    background-color: var(--satya-blue-dark) !important;
     /* Force White initially */
 }
 
@@ -936,7 +936,7 @@ ul {
 /* HERO SECTION STYLES (Fixed to eliminate black bars and text overflow) */
 
 #hero-section {
-    position: relative;
+    /* position: relative; */
     /* Use 100dvh for mobile browsers to fill full screen including address bar area */
     height: 100vh;
     height: 100dvh;
