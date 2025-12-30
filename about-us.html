@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Satya Group - Style Guide</title>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/about-us.css">
+    <link rel="shortcut icon" href="assets/images/logo/satya-logo.png" type="image/x-icon">
+    <!-- 1. Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 2. Fonts (Bold & Clear) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- 3. Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- 4. Animations (GSAP & Lenis) - YE BAHUT ZAROORI HAI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- PREMIUM FLOATING CONTACT DOCK -->
+    <div id="contact-dock">
+
+
+
+        <!-- 1. Call -->
+        <a href="tel:+919876543210" class="dock-item call" aria-label="Call Us">
+            <div class="dock-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            <span class="dock-tooltip">Call Now</span>
+        </a>
+
+        <!-- 2. Email -->
+        <a href="mailto:info@satyametal.com" class="dock-item email" aria-label="Send Email">
+            <div class="dock-icon"><i class="fa-solid fa-envelope"></i></div>
+            <span class="dock-tooltip">Send Email</span>
+        </a>
+
+        <!-- 3. WhatsApp (Pulse Effect) -->
+        <a href="https://wa.me/919876543210" target="_blank" class="dock-item whatsapp" aria-label="Chat on WhatsApp">
+            <div class="dock-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <span class="dock-tooltip">WhatsApp Us</span>
+            <div class="dock-pulse"></div>
+        </a>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- NAVBAR -->
+    <nav class="satya-navbar">
+        <div class="container navbar-container">
+            <!-- LOGO -->
+            <a href="index.html" class="brand-logo">
+                <img src="assets/images/logo/logo-gray.png" alt="The Satya Group Logo">
+            </a>
+
+            <!-- MENU -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" data-text="Home"><span>Home</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="about-us.html" class="nav-link" data-text="About Us"><span>About Us</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-text="Products"><span>Products</span></a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <ul class="submenu">
+                        <li><a href="#">Architectural Profiles</a></li>
+                        <li><a href="#">Industrial Profiles</a></li>
+                        <li><a href="#">Solar Profiles</a></li>
+                        <li><a href="#">Automobile Profiles</a></li>
+                        <li><a href="#">Heat Sinks</a></li>
+                        <li><a href="#">Hardware Sections</a></li>
+                        <li><a href="#">AC Grill Profiles</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="infrastructure.html" class="nav-link" data-text="Infrastructure"><span>Infrastructure</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="sustainability.html" class="nav-link" data-text="Sustainability"><span>Sustainability</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact-us.html" class="nav-link" data-text="Contact"><span>Contact</span></a>
+                </li>
+
+                <!-- Mobile Button -->
+                <li class="nav-item d-none d-lg-none mobile-btn-container">
+                    <a href="contact-us.html" class="btn-industrial">Get a Quote</a>
+                </li>
+            </ul>
+
+            <!-- DESKTOP BUTTON -->
+            <div class="d-none d-lg-block btn-quote-desktop">
+                <a href="contact-us.html" class="btn-industrial">Get a Quote</a>
+            </div>
+
+            <!-- HAMBURGER -->
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+        </div>
+    </nav>
+
+
+
+
+
+
+
+    <!-- NEW UNIQUE HERO SECTION (IMAGE VERSION) -->
+    <header id="au-hero-section">
+
+        <!-- Background Image -->
+        <div class="au-hero-bg-wrapper">
+            <!-- Using a high-quality factory image -->
+            <img src="https://images.squarespace-cdn.com/content/v1/5bcea0563560c3270c50e32d/1578312070026-UQB5SWMOMWKQ4PHCF5AN/Metal+Works+Industry+-+Dust+Collection+Bags.jpeg"
+                class="au-hero-img" alt="Satya Metal Factory">
+        </div>
+
+        <div class="au-hero-overlay"></div>
+
+        <!-- Center Content -->
+        <div class="au-hero-content">
+            <span class="au-hero-tag anim-hero">The Satya Story</span>
+
+            <h1 class="au-hero-title anim-hero">
+                ENGINEERING <br> THE FUTURE
+            </h1>
+
+            <p class="au-hero-desc anim-hero">
+                From a vision in 2012 to becoming India's leading aluminium extrusion manufacturer. We combine
+                precision, capacity, and innovation to build the world of tomorrow.
+            </p>
+        </div>
+
+        <!-- Bottom Glass Bar -->
+        <div class="au-stats-bar">
+            <div class="au-stats-wrapper">
+                <div class="au-hero-stat anim-stat">
+                    <span class="au-stat-value">2012</span>
+                    <span class="au-stat-label">Established</span>
+                </div>
+                <div class="au-hero-stat anim-stat">
+                    <span class="au-stat-value">50k MT</span>
+                    <span class="au-stat-label">Annual Capacity</span>
+                </div>
+                <div class="au-hero-stat anim-stat">
+                    <span class="au-stat-value">Global</span>
+                    <span class="au-stat-label">Footprint</span>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+
+
+
+
+
+
+
+
+    <!-- NEW "THE STORY" SECTION -->
+    <section id="about-story">
+        <div class="container">
+            <div class="story-grid">
+
+                <!-- Left: Image with Frame -->
+                <div class="story-img-col">
+                    <div class="story-frame"></div>
+                    <div class="story-img-wrapper anim-img-reveal">
+                        <img src="https://images.pexels.com/photos/35136696/pexels-photo-35136696/free-photo-of-industrial-welder-at-work-in-factory.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                            class="story-img" alt="Satya Metal History">
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div class="story-content-col">
+                    <span class="story-tag anim-text-up">Since 2012</span>
+                    <h2 class="story-title anim-text-up">
+                        We Don't Just Make Metal. <br>
+                        <span style="color: var(--satya-blue);">We Build Trust.</span>
+                    </h2>
+                    <p class="story-desc anim-text-up">
+                        Established with a vision to revolutionize the aluminium extrusion industry, Satya Metal
+                        Industries has grown from a single press unit to a <strong>50,000 MT capacity</strong> giant.
+                        <br><br>
+                        Our journey is defined by a relentless pursuit of perfection. We combine decades of expertise
+                        with cutting-edge technology to deliver profiles that form the backbone of modern
+                        infrastructure.
+                    </p>
+
+                    <div class="story-signature anim-text-up">
+                        <span class="sign-text">Satya Prakash</span>
+                        <span class="sign-role">Founder & Chairman</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="vision-mission-section">
+        <div class="container">
+
+            <div class="vm-header-wrap">
+                <span class="vm-eyebrow-text">Core Philosophy</span>
+                <h2 class="vm-title-text">Driving <span style="color: var(--satya-blue);">Excellence</span></h2>
+            </div>
+
+            <div class="vm-card-container">
+
+                <!-- Card 1: VISION -->
+                <div class="vm-card">
+                    <div class="vm-card-number">01</div>
+                    <div class="vm-card-icon vision-icon"><i class="fa-regular fa-eye"></i></div>
+                    <div class="vm-card-content">
+                        <h3>Our Vision</h3>
+                        <p>To be the undisputed global leader in aluminium extrusion, setting benchmarks in precision,
+                            quality, and sustainable innovation for future generations.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: MISSION -->
+                <div class="vm-card mission-card">
+                    <div class="vm-card-number">02</div>
+                    <div class="vm-card-icon mission-icon"><i class="fa-solid fa-crosshairs"></i></div>
+                    <div class="vm-card-content">
+                        <h3>Our Mission</h3>
+                        <p>Empowering industries by delivering high-strength, precision-engineered aluminium profiles
+                            while maintaining operational excellence and unwavering customer trust.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: VALUES -->
+                <div class="vm-card">
+                    <div class="vm-card-number">03</div>
+                    <div class="vm-card-icon values-icon"><i class="fa-regular fa-gem"></i></div>
+                    <div class="vm-card-content">
+                        <h3>Core Values</h3>
+                        <div class="values-tags">
+                            <span>Integrity</span>
+                            <span>Innovation</span>
+                            <span>Quality</span>
+                            <span>Sustainability</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Use fromTo to force the animation to play correctly
+                // This ensures they start hidden only when JS runs and then reveal
+                gsap.utils.toArray(".vm-card").forEach((card, i) => {
+                    gsap.fromTo(card,
+                        { y: 50, opacity: 0 },
+                        {
+                            y: 0,
+                            opacity: 1,
+                            duration: 0.8,
+                            ease: "power2.out",
+                            delay: i * 0.2, // Stagger effect
+                            scrollTrigger: {
+                                trigger: "#vision-mission-section",
+                                start: "top 95%", // Trigger almost immediately when section enters viewport
+                            }
+                        }
+                    );
+                });
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <section id="timeline-section">
+        <div class="container">
+
+            <div class="tl-header">
+                <span class="tl-eyebrow">Milestones</span>
+                <h2 class="tl-title">Our Journey</h2>
+            </div>
+
+            <div class="timeline-wrapper">
+
+                <!-- Center Lines -->
+                <div class="tl-line-bg"></div>
+                <div class="tl-line-progress"></div>
+
+                <!-- Item 1: 2012 (Left) -->
+                <div class="tl-item">
+                    <div class="tl-content">
+                        <span class="tl-year">2012</span>
+                        <h3 class="tl-heading">The Inception</h3>
+                        <p class="tl-desc">Founded with a vision to revolutionize aluminium extrusion. Established our
+                            first plant in Bhiwadi, Rajasthan.</p>
+                    </div>
+                    <div class="tl-node"></div>
+                    <div class="tl-space"></div>
+                </div>
+
+                <!-- Item 2: 2015 (Right) -->
+                <div class="tl-item">
+                    <div class="tl-content">
+                        <span class="tl-year">2015</span>
+                        <h3 class="tl-heading">Expansion Phase</h3>
+                        <p class="tl-desc">Commissioned two new automated extrusion presses to meet growing demand.
+                            Production capacity doubled.</p>
+                    </div>
+                    <div class="tl-node"></div>
+                    <div class="tl-space"></div>
+                </div>
+
+                <!-- Item 3: 2018 (Left) -->
+                <div class="tl-item">
+                    <div class="tl-content">
+                        <span class="tl-year">2018</span>
+                        <h3 class="tl-heading">Global Standards</h3>
+                        <p class="tl-desc">Achieved ISO 9001:2015 certification. Started exporting high-precision
+                            profiles to international markets.</p>
+                    </div>
+                    <div class="tl-node"></div>
+                    <div class="tl-space"></div>
+                </div>
+
+                <!-- Item 4: 2021 (Right) -->
+                <div class="tl-item">
+                    <div class="tl-content">
+                        <span class="tl-year">2021</span>
+                        <h3 class="tl-heading">Green Energy</h3>
+                        <p class="tl-desc">Installed captive solar power plants. Committed to reducing carbon footprint
+                            and sustainable manufacturing.</p>
+                    </div>
+                    <div class="tl-node"></div>
+                    <div class="tl-space"></div>
+                </div>
+
+                <!-- Item 5: Present (Left) -->
+                <div class="tl-item">
+                    <div class="tl-content">
+                        <span class="tl-year">Today</span>
+                        <h3 class="tl-heading">Industry Leader</h3>
+                        <p class="tl-desc">50,000 MT annual capacity with 11 presses. Trusted by top global brands in
+                            Architecture, Transport & Solar.</p>
+                    </div>
+                    <div class="tl-node"></div>
+                    <div class="tl-space"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JS Logic -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // 1. Draw the Gold Line
+                gsap.to(".tl-line-progress", {
+                    height: "100%",
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: ".timeline-wrapper",
+                        start: "top center",
+                        end: "bottom center",
+                        scrub: 1
+                    }
+                });
+
+                // 2. Activate Items as we scroll
+                const items = document.querySelectorAll('.tl-item');
+
+                items.forEach((item) => {
+                    ScrollTrigger.create({
+                        trigger: item,
+                        start: "top 70%", // When item is near center
+                        end: "bottom 70%",
+                        onEnter: () => item.classList.add('active'),
+                        onEnterBack: () => item.classList.add('active'),
+                        // Keep active once reached for better UX
+                        // onLeave: () => item.classList.remove('active'), 
+                    });
+                });
+
+                // Header Animation
+                gsap.from(".tl-header", {
+                    y: 50, opacity: 0, duration: 1, ease: "power3.out",
+                    scrollTrigger: { trigger: "#timeline-section", start: "top 85%" }
+                });
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- LEADERSHIP SECTION (Wide Layout & Natural Height) -->
+    <section id="leadership">
+        <div class="container">
+
+            <div class="leader-header">
+                <span class="leader-eyebrow">Guiding Force</span>
+                <h2 class="leader-title">Meet The <span style="color: var(--satya-blue);">Visionaries</span></h2>
+            </div>
+
+            <div class="leaders-grid">
+
+                <!-- Leader 1 -->
+                <div class="leader-card anim-leader">
+                    <div class="leader-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop"
+                            class="leader-img" alt="Mr. Satya Prakash">
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Mr. Satya Prakash</h3>
+                        <span class="leader-role">Founder & Chairman</span>
+                        <p class="leader-quote">"Quality is not an act, it is a habit. We build trust with every
+                            profile."</p>
+
+                        <div class="leader-socials">
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leader 2 -->
+                <div class="leader-card anim-leader">
+                    <div class="leader-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop"
+                            class="leader-img" alt="Mr. Arun Kumar">
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Mr. Arun Kumar</h3>
+                        <span class="leader-role">Managing Director</span>
+                        <p class="leader-quote">"Innovation drives us forward. We engineer the future of aluminium."</p>
+
+                        <div class="leader-socials">
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leader 3 -->
+                <div class="leader-card anim-leader">
+                    <div class="leader-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
+                            class="leader-img" alt="Mr. Vikas Singh">
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Mr. Vikas Singh</h3>
+                        <span class="leader-role">Technical Director</span>
+                        <p class="leader-quote">"Precision is our promise. Every micron matters in what we deliver."</p>
+
+                        <div class="leader-socials">
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // HERO ANIMATIONS (Unique Class Names)
+        const tl = gsap.timeline({ delay: 0.2 });
+
+        // 1. Tag fade in
+        tl.to(".anim-hero", {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+
+        // 2. Stats bar slide up
+        tl.to(".anim-stat", {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "back.out(1.7)"
+        }, "-=0.5");
+
+        // 3. Parallax Effect for Image
+        gsap.to(".au-hero-img", {
+            yPercent: 20,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#au-hero-section",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- NEW CHAT WIDGET -->
+    <div id="chat-widget-container">
+        <!-- Chat Window -->
+        <div class="chat-window">
+            <div class="chat-header">
+                <div class="bot-info">
+                    <div class="bot-avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="bot-text">
+                        <h4>Satya Assistant</h4>
+                        <span>Online | Replies instantly</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-xmark close-chat" onclick="toggleChat()"></i>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <div class="msg bot">
+                    Hello! Welcome to Satya Metal Industries. <br>How can we assist you with your aluminium requirements
+                    today?
+                </div>
+                <div class="chat-options">
+                    <div class="chat-option-btn" onclick="sendOption('Product Inquiry')">Product Inquiry</div>
+                    <div class="chat-option-btn" onclick="sendOption('Download Catalogue')">Catalogue</div>
+                    <div class="chat-option-btn" onclick="sendOption('Connect Sales')">Connect Sales</div>
+                </div>
+                <div class="typing" id="typing-indicator">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" class="chat-input" id="user-input" placeholder="Type a message..."
+                    onkeypress="handleEnter(event)">
+                <button class="send-btn" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <div class="chat-toggle-btn" onclick="toggleChat()">
+            <i class="fa-solid fa-comment-dots"></i>
+        </div>
+    </div>
+
+
+    <!-- NEW PREMIUM FOOTER -->
+    <footer id="contact-footer">
+        <div class="footer-wrapper">
+
+            <div class="footer-top-grid">
+
+                <!-- Left: Info -->
+                <div class="footer-info anim-up">
+                    <span class="footer-label">Partner With Us</span>
+                    <h2 class="footer-heading">Let's build the<br>future together.</h2>
+                    <p class="footer-sub">Have a project in mind? We provide world-class aluminium solutions tailored to
+                        your engineering needs.</p>
+
+                    <div class="contact-details-grid">
+                        <div class="contact-item">
+                            <h5>Address</h5>
+                            <p>Plot No. 12, Industrial Area,<br>Bhiwadi, Rajasthan - 301019</p>
+                        </div>
+                        <div class="contact-item">
+                            <h5>Contact</h5>
+                            <a href="mailto:info@satyagroup.in">info@satyagroup.in</a>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                        </div>
+                        <div class="contact-item">
+                            <h5>Socials</h5>
+                            <div style="display:flex; gap:15px; margin-top:5px;">
+                                <a href="#">LinkedIn</a>
+                                <a href="#">Instagram</a>
+                                <a href="#">Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="footer-form anim-up">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control-custom" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-custom" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-custom" placeholder="Company" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control-custom" rows="2" placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Submit Inquiry</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Bottom: Brand & Links -->
+            <div class="footer-bottom">
+                <div class="big-footer-text anim-fade">
+                    <div class="footerlogo">
+                        <img src="assets/images/logo/footer-logo.png" height="100" alt="">
+                    </div>
+                </div>
+
+                <div class="footer-meta">
+                    <div>© 2025 The Satya Group. Designed By WebAds India</div>
+                    <div class="footer-nav">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                        <a href="#">Site Credit</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+    <!-- JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smooth: true
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            // Footer Animations
+            gsap.utils.toArray(".anim-up").forEach((elem, i) => {
+                gsap.from(elem, {
+                    y: 50,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                    delay: i * 0.1,
+                    scrollTrigger: {
+                        trigger: "#contact-footer",
+                        start: "top 70%"
+                    }
+                });
+            });
+
+            gsap.from(".big-footer-text", {
+                y: 100,
+                opacity: 0,
+                duration: 1.5,
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: "#contact-footer",
+                    start: "top 80%"
+                }
+            });
+        });
+    </script>
+
+
+
+
+    <!-- JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+            }
+
+            // --- ANIMATION LOGIC ---
+            const cards = document.querySelectorAll('.sus-card');
+
+            cards.forEach((card, index) => {
+                ScrollTrigger.create({
+                    trigger: card,
+                    start: "top 60%",
+                    end: "bottom 60%",
+                    onEnter: () => activate(card),
+                    onEnterBack: () => activate(card),
+                    onLeave: () => deactivate(card),
+                    onLeaveBack: () => deactivate(card)
+                });
+            });
+
+            function activate(card) {
+                // Activate Card
+                card.classList.add('active');
+
+                // Activate Text
+                let targetId = card.getAttribute('data-target');
+                document.querySelectorAll('.sus-word').forEach(w => w.classList.remove('active'));
+                const targetText = document.getElementById(targetId);
+                if (targetText) targetText.classList.add('active');
+            }
+
+            function deactivate(card) {
+                card.classList.remove('active');
+            }
+
+            // Initial State Activation (First item active by default if at top)
+            ScrollTrigger.refresh();
+
+            // Icon Animation
+            gsap.to(".sus-leaf-icon", {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                delay: 0.5,
+                scrollTrigger: {
+                    trigger: "#sustainability-section",
+                    start: "top 60%"
+                }
+            });
+        });
+    </script>
+
+
+
+
+    <script>
+        /* * ==========================================
+         * SCROLL FIX & NEW ANIMATIONS
+         * ========================================== */
+
+        // 1. Re-Initialize Lenis with Smoother Settings
+        // Ensure only ONE instance runs. If previous exists, it might need cleanup (handled by browser reload usually)
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth ease
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false, // Fix for mobile touch jerkiness
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // 2. Navbar Scroll Effect
+        window.addEventListener("scroll", function () {
+            const navbar = document.querySelector(".satya-navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+
+        // 3. Mobile Menu Logic with Animations
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+
+            // Staggered Animation for Links using GSAP
+            if (navMenu.classList.contains("active")) {
+                // Reset and Animate
+                gsap.set(".nav-item", {
+                    y: 30,
+                    opacity: 0
+                });
+                gsap.to(".nav-item", {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.5,
+                    stagger: 0.1,
+                    delay: 0.2,
+                    ease: "power2.out"
+                });
+            }
+        });
+
+        // Dropdown Click for Mobile
+        if (window.innerWidth <= 1024) {
+            const dropdowns = document.querySelectorAll('.nav-item');
+            dropdowns.forEach(item => {
+                const link = item.querySelector('.nav-link');
+                const submenu = item.querySelector('.submenu');
+
+                // Only prevent default if it has a submenu
+                if (submenu) {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+
+                        // Close other submenus (Optional - keeps it cleaner)
+                        document.querySelectorAll('.submenu').forEach(sub => {
+                            if (sub !== submenu) sub.classList.remove('show');
+                        });
+
+                        submenu.classList.toggle('show');
+
+                        // Force layout recalculation if needed or simple slide
+                    });
+                }
+            });
+
+            // Show Mobile Button
+            const mobileBtn = document.querySelector('.mobile-btn-container');
+            if (mobileBtn) mobileBtn.classList.remove('d-none');
+        }
+
+        // Ensure Hamburger color is black
+        gsap.set(".bar", {
+            backgroundColor: "#000"
+        });
+    </script>
+
+
+
+
+
+    <script>
+        // CHATBOT FUNCTIONS
+        function toggleChat() {
+            const chatWindow = document.querySelector('.chat-window');
+            chatWindow.classList.toggle('active');
+        }
+
+        function handleEnter(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('user-input');
+            const message = input.value.trim();
+            if (message) {
+                addMessage(message, 'user');
+                input.value = '';
+                showTyping();
+                setTimeout(() => {
+                    hideTyping();
+                    addMessage("Thanks for reaching out! Our team will contact you shortly via email.", 'bot');
+                }, 1500);
+            }
+        }
+
+        function sendOption(option) {
+            addMessage(option, 'user');
+            showTyping();
+            setTimeout(() => {
+                hideTyping();
+                if (option === 'Product Inquiry') addMessage("Great! Please describe your requirement or the alloy grade you need.", 'bot');
+                else if (option === 'Download Catalogue') addMessage("You can download our latest brochure from the Products section.", 'bot');
+                else addMessage("Please email us at info@satyametal.com for direct sales.", 'bot');
+            }, 1000);
+        }
+
+        function addMessage(text, sender) {
+            const chatBody = document.getElementById('chat-body');
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('msg', sender);
+            msgDiv.innerText = text;
+            chatBody.insertBefore(msgDiv, document.getElementById('typing-indicator'));
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function showTyping() {
+            document.getElementById('typing-indicator').style.display = 'flex';
+            document.getElementById('chat-body').scrollTop = document.getElementById('chat-body').scrollHeight;
+        }
+
+        function hideTyping() {
+            document.getElementById('typing-indicator').style.display = 'none';
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Satya Group - Style Guide</title>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/about-us.css">
+    <link rel="shortcut icon" href="assets/images/logo/satya-logo.png" type="image/x-icon">
+    <!-- 1. Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 2. Fonts (Bold & Clear) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- 3. Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- 4. Animations (GSAP & Lenis) - YE BAHUT ZAROORI HAI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+
+    <style>
+        /* * ==========================================
+         * NEW CONTACT HERO (THE GOLDEN HORIZON)
+         * ========================================== */
+        #contact-hero {
+            position: relative;
+            height: 85vh;
+            /* Cinematic Height */
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+        }
+
+        /* 1. Parallax Background Image */
+        .contact-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            /* Extra height for parallax */
+            /* Abstract Industrial/Network Image */
+            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.6;
+            z-index: 0;
+            filter: contrast(1.1) saturate(0) brightness(0.6);
+            /* Premium Noir Look */
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, #000000 90%);
+            z-index: 1;
+        }
+
+        /* 2. Interactive Spotlight (Mouse Follow) */
+        .hero-spotlight {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 71, 171, 0.2) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        /* 3. Main Typography */
+        .contact-content {
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .contact-tag {
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--satya-gold);
+            font-size: 14px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: inline-block;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            padding: 8px 24px;
+            border-radius: 50px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .contact-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(50px, 8vw, 120px);
+            font-weight: 800;
+            line-height: 0.9;
+            text-transform: uppercase;
+            color: white;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        /* Two-tone text effect */
+        .contact-title span {
+            display: block;
+        }
+
+        .title-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-desc {
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(16px, 1.5vw, 20px);
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-weight: 300;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        /* 4. Floating Elements (Abstract) */
+        .floating-element {
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .fe-1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            right: 10%;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        .fe-2 {
+            width: 150px;
+            height: 150px;
+            bottom: 20%;
+            left: 10%;
+            animation: float 15s infinite ease-in-out reverse;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-title {
+                font-size: 50px;
+                line-height: 1;
+            }
+
+            .hero-spotlight {
+                display: none;
+            }
+
+            /* Performance on mobile */
+        }
+
+
+        /* * ==========================================
+         * 2. MAIN CONTACT FORM SECTION (MODERN & STYLISH)
+         * ========================================== */
+        #main-contact {
+            padding: 120px 0;
+            background-color: #FFFFFF;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle Decor */
+        #main-contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 71, 171, 0.03) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            /* Balanced Layout */
+            gap: 80px;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+            align-items: start;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* LEFT: INFO */
+        .info-col h2 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: clamp(36px, 4vw, 50px);
+            line-height: 1.1;
+            margin-bottom: 50px;
+            color: var(--text-main);
+        }
+
+        .info-col h2 span {
+            color: var(--satya-blue);
+            position: relative;
+            display: inline-block;
+        }
+
+        .info-col h2 span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: rgba(197, 160, 89, 0.2);
+            z-index: -1;
+        }
+
+        .info-box {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+        }
+
+        .info-icon {
+            width: 55px;
+            height: 55px;
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--satya-gold);
+            font-size: 22px;
+            flex-shrink: 0;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-item:hover .info-icon {
+            background: var(--satya-blue);
+            color: white;
+            border-color: var(--satya-blue);
+            transform: translateY(-5px);
+        }
+
+        .info-text h5 {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--satya-blue);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .info-text p,
+        .info-text a {
+            font-family: 'Manrope', sans-serif;
+            font-size: 18px;
+            color: var(--text-main);
+            text-decoration: none;
+            line-height: 1.6;
+            font-weight: 500;
+            transition: 0.3s;
+            margin: 0;
+            display: block;
+        }
+
+        .info-text a:hover {
+            color: var(--satya-gold);
+        }
+
+        /* Socials */
+        .socials {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+            margin-left: 80px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            transition: 0.3s;
+            font-size: 18px;
+        }
+
+        .social-link:hover {
+            background: var(--satya-blue);
+            border-color: var(--satya-blue);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* RIGHT: STYLISH FORM CARD */
+        .form-col {
+            background: #FFFFFF;
+            padding: 60px;
+            border-radius: 20px;
+            /* Premium Depth Shadow */
+            box-shadow: 0 30px 60px rgba(0, 71, 171, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Gold Accent Top Bar */
+        .form-col::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--satya-blue), var(--satya-gold));
+        }
+
+        .form-title-small {
+            font-family: 'Syne';
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px 20px;
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            font-family: 'Manrope';
+            font-size: 16px;
+            color: var(--text-main);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            background: #FFFFFF;
+            border-color: var(--satya-gold);
+            box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.1);
+        }
+
+        .form-label {
+            position: absolute;
+            top: 16px;
+            left: 20px;
+            font-size: 14px;
+            color: #888;
+            pointer-events: none;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .form-input:focus~.form-label,
+        .form-input:valid~.form-label {
+            top: -10px;
+            left: 15px;
+            font-size: 11px;
+            color: var(--satya-blue);
+            background: white;
+            padding: 0 5px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--satya-blue);
+            color: white;
+            border: none;
+            font-family: 'Syne';
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 71, 171, 0.2);
+        }
+
+        .submit-btn:hover {
+            background: var(--satya-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(197, 160, 89, 0.3);
+        }
+
+        /* MAP SECTION */
+        #map-section {
+            height: 450px;
+            width: 100%;
+            filter: grayscale(0%);
+            /* Full Color Map for clarity */
+        }
+
+    
+    </style>
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- PREMIUM FLOATING CONTACT DOCK -->
+    <div id="contact-dock">
+
+
+
+        <!-- 1. Call -->
+        <a href="tel:+919876543210" class="dock-item call" aria-label="Call Us">
+            <div class="dock-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            <span class="dock-tooltip">Call Now</span>
+        </a>
+
+        <!-- 2. Email -->
+        <a href="mailto:info@satyametal.com" class="dock-item email" aria-label="Send Email">
+            <div class="dock-icon"><i class="fa-solid fa-envelope"></i></div>
+            <span class="dock-tooltip">Send Email</span>
+        </a>
+
+        <!-- 3. WhatsApp (Pulse Effect) -->
+        <a href="https://wa.me/919876543210" target="_blank" class="dock-item whatsapp" aria-label="Chat on WhatsApp">
+            <div class="dock-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <span class="dock-tooltip">WhatsApp Us</span>
+            <div class="dock-pulse"></div>
+        </a>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- NAVBAR -->
+    <nav class="satya-navbar">
+        <div class="container navbar-container">
+            <!-- LOGO -->
+            <a href="index.html" class="brand-logo">
+                <img src="assets/images/logo/logo-gray.png" alt="The Satya Group Logo">
+            </a>
+
+            <!-- MENU -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" data-text="Home"><span>Home</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="about-us.html" class="nav-link" data-text="About Us"><span>About Us</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-text="Products"><span>Products</span></a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <ul class="submenu">
+                        <li><a href="#">Architectural Profiles</a></li>
+                        <li><a href="#">Industrial Profiles</a></li>
+                        <li><a href="#">Solar Profiles</a></li>
+                        <li><a href="#">Automobile Profiles</a></li>
+                        <li><a href="#">Heat Sinks</a></li>
+                        <li><a href="#">Hardware Sections</a></li>
+                        <li><a href="#">AC Grill Profiles</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="infrastructure.html" class="nav-link" data-text="Infrastructure"><span>Infrastructure</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="sustainability.html" class="nav-link" data-text="Sustainability"><span>Sustainability</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact-us.html" class="nav-link" data-text="Contact"><span>Contact</span></a>
+                </li>
+
+                <!-- Mobile Button -->
+                <li class="nav-item d-none d-lg-none mobile-btn-container">
+                    <a href="contact-us.html" class="btn-industrial">Get a Quote</a>
+                </li>
+            </ul>
+
+            <!-- DESKTOP BUTTON -->
+            <div class="d-none d-lg-block btn-quote-desktop">
+                <a href="contact-us.html" class="btn-industrial">Get a Quote</a>
+            </div>
+
+            <!-- HAMBURGER -->
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- CONTACT HERO SECTION -->
+    <header id="contact-hero">
+
+        <!-- Background Elements -->
+        <div class="contact-hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-spotlight"></div>
+
+        <!-- Floating Decor -->
+        <div class="floating-element fe-1"></div>
+        <div class="floating-element fe-2"></div>
+
+        <!-- Main Content -->
+        <div class="contact-content">
+            <span class="contact-tag anim-hero">24/7 Support</span>
+
+            <h1 class="contact-title anim-hero">
+                <span class="title-outline">Let's Build</span>
+                <span>The Future</span>
+            </h1>
+
+            <p class="contact-desc anim-hero">
+                Have a project in mind? We are ready to engineer the perfect aluminium solution for your needs. Reach
+                out to our experts today.
+            </p>
+        </div>
+    </header>
+
+
+
+
+
+
+
+    <!-- MAIN CONTACT SECTION (IMPROVED) -->
+    <section id="main-contact">
+        <div class="contact-grid">
+
+            <!-- Left: Premium Info Cards -->
+            <div class="info-col">
+                <h2 class="reveal-contact">Let's Start a <br><span>Conversation.</span></h2>
+
+                <div class="info-box reveal-contact">
+
+                    <!-- Address Card -->
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="info-text">
+                            <h5>Headquarters</h5>
+                            <p>Plot No. 12, Industrial Area,<br>Bhiwadi, Rajasthan - 301019</p>
+                        </div>
+                    </div>
+
+                    <!-- Email Card -->
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="info-text">
+                            <h5>Email Us</h5>
+                            <p><a href="mailto:info@satyametal.com">info@satyametal.com</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Phone Card -->
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="info-text">
+                            <h5>Call Us</h5>
+                            <p><a href="tel:+918477897789">+91 84778 97789</a></p>
+                        </div>
+                    </div>
+
+                    <div class="socials">
+                        <a href="#" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Premium Form -->
+            <div class="form-col reveal-form">
+                <h3 class="form-title-small">Send a Message</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-input" required>
+                        <label class="form-label">Full Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" required>
+                        <label class="form-label">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" required>
+                        <label class="form-label">Phone Number</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" required>
+                        <label class="form-label">Company Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" required>
+                        <label class="form-label">Message</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Inquiry</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MAP -->
+    <section id="map-section">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.669894389146!2d76.82885931507856!3d28.2192669825838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d4a23b1c1c9ef%3A0x6a1c1c1c1c1c1c1c!2sBhiwadi%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script> // HERO ANIMATIONS
+        const tl = gsap.timeline({ delay: 0.2 });
+
+        // 1. Tag & Text Reveal
+        tl.to(".anim-hero", {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+
+        // 2. Parallax Background on Scroll
+        gsap.to(".contact-hero-bg", {
+            yPercent: 20,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#contact-hero",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+        // 3. Mouse Spotlight Effect (Desktop)
+        const heroSection = document.getElementById("contact-hero");
+        const spotlight = document.querySelector(".hero-spotlight");
+
+        if (window.innerWidth > 991) {
+            heroSection.addEventListener("mousemove", (e) => {
+                const rect = heroSection.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                gsap.to(spotlight, {
+                    x: x,
+                    y: y,
+                    opacity: 1,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+
+                // Subtle Tilt on Text
+                const title = document.querySelector(".contact-title");
+                const moveX = (e.clientX / window.innerWidth - 0.5) * 20;
+                const moveY = (e.clientY / window.innerHeight - 0.5) * 20;
+                gsap.to(title, { x: moveX, y: moveY, duration: 1 });
+            });
+
+            heroSection.addEventListener("mouseleave", () => {
+                gsap.to(spotlight, { opacity: 0, duration: 0.5 });
+            });
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- NEW CHAT WIDGET -->
+    <div id="chat-widget-container">
+        <!-- Chat Window -->
+        <div class="chat-window">
+            <div class="chat-header">
+                <div class="bot-info">
+                    <div class="bot-avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="bot-text">
+                        <h4>Satya Assistant</h4>
+                        <span>Online | Replies instantly</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-xmark close-chat" onclick="toggleChat()"></i>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <div class="msg bot">
+                    Hello! Welcome to Satya Metal Industries. <br>How can we assist you with your aluminium requirements
+                    today?
+                </div>
+                <div class="chat-options">
+                    <div class="chat-option-btn" onclick="sendOption('Product Inquiry')">Product Inquiry</div>
+                    <div class="chat-option-btn" onclick="sendOption('Download Catalogue')">Catalogue</div>
+                    <div class="chat-option-btn" onclick="sendOption('Connect Sales')">Connect Sales</div>
+                </div>
+                <div class="typing" id="typing-indicator">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" class="chat-input" id="user-input" placeholder="Type a message..."
+                    onkeypress="handleEnter(event)">
+                <button class="send-btn" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <div class="chat-toggle-btn" onclick="toggleChat()">
+            <i class="fa-solid fa-comment-dots"></i>
+        </div>
+    </div>
+
+
+    <!-- NEW PREMIUM FOOTER -->
+    <footer id="contact-footer">
+        <div class="footer-wrapper">
+
+            <div class="footer-top-grid">
+
+                <!-- Left: Info -->
+                <div class="footer-info anim-up">
+                    <span class="footer-label">Partner With Us</span>
+                    <h2 class="footer-heading">Let's build the<br>future together.</h2>
+                    <p class="footer-sub">Have a project in mind? We provide world-class aluminium solutions tailored to
+                        your engineering needs.</p>
+
+                    <div class="contact-details-grid">
+                        <div class="contact-item">
+                            <h5>Address</h5>
+                            <p>Plot No. 12, Industrial Area,<br>Bhiwadi, Rajasthan - 301019</p>
+                        </div>
+                        <div class="contact-item">
+                            <h5>Contact</h5>
+                            <a href="mailto:info@satyagroup.in">info@satyagroup.in</a>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                        </div>
+                        <div class="contact-item">
+                            <h5>Socials</h5>
+                            <div style="display:flex; gap:15px; margin-top:5px;">
+                                <a href="#">LinkedIn</a>
+                                <a href="#">Instagram</a>
+                                <a href="#">Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="footer-form anim-up">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control-custom" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-custom" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-custom" placeholder="Company" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control-custom" rows="2" placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Submit Inquiry</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Bottom: Brand & Links -->
+            <div class="footer-bottom">
+                <div class="big-footer-text anim-fade">
+                    <div class="footerlogo">
+                        <img src="assets/images/logo/footer-logo.png" height="100" alt="">
+                    </div>
+                </div>
+
+                <div class="footer-meta">
+                    <div>© 2025 The Satya Group. Designed By WebAds India</div>
+                    <div class="footer-nav">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                        <a href="#">Site Credit</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+    <!-- JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smooth: true
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            // Footer Animations
+            gsap.utils.toArray(".anim-up").forEach((elem, i) => {
+                gsap.from(elem, {
+                    y: 50,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                    delay: i * 0.1,
+                    scrollTrigger: {
+                        trigger: "#contact-footer",
+                        start: "top 70%"
+                    }
+                });
+            });
+
+            gsap.from(".big-footer-text", {
+                y: 100,
+                opacity: 0,
+                duration: 1.5,
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: "#contact-footer",
+                    start: "top 80%"
+                }
+            });
+        });
+    </script>
+
+
+
+
+    <!-- JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+            }
+
+            // --- ANIMATION LOGIC ---
+            const cards = document.querySelectorAll('.sus-card');
+
+            cards.forEach((card, index) => {
+                ScrollTrigger.create({
+                    trigger: card,
+                    start: "top 60%",
+                    end: "bottom 60%",
+                    onEnter: () => activate(card),
+                    onEnterBack: () => activate(card),
+                    onLeave: () => deactivate(card),
+                    onLeaveBack: () => deactivate(card)
+                });
+            });
+
+            function activate(card) {
+                // Activate Card
+                card.classList.add('active');
+
+                // Activate Text
+                let targetId = card.getAttribute('data-target');
+                document.querySelectorAll('.sus-word').forEach(w => w.classList.remove('active'));
+                const targetText = document.getElementById(targetId);
+                if (targetText) targetText.classList.add('active');
+            }
+
+            function deactivate(card) {
+                card.classList.remove('active');
+            }
+
+            // Initial State Activation (First item active by default if at top)
+            ScrollTrigger.refresh();
+
+            // Icon Animation
+            gsap.to(".sus-leaf-icon", {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                delay: 0.5,
+                scrollTrigger: {
+                    trigger: "#sustainability-section",
+                    start: "top 60%"
+                }
+            });
+        });
+    </script>
+
+
+
+
+    <script>
+        /* * ==========================================
+         * SCROLL FIX & NEW ANIMATIONS
+         * ========================================== */
+
+        // 1. Re-Initialize Lenis with Smoother Settings
+        // Ensure only ONE instance runs. If previous exists, it might need cleanup (handled by browser reload usually)
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth ease
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false, // Fix for mobile touch jerkiness
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // 2. Navbar Scroll Effect
+        window.addEventListener("scroll", function () {
+            const navbar = document.querySelector(".satya-navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+
+        // 3. Mobile Menu Logic with Animations
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+
+            // Staggered Animation for Links using GSAP
+            if (navMenu.classList.contains("active")) {
+                // Reset and Animate
+                gsap.set(".nav-item", {
+                    y: 30,
+                    opacity: 0
+                });
+                gsap.to(".nav-item", {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.5,
+                    stagger: 0.1,
+                    delay: 0.2,
+                    ease: "power2.out"
+                });
+            }
+        });
+
+        // Dropdown Click for Mobile
+        if (window.innerWidth <= 1024) {
+            const dropdowns = document.querySelectorAll('.nav-item');
+            dropdowns.forEach(item => {
+                const link = item.querySelector('.nav-link');
+                const submenu = item.querySelector('.submenu');
+
+                // Only prevent default if it has a submenu
+                if (submenu) {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+
+                        // Close other submenus (Optional - keeps it cleaner)
+                        document.querySelectorAll('.submenu').forEach(sub => {
+                            if (sub !== submenu) sub.classList.remove('show');
+                        });
+
+                        submenu.classList.toggle('show');
+
+                        // Force layout recalculation if needed or simple slide
+                    });
+                }
+            });
+
+            // Show Mobile Button
+            const mobileBtn = document.querySelector('.mobile-btn-container');
+            if (mobileBtn) mobileBtn.classList.remove('d-none');
+        }
+
+        // Ensure Hamburger color is black
+        gsap.set(".bar", {
+            backgroundColor: "#000"
+        });
+    </script>
+
+
+
+
+
+    <script>
+        // CHATBOT FUNCTIONS
+        function toggleChat() {
+            const chatWindow = document.querySelector('.chat-window');
+            chatWindow.classList.toggle('active');
+        }
+
+        function handleEnter(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('user-input');
+            const message = input.value.trim();
+            if (message) {
+                addMessage(message, 'user');
+                input.value = '';
+                showTyping();
+                setTimeout(() => {
+                    hideTyping();
+                    addMessage("Thanks for reaching out! Our team will contact you shortly via email.", 'bot');
+                }, 1500);
+            }
+        }
+
+        function sendOption(option) {
+            addMessage(option, 'user');
+            showTyping();
+            setTimeout(() => {
+                hideTyping();
+                if (option === 'Product Inquiry') addMessage("Great! Please describe your requirement or the alloy grade you need.", 'bot');
+                else if (option === 'Download Catalogue') addMessage("You can download our latest brochure from the Products section.", 'bot');
+                else addMessage("Please email us at info@satyametal.com for direct sales.", 'bot');
+            }, 1000);
+        }
+
+        function addMessage(text, sender) {
+            const chatBody = document.getElementById('chat-body');
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('msg', sender);
+            msgDiv.innerText = text;
+            chatBody.insertBefore(msgDiv, document.getElementById('typing-indicator'));
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function showTyping() {
+            document.getElementById('typing-indicator').style.display = 'flex';
+            document.getElementById('chat-body').scrollTop = document.getElementById('chat-body').scrollHeight;
+        }
+
+        function hideTyping() {
+            document.getElementById('typing-indicator').style.display = 'none';
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

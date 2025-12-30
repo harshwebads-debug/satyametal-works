@@ -1,0 +1,2761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Satya Group - Style Guide</title>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/about-us.css">
+    <link rel="shortcut icon" href="assets/images/logo/satya-logo.png" type="image/x-icon">
+    <!-- 1. Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 2. Fonts (Bold & Clear) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- 3. Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- 4. Animations (GSAP & Lenis) - YE BAHUT ZAROORI HAI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+
+    <style>
+        /* 1. SUSTAINABILITY HERO (Revamped Design - VIBRANT & BRAND COLORED) */
+        #sus-hero {
+            position: relative;
+            /* Use 100dvh for mobile browsers to fill full screen including address bar area */
+            height: 90vh;
+            /* Reduced slightly from full screen for better proportion */
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--satya-blue-dark);
+            /* Dark Blue Base */
+        }
+
+        .sus-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Using a high-quality abstract/nature image */
+            background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            z-index: 0;
+            filter: grayscale(100%) contrast(1.2);
+            /* B&W background so colors pop */
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* BRAND COLOR OVERLAY: Blue tint */
+            background: linear-gradient(135deg, rgba(0, 71, 171, 0.362) 0%, rgba(11, 15, 25, 0.647) 100%);
+            z-index: 1;
+            mix-blend-mode: multiply;
+        }
+
+        .sus-hero-content {
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            max-width: 900px;
+            /* Reduced width for better text wrapping */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .sus-hero-eyebrow {
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--satya-gold);
+            /* Gold Accent */
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-bottom: 20px;
+            /* Reduced spacing */
+            display: inline-block;
+            border: 1px solid var(--satya-gold);
+            /* Gold Border */
+            padding: 8px 24px;
+            border-radius: 50px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            /* Animated */
+            transform: translateY(20px);
+        }
+
+        .sus-hero-title {
+            font-family: 'Syne', sans-serif;
+            /* Balanced Size - Responsive Clamp */
+            font-size: clamp(32px, 5vw, 70px);
+            /* Reduced max size significantly */
+            font-weight: 800;
+            line-height: 1.1;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            opacity: 0;
+            /* Animated */
+            transform: translateY(30px);
+            width: 100%;
+        }
+
+        .sus-hero-title span {
+            color: white;
+            /* Solid white looks cleaner */
+            display: block;
+        }
+
+        .sus-hero-title span.highlight {
+            color: var(--satya-gold);
+            /* Gold for impact */
+            text-shadow: 0 0 40px rgba(197, 160, 89, 0.4);
+            /* Gold Glow */
+        }
+
+        .sus-hero-desc {
+            font-family: 'Manrope', sans-serif;
+            /* Responsive Font Size */
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            /* Reduced width for cleaner look */
+            margin: 0 auto;
+            line-height: 1.7;
+            font-weight: 300;
+            opacity: 0;
+            /* Animated */
+            transform: translateY(30px);
+            padding: 0 10px;
+            /* Safe padding for mobile */
+        }
+
+        /* Scroll Down Indicator */
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            z-index: 5;
+        }
+
+        .scroll-text {
+            font-family: 'Rajdhani', sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .scroll-icon {
+            width: 20px;
+            height: 35px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .scroll-icon::after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            width: 4px;
+            height: 4px;
+            background: var(--satya-gold);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            animation: scrollDrop 2s infinite;
+        }
+
+        @keyframes scrollDrop {
+            0% {
+                top: 6px;
+                opacity: 1;
+            }
+
+            100% {
+                top: 20px;
+                opacity: 0;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .sus-hero-title span {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            /* Use safe size for mobile title */
+            .sus-hero-title {
+                font-size: clamp(28px, 8vw, 45px);
+                line-height: 1.2;
+            }
+
+            #sus-hero {
+                height: 90vh;
+            }
+
+            .sus-hero-desc {
+                max-width: 90%;
+            }
+        }
+
+
+
+
+
+
+
+        /* * ==========================================
+         * THE GREEN PHILOSOPHY SECTION (STYLISH UPDATE)
+         * ========================================== */
+        #green-philosophy {
+            padding: 150px 0;
+            background-color: var(--bg-body);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* --- SEXY BACKGROUND ANIMATION --- */
+        .phil-bg-anim {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            /* Changed green tint to blue/gold tint */
+            background: radial-gradient(circle at center, rgba(197, 160, 89, 0.05) 0%, rgba(0, 71, 171, 0.03) 40%, transparent 70%);
+            opacity: 0.8;
+            z-index: -1;
+            animation: rotateBg 60s linear infinite;
+        }
+
+        @keyframes rotateBg {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .phil-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            /* Right side slightly wider for stylish image */
+            gap: 100px;
+            align-items: center;
+        }
+
+        /* --- LEFT: CONTENT --- */
+        .phil-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .phil-eyebrow {
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--satya-gold);
+            /* Changed from green to gold */
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .phil-eyebrow::before {
+            content: '';
+            width: 40px;
+            height: 2px;
+            background: var(--satya-gold);
+            transition: 0.3s;
+        }
+
+        .phil-content:hover .phil-eyebrow::before {
+            width: 60px;
+            background: var(--satya-blue);
+        }
+
+        .phil-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(42px, 5vw, 68px);
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--text-main);
+            margin-bottom: 30px;
+        }
+
+        .phil-title span {
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .phil-content:hover .phil-title span {
+            text-shadow: 0 0 20px rgba(0, 71, 171, 0.1);
+        }
+
+        .phil-desc {
+            font-size: 18px;
+            color: var(--text-grey);
+            line-height: 1.7;
+            margin-bottom: 50px;
+        }
+
+        /* Stats Strip with Hover Effects */
+        .phil-stats {
+            display: flex;
+            gap: 40px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding-top: 40px;
+        }
+
+        .p-stat-item {
+            position: relative;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: 0.4s ease;
+        }
+
+        /* Hover Effect for Stats */
+        .p-stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 71, 171, 0.03);
+            /* Changed to blue tint */
+            transform: scale(0.8);
+            opacity: 0;
+            transition: 0.4s ease;
+            z-index: -1;
+            border-radius: 8px;
+        }
+
+        .p-stat-item:hover::before {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .p-stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .p-stat-item h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--satya-blue);
+            /* Changed from green to blue */
+            margin-bottom: 5px;
+            line-height: 1;
+            transition: 0.3s;
+        }
+
+        .p-stat-item:hover h4 {
+            color: var(--satya-gold);
+            text-shadow: 0 5px 15px rgba(197, 160, 89, 0.2);
+        }
+
+        .p-stat-item span {
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+            color: #888;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .p-stat-item:hover span {
+            color: var(--text-main);
+        }
+
+        /* --- RIGHT: STYLISH IMAGE --- */
+        .phil-img-container-stylish {
+            position: relative;
+            height: 600px;
+            z-index: 2;
+            perspective: 1000px;
+            /* For 3D effect */
+        }
+
+        /* Layer 1: The Back Frame */
+        .phil-img-frame-back {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            background-color: var(--satya-gold);
+            /* Root Gold */
+            transform: rotate(3deg);
+            /* Opposite tilt */
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 1;
+            opacity: 0.2;
+        }
+
+        /* Layer 2: The Image Wrapper */
+        .phil-img-wrapper {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            /* No border-radius as requested */
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            transform: rotate(-3deg);
+            /* Initial tilt */
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 2;
+            background: var(--satya-blue);
+            /* Fallback color */
+        }
+
+        .phil-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+            filter: brightness(1.05);
+        }
+
+        /* HOVER EFFECTS ON IMAGE CONTAINER */
+        .phil-img-container-stylish:hover .phil-img-wrapper {
+            transform: rotate(0deg) translateY(-10px);
+            /* Straighten up */
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.2);
+        }
+
+        .phil-img-container-stylish:hover .phil-img-frame-back {
+            transform: rotate(6deg) scale(1.05);
+            /* Exaggerate back frame */
+            opacity: 0.3;
+        }
+
+        .phil-img-container-stylish:hover .phil-img {
+            transform: scale(1.1);
+            /* Zoom image */
+        }
+
+        /* Leaf overlay */
+        .leaf-decor {
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+            width: 140px;
+            z-index: 3;
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.2));
+            transition: all 0.6s ease;
+        }
+
+        .phil-img-container-stylish:hover .leaf-decor {
+            transform: translate(10px, -10px) rotate(10deg);
+            /* Float leaf on hover */
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .phil-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+                padding: 0 30px;
+            }
+
+            #green-philosophy {
+                padding: 100px 0;
+            }
+
+            .phil-img-container-stylish {
+                height: 450px;
+            }
+
+            .phil-stats {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .p-stat-item h4 {
+                font-size: 36px;
+            }
+
+            .phil-img-wrapper,
+            .phil-img-frame-back {
+                transform: rotate(0deg);
+                /* Simple on mobile */
+            }
+
+            .phil-img-frame-back {
+                top: 10px;
+                left: 10px;
+            }
+        }
+
+
+
+        /* * ==========================================
+         * STRATEGIC PILLARS (LEFT IMAGE STICKY)
+         * ========================================== */
+        #eco-pillars {
+            padding: 40px 0;
+            background-color: #f8f9fa;
+            position: relative;
+        }
+
+        .pillars-container { 
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            /* Left Image narrower than cards */
+            gap: 80px;
+            align-items: start;
+        }
+
+        /* --- LEFT: STICKY VISUAL --- */
+        .pillar-visual {
+            position: sticky;
+            top: 120px;
+            /* Sticks below navbar */
+            height: 80vh;
+            /* Takes most of viewport */
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .sticky-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        /* Overlay on Image */
+        .visual-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+            color: white;
+        }
+
+        .sticky-tag {
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--satya-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .sticky-heading {
+            font-family: 'Syne', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        /* --- RIGHT: SCROLLING CARDS --- */
+        .pillar-list {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            padding-bottom: 50px;
+        }
+
+        .pillar-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(46, 125, 50, 0.15);
+            /* Green Glow */
+            border-color: var(--satya-green);
+        }
+
+        .card-image-box {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .pillar-card:hover .card-img {
+            transform: scale(1.1);
+        }
+
+        .card-icon-float {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--satya-green);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-text-box {
+            padding: 40px;
+        }
+
+        .card-num {
+            font-family: 'Syne', sans-serif;
+            font-size: 40px;
+            font-weight: 800;
+            color: rgba(46, 125, 50, 0.15);
+            line-height: 1;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .card-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .card-desc {
+            font-size: 16px;
+            color: var(--text-grey);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .card-link {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            color: var(--satya-green);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .card-link:hover {
+            gap: 15px;
+            color: var(--satya-gold);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 1024px) {
+            #eco-pillars {
+                padding: 80px 0;
+            }
+
+            .pillars-container {
+                grid-template-columns: 1fr;
+                /* Stack vertically */
+                gap: 50px;
+                padding: 0 20px;
+            }
+
+            /* Disable sticky on mobile, make it a normal header image */
+            .pillar-visual {
+                position: relative;
+                top: 0;
+                height: 400px;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .sticky-heading {
+                font-size: 32px;
+            }
+
+            .pillar-right {
+                gap: 40px;
+            }
+
+            .card-image-box {
+                height: 220px;
+            }
+
+            .card-text-box {
+                padding: 30px;
+            }
+
+            .card-title {
+                font-size: 24px;
+            }
+        }
+
+        /* * ==========================================
+         * 3. CIRCULAR ECONOMY (The Infinite Loop)
+         * ========================================== */
+        #circular-economy {
+            padding: 120px 0;
+            background-color: #F8F9FA;
+            /* Light Grey background */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ce-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .ce-text-col {
+            z-index: 2;
+        }
+
+        .ce-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(36px, 4vw, 60px);
+            font-weight: 800;
+            color: var(--text-main);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .ce-desc {
+            font-size: 18px;
+            color: var(--text-grey);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        /* Visual Ring Animation */
+        .ce-visual-col {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ce-ring {
+            width: 400px;
+            height: 400px;
+            border: 2px dashed rgba(0, 71, 171, 0.2);
+            border-radius: 50%;
+            position: relative;
+            animation: spinRing 20s linear infinite;
+        }
+
+        .ce-node {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            font-size: 24px;
+            color: var(--satya-blue);
+        }
+
+        /* Positioning Nodes */
+        .node-1 {
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .node-2 {
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .node-3 {
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .node-4 {
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Counter rotate icons to keep them upright */
+        .ce-node i {
+            animation: spinRingReverse 20s linear infinite;
+        }
+
+        @keyframes spinRing {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spinRingReverse {
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        /* Center Content */
+        .ce-center-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
+            z-index: 2;
+        }
+
+        .ce-center-text {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+            color: var(--satya-gold);
+        }
+
+        @media (max-width: 991px) {
+            .ce-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .ce-visual-col {
+                height: 400px;
+            }
+
+            .ce-ring {
+                width: 300px;
+                height: 300px;
+            }
+
+            .ce-node {
+                width: 60px;
+                height: 60px;
+                font-size: 20px;
+            }
+
+            .node-1 {
+                top: -30px;
+            }
+
+            .node-2 {
+                right: -30px;
+            }
+
+            .node-3 {
+                bottom: -30px;
+            }
+
+            .node-4 {
+                left: -30px;
+            }
+        }
+
+
+
+
+
+
+
+        #green-goals {
+            padding: 120px 0;
+            background-color: #F4F6F8;
+            /* Light Grey Base */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background Mesh Pattern */
+        #green-goals::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(var(--satya-blue) 0.5px, transparent 0.5px);
+            background-size: 40px 40px;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        .goals-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Header */
+        .goals-header-wrap {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .goals-title-big {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(60px, 10vw, 150px);
+            font-weight: 800;
+            line-height: 0.8;
+            color: var(--text-dark);
+            margin: 0;
+            letter-spacing: -2px;
+        }
+
+        .stroke-text {
+            color: transparent;
+            -webkit-text-stroke: 2px var(--satya-gold);
+        }
+
+        .goals-subtitle {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 18px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--satya-green);
+            margin-top: 20px;
+            font-weight: 700;
+        }
+
+        /* DASHBOARD GRID */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 300px 250px;
+            gap: 30px;
+        }
+
+        /* CARD BASE */
+        .dash-card {
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+
+        .dash-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 71, 171, 0.15);
+        }
+
+        .dash-content {
+            position: relative;
+            z-index: 2;
+            padding: 40px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .dash-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dash-num {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(40px, 5vw, 60px);
+            font-weight: 800;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .dash-label {
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .dash-sub {
+            font-family: 'Manrope', sans-serif;
+            font-size: 14px;
+            opacity: 0.8;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        /* CARD 1: TREES (Tall Image) */
+        .card-trees {
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+            background: #000;
+            color: white;
+        }
+
+        .card-bg-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.6s ease;
+        }
+
+        .card-trees:hover .card-bg-img {
+            transform: scale(1.1);
+        }
+
+        .dash-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            z-index: 1;
+        }
+
+        .card-trees .dash-content {
+            justify-content: flex-end;
+        }
+
+        .card-trees .dash-icon {
+            background: var(--satya-green);
+            color: white;
+        }
+
+        /* CARD 2: CARBON (Wide, Dark) */
+        .card-carbon {
+            grid-column: 2 / 4;
+            grid-row: 1 / 2;
+            background: linear-gradient(135deg, #1a1a1a, #000000);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-carbon .dash-content {
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+        }
+
+        .card-carbon .dash-icon {
+            margin: 0 30px 0 0;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .card-carbon .dash-num {
+            color: var(--satya-gold);
+        }
+
+        /* CARD 3: WATER (Blue) */
+        .card-water {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            background: linear-gradient(135deg, var(--satya-blue), #003a8c);
+            color: white;
+        }
+
+        .card-water .dash-icon {
+            color: var(--satya-blue);
+            background: white;
+        }
+
+        /* Water Wave Decor */
+        .water-wave {
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 40%;
+            animation: waveRotate 10s infinite linear;
+        }
+
+        @keyframes waveRotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* CARD 4: CTA (Gold Highlight) */
+        .card-cta {
+            grid-column: 3 / 5;
+            grid-row: 2 / 3;
+            /* Overlaps rows differently */
+            grid-row: 1 / 3;
+            /* Actually let's make it tall on the right */
+            grid-column: 4 / 5;
+            background: var(--satya-gold);
+            color: #000;
+            text-decoration: none;
+        }
+
+        .card-cta .dash-content {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .cta-heading {
+            font-family: 'Syne';
+            font-weight: 800;
+            font-size: 28px;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .cta-icon-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #000;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            transition: 0.4s;
+        }
+
+        .card-cta:hover .cta-icon-box {
+            transform: scale(1.2) rotate(-45deg);
+            background: white;
+            color: #000;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+            }
+
+            .card-trees {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                min-height: 350px;
+            }
+
+            .card-carbon {
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+                flex-direction: column;
+            }
+
+            .card-carbon .dash-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .card-water {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+                min-height: 300px;
+            }
+
+            .card-cta {
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+                min-height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #green-goals {
+                padding: 80px 0;
+            }
+
+            .dashboard-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .dash-card {
+                min-height: 300px;
+            }
+
+            .goals-title-big {
+                font-size: 60px;
+            }
+        }
+
+        /* * ==========================================
+         * 4. CIRCULAR ECONOMY (FIXED BACKGROUND)
+         * ========================================== */
+        #circular-economy {
+            padding: 150px 0;
+            position: relative;
+            /* Fixed Background Image */
+            background-image: url('https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070&auto=format&fit=crop');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            /* White text for dark bg */
+            overflow: hidden;
+        }
+
+        /* Dark Overlay for Text Visibility */
+        #circular-economy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(11, 15, 25, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .ce-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Left Text Column */
+        .ce-text-col {
+            position: relative;
+        }
+
+        .ce-label {
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--satya-gold);
+            letter-spacing: 4px;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .ce-label::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: var(--satya-gold);
+        }
+
+        .ce-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(40px, 5vw, 70px);
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .ce-desc {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .ce-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 35px;
+            background: var(--satya-green);
+            color: white;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+            transition: all 0.3s ease;
+        }
+
+        .ce-btn:hover {
+            background: var(--satya-gold);
+            transform: translateY(-2px);
+            color: black;
+        }
+
+        /* Right Visual Column */
+        .ce-visual-col {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* The Ring */
+        .ce-ring {
+            width: 450px;
+            height: 450px;
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            position: relative;
+            animation: spinRing 30s linear infinite;
+        }
+
+        /* Floating Nodes */
+        .ce-node {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid var(--satya-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--satya-green);
+            box-shadow: 0 0 30px rgba(46, 125, 50, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Positioning Nodes */
+        .node-1 {
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .node-2 {
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .node-3 {
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .node-4 {
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Center Content */
+        .ce-center-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 180px;
+            height: 180px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            z-index: 2;
+        }
+
+        .ce-center-text {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        .ce-center-sub {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 12px;
+            color: var(--satya-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        @keyframes spinRing {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .ce-node i {
+            animation: spinRingReverse 30s linear infinite;
+        }
+
+        @keyframes spinRingReverse {
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            #circular-economy {
+                padding: 80px 0;
+            }
+
+            .ce-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+                padding: 0 30px;
+            }
+
+            .ce-visual-col {
+                height: 400px;
+            }
+
+            .ce-ring {
+                width: 300px;
+                height: 300px;
+            }
+
+            .ce-node {
+                width: 60px;
+                height: 60px;
+                font-size: 20px;
+            }
+
+            .node-1 {
+                top: -30px;
+            }
+
+            .node-2 {
+                right: -30px;
+            }
+
+            .node-3 {
+                bottom: -30px;
+            }
+
+            .node-4 {
+                left: -30px;
+            }
+
+            .ce-center-logo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .ce-center-text {
+                font-size: 18px;
+            }
+        }
+
+
+
+
+
+
+
+
+
+        #green-goals {
+            padding: 120px 0;
+            background-color: var(--satya-dark-black);
+            /* Updated gradient to be Dark/Black instead of Blue */
+            background: radial-gradient(circle at 50% -20%, #1a1a1a 0%, #000000 80%);
+            color: var(--text-white);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Moving Background Particles */
+        .goals-bg-anim {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.15;
+            animation: moveBg 60s linear infinite;
+        }
+
+        @keyframes moveBg {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 100px 100px;
+            }
+        }
+
+        .goals-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Header */
+        .goals-top-row {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .goals-heading {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(50px, 8vw, 100px);
+            font-weight: 800;
+            text-transform: uppercase;
+            margin: 0 0 10px 0;
+            line-height: 1;
+            letter-spacing: -2px;
+            color: white;
+        }
+
+        .text-gold {
+            color: var(--satya-gold);
+            text-shadow: 0 0 30px rgba(197, 160, 89, 0.4);
+        }
+
+        .goals-sub {
+            font-family: 'Manrope', sans-serif;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 500px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Metrics Grid */
+        .impact-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        /* Premium Metric Card */
+        .metric-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 280px;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--satya-gold);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Shine Effect */
+        .metric-shine {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transform: skewX(-20deg);
+            transition: 0.5s;
+        }
+
+        .metric-card:hover .metric-shine {
+            left: 150%;
+            transition: 0.7s;
+        }
+
+        /* Icon */
+        .metric-icon-wrap {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(197, 160, 89, 0.1);
+            color: var(--satya-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+
+        .metric-card:hover .metric-icon-wrap {
+            background: var(--satya-gold);
+            color: black;
+        }
+
+        /* Numbers */
+        .metric-val {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(40px, 4vw, 60px);
+            font-weight: 700;
+            color: white;
+            line-height: 0.9;
+            display: block;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
+        }
+
+        .metric-unit {
+            font-size: 0.5em;
+            color: var(--satya-gold);
+            vertical-align: top;
+            margin-left: 2px;
+        }
+
+        .metric-label {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 600;
+        }
+
+        /* CTA Card (Fixing Cut-off issue) */
+        .cta-card-new {
+            background: linear-gradient(135deg, var(--satya-gold), #B38728);
+            border: none;
+            padding: 30px 20px;
+            /* Adjusted padding */
+            display: flex;
+            justify-content: center;
+            /* Center content vertically */
+        }
+
+        .cta-card-new .cta-inner {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cta-card-new h3 {
+            font-family: 'Syne';
+            font-size: 22px;
+            /* Slightly smaller for better fit */
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            line-height: 1.2;
+            width: 100%;
+        }
+
+        .btn-report {
+            padding: 12px 25px;
+            background: #000;
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Rajdhani';
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+            white-space: nowrap;
+            /* Prevent button text wrap */
+        }
+
+        .btn-report:hover {
+            background: white;
+            color: black;
+            gap: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .impact-metrics {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .metric-card {
+                min-height: 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #green-goals {
+                padding: 80px 0;
+            }
+
+            .goals-heading {
+                font-size: 50px;
+            }
+
+            .impact-metrics {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .metric-card {
+                flex-direction: row;
+                align-items: center;
+                min-height: auto;
+                padding: 30px;
+            }
+
+            .metric-icon-wrap {
+                margin-bottom: 0;
+                margin-right: 20px;
+            }
+
+            .metric-content {
+                text-align: left;
+            }
+
+            .metric-val {
+                font-size: 40px;
+                margin-bottom: 5px;
+            }
+
+            .cta-card-new {
+                padding: 40px;
+                justify-content: center;
+            }
+
+            .cta-card-new .cta-inner {
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- PREMIUM FLOATING CONTACT DOCK -->
+    <div id="contact-dock">
+
+
+
+        <!-- 1. Call -->
+        <a href="tel:+919876543210" class="dock-item call" aria-label="Call Us">
+            <div class="dock-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            <span class="dock-tooltip">Call Now</span>
+        </a>
+
+        <!-- 2. Email -->
+        <a href="mailto:info@satyametal.com" class="dock-item email" aria-label="Send Email">
+            <div class="dock-icon"><i class="fa-solid fa-envelope"></i></div>
+            <span class="dock-tooltip">Send Email</span>
+        </a>
+
+        <!-- 3. WhatsApp (Pulse Effect) -->
+        <a href="https://wa.me/919876543210" target="_blank" class="dock-item whatsapp" aria-label="Chat on WhatsApp">
+            <div class="dock-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <span class="dock-tooltip">WhatsApp Us</span>
+            <div class="dock-pulse"></div>
+        </a>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- NAVBAR -->
+    <nav class="satya-navbar">
+        <div class="container navbar-container">
+            <!-- LOGO -->
+            <a href="index.html" class="brand-logo">
+                <img src="assets/images/logo/logo-gray.png" alt="The Satya Group Logo">
+            </a>
+
+            <!-- MENU -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" data-text="Home"><span>Home</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="about-us.html" class="nav-link" data-text="About Us"><span>About Us</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-text="Products"><span>Products</span></a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <ul class="submenu">
+                        <li><a href="#">Architectural Profiles</a></li>
+                        <li><a href="#">Industrial Profiles</a></li>
+                        <li><a href="#">Solar Profiles</a></li>
+                        <li><a href="#">Automobile Profiles</a></li>
+                        <li><a href="#">Heat Sinks</a></li>
+                        <li><a href="#">Hardware Sections</a></li>
+                        <li><a href="#">AC Grill Profiles</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="infrastructure.html" class="nav-link" data-text="Infrastructure"><span>Infrastructure</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="sustainability.html" class="nav-link" data-text="Sustainability"><span>Sustainability</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact-us.html" class="nav-link" data-text="Contact"><span>Contact</span></a>
+                </li>
+
+                <!-- Mobile Button -->
+                <li class="nav-item d-none d-lg-none mobile-btn-container">
+                    <a href="contact-us.html" class="btn-industrial">Get a Quote</a>
+                </li>
+            </ul>
+
+            <!-- DESKTOP BUTTON -->
+            <div class="d-none d-lg-block btn-quote-desktop">
+                <a href="contact-us.html" class="btn-industrial">Get a Quote</a>
+            </div>
+
+            <!-- HAMBURGER -->
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+    <!-- 1. HERO SECTION -->
+    <header id="sus-hero">
+        <div class="sus-hero-bg"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="sus-hero-content">
+            <span class="sus-hero-eyebrow anim-hero">Sustainable Manufacturing</span>
+
+            <h1 class="sus-hero-title anim-hero">
+                <span>ENGINEERING A</span>
+                <span class="highlight">GREENER FUTURE</span>
+            </h1>
+
+            <p class="sus-hero-desc anim-hero">
+                At Satya Metal Industries, sustainability isn't just a goal; it's our process. From renewable energy to
+                infinite recycling, we are committed to a net-zero impact.
+            </p>
+        </div>
+
+        <div class="scroll-down anim-hero-fade">
+            <span class="scroll-text">SCROLL</span>
+            <div class="scroll-icon"></div>
+        </div>
+    </header>
+
+    <!-- JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+            const lenis = new Lenis({ duration: 1.2, smooth: true });
+            function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+            requestAnimationFrame(raf);
+
+            // Hero Animation
+            const tl = gsap.timeline({ delay: 0.2 });
+
+            tl.to(".anim-hero", {
+                y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power3.out"
+            })
+                .to(".anim-hero-fade", {
+                    opacity: 1, duration: 1, ease: "power2.out"
+                }, "-=0.5");
+
+            // Parallax
+            gsap.to(".sus-hero-bg", {
+                yPercent: 20, ease: "none",
+                scrollTrigger: { trigger: "#sus-hero", start: "top top", end: "bottom top", scrub: true }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+    <!-- GREEN PHILOSOPHY SECTION -->
+    <section id="green-philosophy">
+        <!-- Background Animation -->
+        <div class="phil-bg-anim"></div>
+
+        <div class="phil-container">
+
+            <!-- Left: Text Content -->
+            <div class="phil-content anim-left">
+                <span class="phil-eyebrow">Our Philosophy</span>
+                <h2 class="phil-title">
+                    Harmonizing <br>
+                    <span style="color: var(--satya-blue);">Industry</span> & Nature
+                </h2>
+                <p class="phil-desc">
+                    We believe that industrial growth should not come at the cost of the environment.
+                    Our manufacturing processes are designed to minimize waste, conserve energy, and promote a circular
+                    economy.
+                    Sustainability is embedded in our DNA.
+                </p>
+
+                <div class="phil-stats">
+                    <div class="p-stat-item">
+                        <h4>100%</h4>
+                        <span>Recyclable Product</span>
+                    </div>
+                    <div class="p-stat-item">
+                        <h4>30%</h4>
+                        <span>Solar Energy Used</span>
+                    </div>
+                    <div class="p-stat-item">
+                        <h4>Zero</h4>
+                        <span>Liquid Discharge</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Stylish Image Composition -->
+            <div class="phil-img-container-stylish anim-right">
+                <div class="phil-img-frame-back"></div> <!-- Back Layer -->
+                <div class="phil-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2013&auto=format&fit=crop"
+                        class="phil-img" alt="Green Factory">
+                </div>
+                <!-- Decorative Leaf Icon -->
+                <img src="https://cdn-icons-png.flaticon.com/512/892/892926.png" class="leaf-decor" alt="Leaf">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Entrance Animations
+                gsap.from(".anim-left", {
+                    x: -50,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: { trigger: "#green-philosophy", start: "top 75%" }
+                });
+
+                gsap.from(".anim-right", {
+                    x: 50,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                    delay: 0.2,
+                    scrollTrigger: { trigger: "#green-philosophy", start: "top 75%" }
+                });
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- STRATEGIC PILLARS SECTION (Left Sticky Image) -->
+    <section id="eco-pillars">
+        <div class="pillars-container">
+
+            <!-- Left Side: Sticky Visual -->
+            <div class="pillar-visual">
+                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070&auto=format&fit=crop"
+                    class="sticky-img" alt="Green Future">
+                <div class="visual-overlay">
+                    <span class="sticky-tag">Our Commitment</span>
+                    <h2 class="sticky-heading">Strategic <br>Pillars</h2>
+                </div>
+            </div>
+
+            <!-- Right Side: Scrolling Cards -->
+            <div class="pillar-list">
+
+                <!-- Card 1: Renewable -->
+                <div class="pillar-card anim-card">
+                    <div class="card-image-box">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop"
+                            class="card-img" alt="Solar">
+                        <div class="card-icon-float"><i class="fa-solid fa-solar-panel"></i></div>
+                    </div>
+                    <div class="card-text-box">
+                        <span class="card-num">01</span>
+                        <h3 class="card-title">Renewable Energy</h3>
+                        <p class="card-desc">
+                            We harness the power of the sun. <strong>30%</strong> of our total energy consumption is met
+                            through captive solar power plants, significantly reducing our carbon footprint.
+                        </p>
+                        <a href="#" class="card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Water -->
+                <div class="pillar-card anim-card">
+                    <div class="card-image-box">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2013&auto=format&fit=crop"
+                            class="card-img" alt="Water">
+                        <div class="card-icon-float"><i class="fa-solid fa-droplet"></i></div>
+                    </div>
+                    <div class="card-text-box">
+                        <span class="card-num">02</span>
+                        <h3 class="card-title">Water Conservation</h3>
+                        <p class="card-desc">
+                            We operate on a <strong>Zero Liquid Discharge (ZLD)</strong> policy. 100% of industrial
+                            wastewater is treated and reused within the facility, ensuring zero waste.
+                        </p>
+                        <a href="#" class="card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Recycling -->
+                <div class="pillar-card anim-card">
+                    <div class="card-image-box">
+                        <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070&auto=format&fit=crop"
+                            class="card-img" alt="Recycling">
+                        <div class="card-icon-float"><i class="fa-solid fa-recycle"></i></div>
+                    </div>
+                    <div class="card-text-box">
+                        <span class="card-num">03</span>
+                        <h3 class="card-title">Infinite Recycling</h3>
+                        <p class="card-desc">
+                            Aluminium is eternal. Our advanced recycling unit processes scrap with <strong>95% less
+                                energy</strong> compared to primary metal production, driving a circular economy.
+                        </p>
+                        <a href="#" class="card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JS for Animation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Animate Cards on Scroll
+                const cards = gsap.utils.toArray(".anim-card");
+
+                cards.forEach((card, index) => {
+                    gsap.from(card, {
+                        y: 80,
+                        opacity: 0,
+                        duration: 1,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top 85%",
+                            toggleActions: "play none none reverse"
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 4. CIRCULAR ECONOMY SECTION -->
+    <section id="circular-economy">
+        <div class="ce-container">
+
+            <!-- Text Content -->
+            <div class="ce-text-col anim-ce-text">
+                <span class="ce-label">Infinite Loop</span>
+                <h2 class="ce-title">Closed Loop <br>Recycling</h2>
+                <p class="ce-desc">
+                    Aluminium is one of the few materials that can be recycled infinitely without losing its properties.
+                    Our process ensures that scrap is transformed back into high-grade billets, completing the cycle of
+                    sustainability.
+                </p>
+                <div style="margin-top: 30px;">
+                    <a href="#" class="ce-btn">
+                        Learn More <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Visual Animation -->
+            <div class="ce-visual-col anim-ce-visual">
+                <div class="ce-ring">
+                    <div class="ce-node node-1"><i class="fa-solid fa-recycle"></i></div> <!-- Recycle -->
+                    <div class="ce-node node-2"><i class="fa-solid fa-industry"></i></div> <!-- Process -->
+                    <div class="ce-node node-3"><i class="fa-solid fa-truck-fast"></i></div> <!-- Deliver -->
+                    <div class="ce-node node-4"><i class="fa-solid fa-city"></i></div> <!-- Use -->
+                </div>
+                <div class="ce-center-logo">
+                    <span class="ce-center-text">SATYA</span>
+                    <span class="ce-center-sub">Eco-System</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Circular Economy Entrance
+            gsap.from(".anim-ce-text", {
+                y: 50, opacity: 0, duration: 1, ease: "power3.out",
+                scrollTrigger: { trigger: "#circular-economy", start: "top 75%" }
+            });
+
+            gsap.from(".anim-ce-visual", {
+                scale: 0.8, opacity: 0, duration: 1.2, ease: "back.out(1.7)", delay: 0.2,
+                scrollTrigger: { trigger: "#circular-economy", start: "top 75%" }
+            });
+        });
+    </script>
+
+
+
+
+
+    <!-- 5. MISSION 2030 (PREMIUM IMPACT DASHBOARD) -->
+    <section id="green-goals">
+
+        <!-- Animated Background -->
+        <div class="goals-bg-anim"></div>
+
+        <div class="goals-container">
+
+            <div class="goals-top-row">
+                <!-- Vision text white, 2030 Gold -->
+                <h2 class="goals-heading">Vision <span class="text-gold">2030</span></h2>
+                <p class="goals-sub">Measurable impact for a regenerative future.</p>
+            </div>
+
+            <div class="impact-metrics">
+
+                <!-- Metric 1 -->
+                <div class="metric-card">
+                    <div class="metric-icon-wrap"><i class="fa-solid fa-tree"></i></div>
+                    <div class="metric-content">
+                        <span class="metric-val">100k<span class="metric-unit">+</span></span>
+                        <span class="metric-label">Trees Planted</span>
+                    </div>
+                    <div class="metric-shine"></div>
+                </div>
+
+                <!-- Metric 2 -->
+                <div class="metric-card">
+                    <div class="metric-icon-wrap"><i class="fa-solid fa-cloud-arrow-down"></i></div>
+                    <div class="metric-content">
+                        <span class="metric-val">50<span class="metric-unit">%</span></span>
+                        <span class="metric-label">Carbon Reduced</span>
+                    </div>
+                    <div class="metric-shine"></div>
+                </div>
+
+                <!-- Metric 3 -->
+                <div class="metric-card">
+                    <div class="metric-icon-wrap"><i class="fa-solid fa-water"></i></div>
+                    <div class="metric-content">
+                        <span class="metric-val">Zero</span>
+                        <span class="metric-label">Water Discharge</span>
+                    </div>
+                    <div class="metric-shine"></div>
+                </div>
+
+                <!-- CTA Card (Fixed Layout) -->
+                <div class="metric-card cta-card-new">
+                    <div class="cta-inner">
+                        <h3>Report</h3>
+                        <a href="#" class="btn-report">
+                            <span>Download</span> <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- NEW CHAT WIDGET -->
+    <div id="chat-widget-container">
+        <!-- Chat Window -->
+        <div class="chat-window">
+            <div class="chat-header">
+                <div class="bot-info">
+                    <div class="bot-avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="bot-text">
+                        <h4>Satya Assistant</h4>
+                        <span>Online | Replies instantly</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-xmark close-chat" onclick="toggleChat()"></i>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <div class="msg bot">
+                    Hello! Welcome to Satya Metal Industries. <br>How can we assist you with your aluminium requirements
+                    today?
+                </div>
+                <div class="chat-options">
+                    <div class="chat-option-btn" onclick="sendOption('Product Inquiry')">Product Inquiry</div>
+                    <div class="chat-option-btn" onclick="sendOption('Download Catalogue')">Catalogue</div>
+                    <div class="chat-option-btn" onclick="sendOption('Connect Sales')">Connect Sales</div>
+                </div>
+                <div class="typing" id="typing-indicator">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" class="chat-input" id="user-input" placeholder="Type a message..."
+                    onkeypress="handleEnter(event)">
+                <button class="send-btn" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <div class="chat-toggle-btn" onclick="toggleChat()">
+            <i class="fa-solid fa-comment-dots"></i>
+        </div>
+    </div>
+
+
+    <!-- NEW PREMIUM FOOTER -->
+    <footer id="contact-footer">
+        <div class="footer-wrapper">
+
+            <div class="footer-top-grid">
+
+                <!-- Left: Info -->
+                <div class="footer-info anim-up">
+                    <span class="footer-label">Partner With Us</span>
+                    <h2 class="footer-heading">Let's build the<br>future together.</h2>
+                    <p class="footer-sub">Have a project in mind? We provide world-class aluminium solutions tailored to
+                        your engineering needs.</p>
+
+                    <div class="contact-details-grid">
+                        <div class="contact-item">
+                            <h5>Address</h5>
+                            <p>Plot No. 12, Industrial Area,<br>Bhiwadi, Rajasthan - 301019</p>
+                        </div>
+                        <div class="contact-item">
+                            <h5>Contact</h5>
+                            <a href="mailto:info@satyagroup.in">info@satyagroup.in</a>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                        </div>
+                        <div class="contact-item">
+                            <h5>Socials</h5>
+                            <div style="display:flex; gap:15px; margin-top:5px;">
+                                <a href="#">LinkedIn</a>
+                                <a href="#">Instagram</a>
+                                <a href="#">Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="footer-form anim-up">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control-custom" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-custom" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-custom" placeholder="Company" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control-custom" rows="2" placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Submit Inquiry</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Bottom: Brand & Links -->
+            <div class="footer-bottom">
+                <div class="big-footer-text anim-fade">
+                    <div class="footerlogo">
+                        <img src="assets/images/logo/footer-logo.png" height="100" alt="">
+                    </div>
+                </div>
+
+                <div class="footer-meta">
+                    <div>© 2025 The Satya Group. Designed By WebAds India</div>
+                    <div class="footer-nav">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                        <a href="#">Site Credit</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+    <!-- JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smooth: true
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            // Footer Animations
+            gsap.utils.toArray(".anim-up").forEach((elem, i) => {
+                gsap.from(elem, {
+                    y: 50,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                    delay: i * 0.1,
+                    scrollTrigger: {
+                        trigger: "#contact-footer",
+                        start: "top 70%"
+                    }
+                });
+            });
+
+            gsap.from(".big-footer-text", {
+                y: 100,
+                opacity: 0,
+                duration: 1.5,
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: "#contact-footer",
+                    start: "top 80%"
+                }
+            });
+        });
+    </script>
+
+
+
+
+    <!-- JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+            }
+
+            // --- ANIMATION LOGIC ---
+            const cards = document.querySelectorAll('.sus-card');
+
+            cards.forEach((card, index) => {
+                ScrollTrigger.create({
+                    trigger: card,
+                    start: "top 60%",
+                    end: "bottom 60%",
+                    onEnter: () => activate(card),
+                    onEnterBack: () => activate(card),
+                    onLeave: () => deactivate(card),
+                    onLeaveBack: () => deactivate(card)
+                });
+            });
+
+            function activate(card) {
+                // Activate Card
+                card.classList.add('active');
+
+                // Activate Text
+                let targetId = card.getAttribute('data-target');
+                document.querySelectorAll('.sus-word').forEach(w => w.classList.remove('active'));
+                const targetText = document.getElementById(targetId);
+                if (targetText) targetText.classList.add('active');
+            }
+
+            function deactivate(card) {
+                card.classList.remove('active');
+            }
+
+            // Initial State Activation (First item active by default if at top)
+            ScrollTrigger.refresh();
+
+            // Icon Animation
+            gsap.to(".sus-leaf-icon", {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                delay: 0.5,
+                scrollTrigger: {
+                    trigger: "#sustainability-section",
+                    start: "top 60%"
+                }
+            });
+        });
+    </script>
+
+
+
+
+    <script>
+        /* * ==========================================
+         * SCROLL FIX & NEW ANIMATIONS
+         * ========================================== */
+
+        // 1. Re-Initialize Lenis with Smoother Settings
+        // Ensure only ONE instance runs. If previous exists, it might need cleanup (handled by browser reload usually)
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth ease
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false, // Fix for mobile touch jerkiness
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // 2. Navbar Scroll Effect
+        window.addEventListener("scroll", function () {
+            const navbar = document.querySelector(".satya-navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+
+        // 3. Mobile Menu Logic with Animations
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+
+            // Staggered Animation for Links using GSAP
+            if (navMenu.classList.contains("active")) {
+                // Reset and Animate
+                gsap.set(".nav-item", {
+                    y: 30,
+                    opacity: 0
+                });
+                gsap.to(".nav-item", {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.5,
+                    stagger: 0.1,
+                    delay: 0.2,
+                    ease: "power2.out"
+                });
+            }
+        });
+
+        // Dropdown Click for Mobile
+        if (window.innerWidth <= 1024) {
+            const dropdowns = document.querySelectorAll('.nav-item');
+            dropdowns.forEach(item => {
+                const link = item.querySelector('.nav-link');
+                const submenu = item.querySelector('.submenu');
+
+                // Only prevent default if it has a submenu
+                if (submenu) {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+
+                        // Close other submenus (Optional - keeps it cleaner)
+                        document.querySelectorAll('.submenu').forEach(sub => {
+                            if (sub !== submenu) sub.classList.remove('show');
+                        });
+
+                        submenu.classList.toggle('show');
+
+                        // Force layout recalculation if needed or simple slide
+                    });
+                }
+            });
+
+            // Show Mobile Button
+            const mobileBtn = document.querySelector('.mobile-btn-container');
+            if (mobileBtn) mobileBtn.classList.remove('d-none');
+        }
+
+        // Ensure Hamburger color is black
+        gsap.set(".bar", {
+            backgroundColor: "#000"
+        });
+    </script>
+
+
+
+
+
+    <script>
+        // CHATBOT FUNCTIONS
+        function toggleChat() {
+            const chatWindow = document.querySelector('.chat-window');
+            chatWindow.classList.toggle('active');
+        }
+
+        function handleEnter(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('user-input');
+            const message = input.value.trim();
+            if (message) {
+                addMessage(message, 'user');
+                input.value = '';
+                showTyping();
+                setTimeout(() => {
+                    hideTyping();
+                    addMessage("Thanks for reaching out! Our team will contact you shortly via email.", 'bot');
+                }, 1500);
+            }
+        }
+
+        function sendOption(option) {
+            addMessage(option, 'user');
+            showTyping();
+            setTimeout(() => {
+                hideTyping();
+                if (option === 'Product Inquiry') addMessage("Great! Please describe your requirement or the alloy grade you need.", 'bot');
+                else if (option === 'Download Catalogue') addMessage("You can download our latest brochure from the Products section.", 'bot');
+                else addMessage("Please email us at info@satyametal.com for direct sales.", 'bot');
+            }, 1000);
+        }
+
+        function addMessage(text, sender) {
+            const chatBody = document.getElementById('chat-body');
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('msg', sender);
+            msgDiv.innerText = text;
+            chatBody.insertBefore(msgDiv, document.getElementById('typing-indicator'));
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function showTyping() {
+            document.getElementById('typing-indicator').style.display = 'flex';
+            document.getElementById('chat-body').scrollTop = document.getElementById('chat-body').scrollHeight;
+        }
+
+        function hideTyping() {
+            document.getElementById('typing-indicator').style.display = 'none';
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Satya Group - Style Guide</title>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/index.css">
+    <!-- <link rel="stylesheet" href="assets/css/about-us.css"> -->
+    <link rel="shortcut icon" href="assets/images/logo/satya-logo.png" type="image/x-icon">
+    <!-- 1. Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 2. Fonts (Bold & Clear) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- 3. Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- 4. Animations (GSAP & Lenis) - YE BAHUT ZAROORI HAI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+
+    <style>
+        :root {
+            /* Colors */
+            --satya-blue: #0047AB;
+            --satya-blue-dark: #002A66;
+            --satya-gold: #C5A059;
+            /* Backgrounds */
+            --bg-body: #FFFFFF;
+            --bg-glass: rgba(255, 255, 255, 0.95);
+            /* Text */
+            --text-main: #0B0F19;
+            --text-grey: #4B5563;
+            /* Dimensions */
+            --nav-height: 95px;
+        }
+
+
+        /* * ==========================================
+         * INFRASTRUCTURE HERO (THE POWERHOUSE) - VISIBILITY FIXED
+         * ========================================== */
+        #infra-hero {
+            position: relative;
+            /* Use 100dvh for mobile to handle browser bars */
+            height: 100vh;
+            height: 100dvh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+        }
+
+        /* Background Image (Factory/Press) */
+        .infra-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 110%;
+            /* Extra height for parallax */
+            object-fit: cover;
+            opacity: 0.6;
+            filter: contrast(1.2) brightness(0.7) sepia(0.2);
+            /* Industrial Look */
+            z-index: 0;
+        }
+
+        .infra-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, #000000 90%);
+            z-index: 1;
+        }
+
+        /* Tech Grid Lines Overlay */
+        .tech-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100px 100px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .infra-content {
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            padding: 0 20px;
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* "CAPACITY" Tag */
+        .infra-tag-box {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            /* Allow wrapping on small screens */
+            gap: 20px 40px;
+            margin-bottom: 30px;
+            /* FIXED: Visible by default */
+            opacity: 1;
+            transform: none;
+        }
+
+        .tag-item {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--satya-gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tag-item i {
+            font-size: 14px;
+        }
+
+        .tag-line {
+            width: 1px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Main Title */
+        .infra-title {
+            font-family: 'Syne', sans-serif;
+            /* FIXED SIZE: Much smaller clamp to fit all screens */
+            /* Min 30px, Max 80px */
+            font-size: clamp(30px, 6vw, 80px);
+            font-weight: 900;
+            line-height: 1;
+            text-transform: uppercase;
+            color: white;
+            margin-bottom: 30px;
+            position: relative;
+            width: 100%;
+            /* Word break to prevent overflow on tiny screens */
+            word-wrap: break-word;
+        }
+
+        .title-top {
+            display: block;
+            /* Make text solid white for better visibility */
+            color: white;
+            /* FIXED: Visible by default */
+            opacity: 1;
+            transform: none;
+        }
+
+        .title-bottom {
+            display: block;
+            color: white;
+            text-shadow: 0 0 50px rgba(0, 71, 171, 0.5);
+            /* FIXED: Visible by default */
+            opacity: 1;
+            transform: none;
+        }
+
+        .infra-desc {
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(16px, 1.5vw, 18px);
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+            /* FIXED: Visible by default */
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Scroll Mouse */
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            opacity: 1;
+        }
+
+        .mouse {
+            width: 26px;
+            height: 42px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .wheel {
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scroll 2s infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                top: 8px;
+                opacity: 1;
+            }
+
+            100% {
+                top: 20px;
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 1024px) {
+            .infra-title {
+                font-size: clamp(30px, 8vw, 60px);
+                /* Smaller for tablets */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .infra-tag-box {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            .tag-line {
+                display: none;
+            }
+
+            /* Hide separator lines on mobile stack */
+
+            .infra-title {
+                /* Reduced further for mobile */
+                font-size: clamp(28px, 10vw, 50px);
+                line-height: 1.1;
+            }
+
+            .title-top,
+            .title-bottom {
+                /* Removed custom strokes/transforms */
+            }
+
+            .infra-desc {
+                padding: 0 10px;
+                /* Prevent edge touching */
+                margin-bottom: 30px;
+                font-size: 15px;
+            }
+        }
+
+
+        /* MACHINERY SECTION STYLES */
+        #machinery-showcase {
+            padding: 120px 0;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            /* For marquee clipping */
+        }
+
+        /* Background Marquee Text */
+        .machinery-watermark-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            transform: translateY(-50%) rotate(-5deg);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.05;
+        }
+
+        .machinery-watermark {
+            font-family: 'Syne', sans-serif;
+            font-size: 15vw;
+            font-weight: 900;
+            white-space: nowrap;
+            color: #000;
+            display: inline-block;
+        }
+
+        .machine-header {
+            text-align: center;
+            margin-bottom: 80px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .machine-eyebrow {
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--satya-blue);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .machine-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 800;
+            color: var(--text-main);
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .machine-desc {
+            font-family: 'Manrope', sans-serif;
+            font-size: 18px;
+            color: var(--text-grey);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Layout Rows */
+        .machine-row {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 120px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .machine-row:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Zig-Zag Effect */
+        .reverse-layout {
+            grid-template-columns: 1fr 1.2fr;
+            direction: rtl;
+            /* Quick flip hack */
+        }
+
+        .reverse-layout .machine-info {
+            direction: ltr;
+        }
+
+        /* Image Box */
+        .machine-img-box {
+            position: relative;
+            height: 500px;
+            /* border-radius: 12px; */
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .machine-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        /* Blueprint Overlay Effect */
+        .blueprint-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 2;
+            pointer-events: none;
+            background-color: rgba(0, 71, 171, 0.6);
+            /* Blue Tint */
+        }
+
+        .icon-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 50px;
+            color: white;
+            z-index: 3;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+        }
+
+        .machine-img-box:hover .blueprint-grid {
+            opacity: 1;
+        }
+
+        .machine-img-box:hover .machine-img {
+            transform: scale(1.1);
+        }
+
+        .machine-img-box:hover .icon-overlay {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .tech-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--satya-blue);
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            padding: 5px 15px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            z-index: 3;
+            border-radius: 4px;
+        }
+
+        /* Info Side */
+        .machine-info {
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 71, 171, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--satya-blue);
+            margin-bottom: 20px;
+        }
+
+        .m-name {
+            font-family: 'Syne', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .m-desc {
+            font-family: 'Manrope', sans-serif;
+            font-size: 16px;
+            color: var(--text-grey);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        /* Specs Grid */
+        .specs-grid {
+            display: flex;
+            gap: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding-top: 30px;
+            width: 100%;
+        }
+
+        .spec-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .spec-item i {
+            font-size: 18px;
+            color: var(--satya-gold);
+            margin-bottom: 8px;
+        }
+
+        .spec-val {
+            font-family: 'Syne', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--satya-blue);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .spec-label {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            #machinery-showcase {
+                padding: 80px 0;
+            }
+
+            .machine-row,
+            .reverse-layout {
+                grid-template-columns: 1fr;
+                /* Single column */
+                direction: ltr;
+                /* Reset direction */
+                gap: 40px;
+                margin-bottom: 80px;
+            }
+
+            .machine-img-box {
+                height: 300px;
+                width: 100%;
+            }
+
+            .machine-info {
+                padding: 0;
+                align-items: center;
+                text-align: center;
+            }
+
+            .m-name {
+                font-size: 26px;
+            }
+
+            .specs-grid {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .spec-item {
+                align-items: center;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+        /* QUALITY LAB STYLES */
+        #quality-lab {
+            padding: 100px 0;
+            background-color: var(--satya-blue-dark);
+            /* Changed to dark blue as requested before */
+            color: white;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        .lab-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .lab-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(32px, 5vw, 50px);
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .lab-desc {
+            font-family: 'Manrope', sans-serif;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .lab-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 0 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .lab-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 40px 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+            /* Ensure visible by default */
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .lab-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--satya-gold);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .lab-icon {
+            font-size: 28px;
+            color: var(--satya-gold);
+            margin-bottom: 25px;
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: 0.4s;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .lab-card:hover .lab-icon {
+            background: var(--satya-gold);
+            color: #000;
+            transform: rotateY(180deg);
+        }
+
+        .lab-card h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .lab-card p {
+            font-family: 'Manrope', sans-serif;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .lab-grid {
+                grid-template-columns: 1fr 1fr;
+                /* 2 columns on tablet */
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #quality-lab {
+                padding: 60px 0;
+            }
+
+            .lab-grid {
+                grid-template-columns: 1fr;
+                /* 1 column on mobile */
+                padding: 0 20px;
+            }
+
+            .lab-card {
+                padding: 30px 20px;
+            }
+        }
+
+        #process-section {
+            padding: 60px 0;
+            background-color: var(--bg-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+
+        .process-eyebrow {
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--satya-gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .process-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(32px, 5vw, 60px);
+            font-weight: 800;
+            color: var(--text-main);
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .process-desc {
+            font-family: 'Manrope', sans-serif;
+            font-size: 16px;
+            color: var(--text-grey);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Process Flow Layout */
+        .process-wrapper {
+            position: relative;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Connecting Line */
+        .process-line-bg {
+            position: absolute;
+            top: 60px;
+            /* Aligns with icon center approx */
+            left: 5%;
+            width: 90%;
+            height: 2px;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 0;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Individual Item */
+        .proc-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px 10px;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .proc-item:hover {
+            transform: translateY(-10px);
+        }
+
+        /* The Circle Icon */
+        .proc-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--satya-blue);
+            margin-bottom: 25px;
+            transition: 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Hover State */
+        .proc-item:hover .proc-icon {
+            border-color: var(--satya-gold);
+            background: var(--satya-blue);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(0, 71, 171, 0.2);
+        }
+
+        /* Step Number */
+        .proc-number {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            font-family: 'Syne', sans-serif;
+            font-size: 40px;
+            font-weight: 800;
+            color: rgba(0, 0, 0, 0.03);
+            z-index: 0;
+            transition: 0.3s;
+        }
+
+        .proc-item:hover .proc-number {
+            color: rgba(197, 160, 89, 0.15);
+            transform: translateY(-5px);
+        }
+
+        /* Text */
+        .proc-name {
+            font-family: 'Syne', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .proc-detail {
+            font-family: 'Manrope', sans-serif;
+            font-size: 14px;
+            color: var(--text-grey);
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .process-line-bg {
+                width: 2px;
+                height: 90%;
+                left: 50px;
+                top: 0;
+                /* Vertical line on mobile */
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: left;
+            }
+
+            .proc-item {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 20px;
+                padding: 0;
+            }
+
+            .proc-icon {
+                margin-bottom: 0;
+                flex-shrink: 0;
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+
+            .proc-number {
+                right: 20px;
+                top: 10px;
+                font-size: 30px;
+            }
+
+            .proc-name {
+                margin-top: 5px;
+                font-size: 20px;
+            }
+
+            .proc-detail {
+                font-size: 15px;
+            }
+        }
+
+
+
+        /* CTA SECTION STYLES (WITH FIXED BG) */
+        #infra-cta {
+            position: relative;
+            padding: 120px 0;
+            text-align: center;
+            overflow: hidden;
+            /* FIXED BACKGROUND IMAGE */
+            background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .cta-overlay-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Dark overlay for text readability */
+            background: rgba(0, 0, 0, 0.85);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .cta-content-box {
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-heading {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(32px, 6vw, 64px);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .cta-sub {
+            font-family: 'Manrope', sans-serif;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-cta-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 45px;
+            background: var(--satya-gold);
+            color: black;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.3);
+            font-size: 16px;
+        }
+
+        .btn-cta-gold:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+            color: var(--satya-blue);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            #infra-cta {
+                padding: 80px 0;
+                background-attachment: scroll;
+                /* Better performance on mobile */
+            }
+
+            .cta-heading {
+                font-size: 40px;
+            }
+
+            .cta-sub {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- PREMIUM FLOATING CONTACT DOCK -->
+    <div id="contact-dock">
+
+
+
+        <!-- 1. Call -->
+        <a href="tel:+919876543210" class="dock-item call" aria-label="Call Us">
+            <div class="dock-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            <span class="dock-tooltip">Call Now</span>
+        </a>
+
+        <!-- 2. Email -->
+        <a href="mailto:info@satyametal.com" class="dock-item email" aria-label="Send Email">
+            <div class="dock-icon"><i class="fa-solid fa-envelope"></i></div>
+            <span class="dock-tooltip">Send Email</span>
+        </a>
+
+        <!-- 3. WhatsApp (Pulse Effect) -->
+        <a href="https://wa.me/919876543210" target="_blank" class="dock-item whatsapp" aria-label="Chat on WhatsApp">
+            <div class="dock-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <span class="dock-tooltip">WhatsApp Us</span>
+            <div class="dock-pulse"></div>
+        </a>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- NAVBAR -->
+    <nav class="satya-navbar">
+        <div class="container navbar-container">
+            <!-- LOGO -->
+            <a href="index.html" class="brand-logo">
+                <img src="assets/images/logo/logo-gray.png" alt="The Satya Group Logo">
+            </a>
+
+            <!-- MENU -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" data-text="Home"><span>Home</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="about-us.html" class="nav-link" data-text="About Us"><span>About Us</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-text="Products"><span>Products</span></a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <ul class="submenu">
+                        <li><a href="#">Architectural Profiles</a></li>
+                        <li><a href="#">Industrial Profiles</a></li>
+                        <li><a href="#">Solar Profiles</a></li>
+                        <li><a href="#">Automobile Profiles</a></li>
+                        <li><a href="#">Heat Sinks</a></li>
+                        <li><a href="#">Hardware Sections</a></li>
+                        <li><a href="#">AC Grill Profiles</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="infrastructure.html" class="nav-link" data-text="Infrastructure"><span>Infrastructure</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="sustainability.html" class="nav-link" data-text="Sustainability"><span>Sustainability</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact-us.html" class="nav-link" data-text="Contact"><span>Contact</span></a>
+                </li>
+
+                <!-- Mobile Button -->
+                <li class="nav-item d-none d-lg-none mobile-btn-container">
+                    <a href="contact-us.html" class="btn-industrial">Get a Quote</a>
+                </li>
+            </ul>
+
+            <!-- DESKTOP BUTTON -->
+            <div class="d-none d-lg-block btn-quote-desktop">
+                <a href="contact-us.html" class="btn-industrial">Get a Quote</a>
+            </div>
+
+            <!-- HAMBURGER -->
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- INFRASTRUCTURE HERO -->
+    <header id="infra-hero">
+
+        <!-- Background -->
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format&fit=crop"
+            class="infra-bg" alt="Heavy Machinery">
+        <div class="infra-overlay"></div>
+        <div class="tech-grid"></div>
+
+        <div class="infra-content">
+
+            <!-- Tags -->
+            <div class="infra-tag-box anim-infra">
+                <div class="tag-item"><i class="fa-solid fa-industry"></i> 50,000 MT Capacity</div>
+                <div class="tag-line"></div>
+                <div class="tag-item"><i class="fa-solid fa-cogs"></i> 11 Presses</div>
+                <div class="tag-line"></div>
+                <div class="tag-item"><i class="fa-solid fa-expand"></i> 300,000 Sq. Ft.</div>
+            </div>
+
+            <!-- Title -->
+            <h1 class="infra-title">
+                <span class="title-top anim-title">THE</span>
+                <span class="title-bottom anim-title">POWERHOUSE</span>
+            </h1>
+
+            <p class="infra-desc anim-infra">
+                Equipped with cutting-edge technology and automated systems, our facility in Bhiwadi is designed for
+                precision, speed, and massive scale production.
+            </p>
+
+            <div class="anim-infra">
+                <a href="#machinery" class="btn-industrial">Explore Machinery</a>
+            </div>
+
+        </div>
+
+        <div class="scroll-down anim-infra">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            // GSAP Logic
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Simple Fade & Move Animation (No opacity:0 tricks)
+                // We animate FROM a state, so if JS fails, CSS default (visible) applies
+                const tl = gsap.timeline({ delay: 0.2 });
+
+
+                // 3. Parallax BG
+                gsap.to(".infra-bg", {
+                    yPercent: 20, ease: "none",
+                    scrollTrigger: { trigger: "#infra-hero", start: "top top", end: "bottom top", scrub: true }
+                });
+            }
+
+            // Lenis
+            if (typeof Lenis !== 'undefined') {
+                const lenis = new Lenis({ duration: 1.2, smooth: true });
+                function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+                requestAnimationFrame(raf);
+            }
+
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <!-- NEW MACHINERY SECTION (ENHANCED) -->
+    <section id="machinery-showcase">
+
+        <!-- Scrolling Background Text -->
+        <div class="machinery-watermark-wrapper">
+            <div class="machinery-watermark">INFRASTRUCTURE • TECHNOLOGY • PRECISION • AUTOMATION • QUALITY •</div>
+        </div>
+
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="machine-header">
+                <span class="machine-eyebrow">Our Arsenal</span>
+                <h2 class="machine-title">Advanced <span style="color: var(--satya-blue);">Technology</span></h2>
+                <p class="machine-desc">We deploy the world's finest extrusion technologies to deliver precision at
+                    scale.</p>
+            </div>
+
+            <!-- Machine 1: The Press -->
+            <div class="machine-row">
+                <div class="machine-img-box reveal-machine-left">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop"
+                        class="machine-img" alt="4000 MT Press">
+                    <div class="blueprint-grid"></div>
+                    <div class="tech-badge">CORE UNIT</div>
+                    <!-- Extra Icon Overlay -->
+                    <div class="icon-overlay">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                </div>
+                <div class="machine-info reveal-machine-right">
+                    <div class="info-icon"><i class="fa-solid fa-weight-hanging"></i></div>
+                    <h3 class="m-name">4000 MT Extrusion Press</h3>
+                    <p class="m-desc">Our flagship press capable of extruding large-diameter and complex profiles with
+                        exceptional surface finish and structural integrity. Fully automated handling systems ensure
+                        minimal manual intervention.</p>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <i class="fa-solid fa-dumbbell"></i>
+                            <span class="spec-val">4000 MT</span>
+                            <span class="spec-label">Force</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fa-solid fa-ruler-combined"></i>
+                            <span class="spec-val">450mm</span>
+                            <span class="spec-label">Max CCD</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fa-solid fa-robot"></i>
+                            <span class="spec-val">Automated</span>
+                            <span class="spec-label">Handling</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine 2: Tool Room -->
+            <div class="machine-row reverse-layout">
+                <div class="machine-img-box reveal-machine-right">
+                    <img src="https://content.jdmagicbox.com/comp/def_content/tool-room-job-works/0b08bd144b-tool-room-job-works-2-kdwgn.jpg"
+                        class="machine-img" alt="CNC Tool Room">
+                    <div class="blueprint-grid"></div>
+                    <div class="tech-badge" style="background: var(--satya-gold); color: black;">PRECISION</div>
+                    <div class="icon-overlay">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                </div>
+                <div class="machine-info reveal-machine-left">
+                    <div class="info-icon" style="color: var(--satya-gold); background: rgba(197, 160, 89, 0.1);"><i
+                            class="fa-solid fa-microchip"></i></div>
+                    <h3 class="m-name">In-House Tool Room</h3>
+                    <p class="m-desc">Equipped with advanced CNC machines and wire-cut EDM to design and manufacture
+                        custom dies with micron-level accuracy. We turn complex drawings into reality within record
+                        turnaround time.</p>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <i class="fa-solid fa-computer"></i>
+                            <span class="spec-val">CNC</span>
+                            <span class="spec-label">Machining</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fa-solid fa-clock"></i>
+                            <span class="spec-val">24 hrs</span>
+                            <span class="spec-label">Turnaround</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fa-solid fa-pen-ruler"></i>
+                            <span class="spec-val">CAD/CAM</span>
+                            <span class="spec-label">Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine 3: Foundry -->
+            <div class="machine-row">
+                <div class="machine-img-box reveal-machine-left">
+                    <img src="https://www.regalalum.com/img/service/Billet/billet1.jpg" class="machine-img"
+                        alt="Foundry">
+                    <div class="blueprint-grid"></div>
+                    <div class="tech-badge">QUALITY</div>
+                    <div class="icon-overlay">
+                        <i class="fa-solid fa-fire-burner"></i>
+                    </div>
+                </div>
+                <div class="machine-info reveal-machine-right">
+                    <div class="info-icon"><i class="fa-solid fa-flask"></i></div>
+                    <h3 class="m-name">Hot Top Casting</h3>
+                    <p class="m-desc">State-of-the-art foundry ensuring high-quality billets with uniform grain
+                        structure, crucial for superior extrusion properties. Ultrasonic testing ensures zero internal
+                        defects.</p>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <i class="fa-solid fa-wave-square"></i>
+                            <span class="spec-val">Ultrasonic</span>
+                            <span class="spec-label">Testing</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fa-solid fa-vial"></i>
+                            <span class="spec-val">100%</span>
+                            <span class="spec-label">Homogeneity</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fa-solid fa-temperature-high"></i>
+                            <span class="spec-val">Auto</span>
+                            <span class="spec-label">Casting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+    <!-- NEW QUALITY CONTROL LAB SECTION -->
+    <section id="quality-lab">
+        <div class="container">
+            <div class="lab-header">
+                <h2 class="lab-title">Precision <span style="color: var(--satya-gold);">Lab</span></h2>
+                <p class="lab-desc">We don't just manufacture; we verify. Every profile passes through our advanced
+                    Quality Assurance laboratory.</p>
+            </div>
+
+            <div class="lab-grid">
+                <!-- Lab Item 1 -->
+                <div class="lab-card">
+                    <div class="lab-icon"><i class="fa-solid fa-microscope"></i></div>
+                    <h4>Spectrometer</h4>
+                    <p>For precise chemical composition analysis of alloys to ensure global standard compliance.</p>
+                </div>
+
+                <!-- Lab Item 2 -->
+                <div class="lab-card">
+                    <div class="lab-icon"><i class="fa-solid fa-compress"></i></div>
+                    <h4>Tensile Tester</h4>
+                    <p>Universal Testing Machine (UTM) to verify tensile strength, yield strength, and elongation.</p>
+                </div>
+
+                <!-- Lab Item 3 -->
+                <div class="lab-card">
+                    <div class="lab-icon"><i class="fa-solid fa-gem"></i></div>
+                    <h4>Hardness Tester</h4>
+                    <p>Webster and Rockwell hardness testers to guarantee the structural durability of profiles.</p>
+                </div>
+
+                <!-- Lab Item 4 -->
+                <div class="lab-card">
+                    <div class="lab-icon"><i class="fa-solid fa-flask-vial"></i></div>
+                    <h4>Chemical Lab</h4>
+                    <p>Dedicated wet analysis lab for anodizing and powder coating quality checks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Animate Scrolling Background Text
+                gsap.to(".machinery-watermark", {
+                    xPercent: -50,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "#machinery-showcase",
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: 1
+                    }
+                });
+
+                // Animate Images (Scale Up Reveal)
+                gsap.utils.toArray(".reveal-machine-left").forEach(elem => {
+                    gsap.from(elem, {
+                        x: -50, opacity: 0, duration: 1, ease: "power3.out",
+                        scrollTrigger: { trigger: elem, start: "top 80%" }
+                    });
+                });
+
+                gsap.utils.toArray(".reveal-machine-right").forEach(elem => {
+                    gsap.from(elem, {
+                        x: 50, opacity: 0, duration: 1, ease: "power3.out",
+                        scrollTrigger: { trigger: elem, start: "top 80%" }
+                    });
+                });
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+    <!-- NEW PRODUCTION PROCESS SECTION -->
+    <section id="process-section">
+        <div class="container">
+
+            <div class="process-header">
+                <span class="process-eyebrow">How We Do It</span>
+                <h2 class="process-title">The Extrusion <span style="color: var(--satya-blue);">Journey</span></h2>
+                <p class="process-desc">From premium billets to precision profiles, every step is monitored for
+                    excellence.</p>
+            </div>
+
+            <div class="process-wrapper">
+                <!-- Connecting Line (Background) -->
+                <div class="process-line-bg"></div>
+
+                <div class="process-grid">
+
+                    <!-- Step 1 -->
+                    <div class="proc-item anim-proc">
+                        <div class="proc-number">01</div>
+                        <div class="proc-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                        <h4 class="proc-name">Billet Heating</h4>
+                        <p class="proc-detail">Pre-heating aluminium logs to optimal plasticity.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="proc-item anim-proc">
+                        <div class="proc-number">02</div>
+                        <div class="proc-icon"><i class="fa-solid fa-arrows-left-right-to-line"></i></div>
+                        <h4 class="proc-name">Extrusion</h4>
+                        <p class="proc-detail">Pressing heated metal through precision dies.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="proc-item anim-proc">
+                        <div class="proc-number">03</div>
+                        <div class="proc-icon"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+                        <h4 class="proc-name">Quenching</h4>
+                        <p class="proc-detail">Controlled cooling to set profile dimensions.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="proc-item anim-proc">
+                        <div class="proc-number">04</div>
+                        <div class="proc-icon"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
+                        <h4 class="proc-name">Stretching</h4>
+                        <p class="proc-detail">Straightening profiles and relieving stress.</p>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="proc-item anim-proc">
+                        <div class="proc-number">05</div>
+                        <div class="proc-icon"><i class="fa-solid fa-check-double"></i></div>
+                        <h4 class="proc-name">Aging & Finish</h4>
+                        <p class="proc-detail">Heat treatment for strength and surface coating.</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Staggered Entrance
+                gsap.from(".anim-proc", {
+                    y: 50,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.15,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: "#process-section",
+                        start: "top 75%"
+                    }
+                });
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- FINAL CTA STRIP -->
+    <section id="infra-cta">
+        <div class="cta-overlay-bg"></div>
+        <div class="cta-content-box">
+            <h2 class="cta-heading">Ready to Start Your Project?</h2>
+            <p class="cta-sub">Leverage our world-class infrastructure and precision engineering for your extrusion
+                needs.</p>
+            <a href="contact.html" class="btn-cta-gold">
+                Get in Touch <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+
+
+    <!-- JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // CTA Reveal Animation
+            gsap.from(".cta-content-box", {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: "#infra-cta",
+                    start: "top 80%"
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- NEW CHAT WIDGET -->
+    <div id="chat-widget-container">
+        <!-- Chat Window -->
+        <div class="chat-window">
+            <div class="chat-header">
+                <div class="bot-info">
+                    <div class="bot-avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="bot-text">
+                        <h4>Satya Assistant</h4>
+                        <span>Online | Replies instantly</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-xmark close-chat" onclick="toggleChat()"></i>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <div class="msg bot">
+                    Hello! Welcome to Satya Metal Industries. <br>How can we assist you with your aluminium requirements
+                    today?
+                </div>
+                <div class="chat-options">
+                    <div class="chat-option-btn" onclick="sendOption('Product Inquiry')">Product Inquiry</div>
+                    <div class="chat-option-btn" onclick="sendOption('Download Catalogue')">Catalogue</div>
+                    <div class="chat-option-btn" onclick="sendOption('Connect Sales')">Connect Sales</div>
+                </div>
+                <div class="typing" id="typing-indicator">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" class="chat-input" id="user-input" placeholder="Type a message..."
+                    onkeypress="handleEnter(event)">
+                <button class="send-btn" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <div class="chat-toggle-btn" onclick="toggleChat()">
+            <i class="fa-solid fa-comment-dots"></i>
+        </div>
+    </div>
+
+
+    <!-- NEW PREMIUM FOOTER -->
+    <footer id="contact-footer">
+        <div class="footer-wrapper">
+
+            <div class="footer-top-grid">
+
+                <!-- Left: Info -->
+                <div class="footer-info anim-up">
+                    <span class="footer-label">Partner With Us</span>
+                    <h2 class="footer-heading">Let's build the<br>future together.</h2>
+                    <p class="footer-sub">Have a project in mind? We provide world-class aluminium solutions tailored to
+                        your engineering needs.</p>
+
+                    <div class="contact-details-grid">
+                        <div class="contact-item">
+                            <h5>Address</h5>
+                            <p>Plot No. 12, Industrial Area,<br>Bhiwadi, Rajasthan - 301019</p>
+                        </div>
+                        <div class="contact-item">
+                            <h5>Contact</h5>
+                            <a href="mailto:info@satyagroup.in">info@satyagroup.in</a>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                        </div>
+                        <div class="contact-item">
+                            <h5>Socials</h5>
+                            <div style="display:flex; gap:15px; margin-top:5px;">
+                                <a href="#">LinkedIn</a>
+                                <a href="#">Instagram</a>
+                                <a href="#">Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="footer-form anim-up">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control-custom" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-custom" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-custom" placeholder="Company" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control-custom" rows="2" placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Submit Inquiry</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Bottom: Brand & Links -->
+            <div class="footer-bottom">
+                <div class="big-footer-text anim-fade">
+                    <div class="footerlogo">
+                        <img src="assets/images/logo/footer-logo.png" height="100" alt="">
+                    </div>
+                </div>
+
+                <div class="footer-meta">
+                    <div>© 2025 The Satya Group. Designed By WebAds India</div>
+                    <div class="footer-nav">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                        <a href="#">Site Credit</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+    <!-- JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smooth: true
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            // Footer Animations
+            gsap.utils.toArray(".anim-up").forEach((elem, i) => {
+                gsap.from(elem, {
+                    y: 50,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                    delay: i * 0.1,
+                    scrollTrigger: {
+                        trigger: "#contact-footer",
+                        start: "top 70%"
+                    }
+                });
+            });
+
+            gsap.from(".big-footer-text", {
+                y: 100,
+                opacity: 0,
+                duration: 1.5,
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: "#contact-footer",
+                    start: "top 80%"
+                }
+            });
+        });
+    </script>
+
+
+
+
+    <!-- JS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+            }
+
+            // --- ANIMATION LOGIC ---
+            const cards = document.querySelectorAll('.sus-card');
+
+            cards.forEach((card, index) => {
+                ScrollTrigger.create({
+                    trigger: card,
+                    start: "top 60%",
+                    end: "bottom 60%",
+                    onEnter: () => activate(card),
+                    onEnterBack: () => activate(card),
+                    onLeave: () => deactivate(card),
+                    onLeaveBack: () => deactivate(card)
+                });
+            });
+
+            function activate(card) {
+                // Activate Card
+                card.classList.add('active');
+
+                // Activate Text
+                let targetId = card.getAttribute('data-target');
+                document.querySelectorAll('.sus-word').forEach(w => w.classList.remove('active'));
+                const targetText = document.getElementById(targetId);
+                if (targetText) targetText.classList.add('active');
+            }
+
+            function deactivate(card) {
+                card.classList.remove('active');
+            }
+
+            // Initial State Activation (First item active by default if at top)
+            ScrollTrigger.refresh();
+
+            // Icon Animation
+            gsap.to(".sus-leaf-icon", {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                delay: 0.5,
+                scrollTrigger: {
+                    trigger: "#sustainability-section",
+                    start: "top 60%"
+                }
+            });
+        });
+    </script>
+
+
+
+
+    <script>
+        /* * ==========================================
+         * SCROLL FIX & NEW ANIMATIONS
+         * ========================================== */
+
+        // 1. Re-Initialize Lenis with Smoother Settings
+        // Ensure only ONE instance runs. If previous exists, it might need cleanup (handled by browser reload usually)
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth ease
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false, // Fix for mobile touch jerkiness
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // 2. Navbar Scroll Effect
+        window.addEventListener("scroll", function () {
+            const navbar = document.querySelector(".satya-navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+
+        // 3. Mobile Menu Logic with Animations
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+
+            // Staggered Animation for Links using GSAP
+            if (navMenu.classList.contains("active")) {
+                // Reset and Animate
+                gsap.set(".nav-item", {
+                    y: 30,
+                    opacity: 0
+                });
+                gsap.to(".nav-item", {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.5,
+                    stagger: 0.1,
+                    delay: 0.2,
+                    ease: "power2.out"
+                });
+            }
+        });
+
+        // Dropdown Click for Mobile
+        if (window.innerWidth <= 1024) {
+            const dropdowns = document.querySelectorAll('.nav-item');
+            dropdowns.forEach(item => {
+                const link = item.querySelector('.nav-link');
+                const submenu = item.querySelector('.submenu');
+
+                // Only prevent default if it has a submenu
+                if (submenu) {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+
+                        // Close other submenus (Optional - keeps it cleaner)
+                        document.querySelectorAll('.submenu').forEach(sub => {
+                            if (sub !== submenu) sub.classList.remove('show');
+                        });
+
+                        submenu.classList.toggle('show');
+
+                        // Force layout recalculation if needed or simple slide
+                    });
+                }
+            });
+
+            // Show Mobile Button
+            const mobileBtn = document.querySelector('.mobile-btn-container');
+            if (mobileBtn) mobileBtn.classList.remove('d-none');
+        }
+
+        // Ensure Hamburger color is black
+        gsap.set(".bar", {
+            backgroundColor: "#000"
+        });
+    </script>
+
+
+
+
+
+    <script>
+        // CHATBOT FUNCTIONS
+        function toggleChat() {
+            const chatWindow = document.querySelector('.chat-window');
+            chatWindow.classList.toggle('active');
+        }
+
+        function handleEnter(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('user-input');
+            const message = input.value.trim();
+            if (message) {
+                addMessage(message, 'user');
+                input.value = '';
+                showTyping();
+                setTimeout(() => {
+                    hideTyping();
+                    addMessage("Thanks for reaching out! Our team will contact you shortly via email.", 'bot');
+                }, 1500);
+            }
+        }
+
+        function sendOption(option) {
+            addMessage(option, 'user');
+            showTyping();
+            setTimeout(() => {
+                hideTyping();
+                if (option === 'Product Inquiry') addMessage("Great! Please describe your requirement or the alloy grade you need.", 'bot');
+                else if (option === 'Download Catalogue') addMessage("You can download our latest brochure from the Products section.", 'bot');
+                else addMessage("Please email us at info@satyametal.com for direct sales.", 'bot');
+            }, 1000);
+        }
+
+        function addMessage(text, sender) {
+            const chatBody = document.getElementById('chat-body');
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('msg', sender);
+            msgDiv.innerText = text;
+            chatBody.insertBefore(msgDiv, document.getElementById('typing-indicator'));
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function showTyping() {
+            document.getElementById('typing-indicator').style.display = 'flex';
+            document.getElementById('chat-body').scrollTop = document.getElementById('chat-body').scrollHeight;
+        }
+
+        function hideTyping() {
+            document.getElementById('typing-indicator').style.display = 'none';
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
