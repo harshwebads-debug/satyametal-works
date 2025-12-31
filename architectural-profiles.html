@@ -8,7 +8,7 @@
 
     <!-- custom css -->
     <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/css/about-us.css">
+    <link rel="stylesheet" href="assets/css/products.css">
     <link rel="shortcut icon" href="assets/images/logo/satya-logo.png" type="image/x-icon">
     <!-- 1. Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -29,459 +29,9 @@
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 
 
-    <style>
-        /* * ==========================================
-         * NEW CONTACT HERO (THE GOLDEN HORIZON)
-         * ========================================== */
-        #contact-hero {
-            position: relative;
-            height: 85vh;
-            /* Cinematic Height */
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #000;
-        }
-
-        /* 1. Parallax Background Image */
-        .contact-hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 120%;
-            /* Extra height for parallax */
-            /* Abstract Industrial/Network Image */
-            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.6;
-            z-index: 0;
-            filter: contrast(1.1) saturate(0) brightness(0.6);
-            /* Premium Noir Look */
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, transparent 0%, #000000 90%);
-            z-index: 1;
-        }
-
-        /* 2. Interactive Spotlight (Mouse Follow) */
-        .hero-spotlight {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 71, 171, 0.2) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 2;
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
-
-        /* 3. Main Typography */
-        .contact-content {
-            position: relative;
-            z-index: 5;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .contact-tag {
-            font-family: 'Rajdhani', sans-serif;
-            color: var(--satya-gold);
-            font-size: 14px;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: inline-block;
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            padding: 8px 24px;
-            border-radius: 50px;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(10px);
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .contact-title {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(50px, 8vw, 120px);
-            font-weight: 800;
-            line-height: 0.9;
-            text-transform: uppercase;
-            color: white;
-            margin-bottom: 30px;
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-        /* Two-tone text effect */
-        .contact-title span {
-            display: block;
-        }
-
-        .title-outline {
-            color: transparent;
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
-        }
-
-        .contact-desc {
-            font-family: 'Manrope', sans-serif;
-            font-size: clamp(16px, 1.5vw, 20px);
-            color: rgba(255, 255, 255, 0.7);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-            font-weight: 300;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        /* 4. Floating Elements (Abstract) */
-        .floating-element {
-            position: absolute;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 3;
-        }
-
-        .fe-1 {
-            width: 300px;
-            height: 300px;
-            top: 10%;
-            right: 10%;
-            animation: float 10s infinite ease-in-out;
-        }
-
-        .fe-2 {
-            width: 150px;
-            height: 150px;
-            bottom: 20%;
-            left: 10%;
-            animation: float 15s infinite ease-in-out reverse;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-30px);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .contact-title {
-                font-size: 50px;
-                line-height: 1;
-            }
-
-            .hero-spotlight {
-                display: none;
-            }
-
-            /* Performance on mobile */
-        }
-
-
-        /* * ==========================================
-         * 2. MAIN CONTACT FORM SECTION (MODERN & STYLISH)
-         * ========================================== */
-        #main-contact {
-            padding: 120px 0;
-            background-color: #FFFFFF;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Subtle Decor */
-        #main-contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 71, 171, 0.03) 0%, transparent 70%);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            /* Balanced Layout */
-            gap: 80px;
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 40px;
-            align-items: start;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* LEFT: INFO */
-        .info-col h2 {
-            font-family: 'Syne', sans-serif;
-            font-weight: 800;
-            font-size: clamp(36px, 4vw, 50px);
-            line-height: 1.1;
-            margin-bottom: 50px;
-            color: var(--text-main);
-        }
-
-        .info-col h2 span {
-            color: var(--satya-blue);
-            position: relative;
-            display: inline-block;
-        }
-
-        .info-col h2 span::after {
-            content: '';
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            background: rgba(197, 160, 89, 0.2);
-            z-index: -1;
-        }
-
-        .info-box {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .info-item {
-            display: flex;
-            gap: 25px;
-            align-items: flex-start;
-        }
-
-        .info-icon {
-            width: 55px;
-            height: 55px;
-            background: #ffffff;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--satya-gold);
-            font-size: 22px;
-            flex-shrink: 0;
-            transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .info-item:hover .info-icon {
-            background: var(--satya-blue);
-            color: white;
-            border-color: var(--satya-blue);
-            transform: translateY(-5px);
-        }
-
-        .info-text h5 {
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--satya-blue);
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-
-        .info-text p,
-        .info-text a {
-            font-family: 'Manrope', sans-serif;
-            font-size: 18px;
-            color: var(--text-main);
-            text-decoration: none;
-            line-height: 1.6;
-            font-weight: 500;
-            transition: 0.3s;
-            margin: 0;
-            display: block;
-        }
-
-        .info-text a:hover {
-            color: var(--satya-gold);
-        }
-
-        /* Socials */
-        .socials {
-            display: flex;
-            gap: 15px;
-            margin-top: 40px;
-            margin-left: 80px;
-        }
-
-        .social-link {
-            width: 45px;
-            height: 45px;
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-main);
-            transition: 0.3s;
-            font-size: 18px;
-        }
-
-        .social-link:hover {
-            background: var(--satya-blue);
-            border-color: var(--satya-blue);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* RIGHT: STYLISH FORM CARD */
-        .form-col {
-            background: #FFFFFF;
-            padding: 60px;
-            border-radius: 20px;
-            /* Premium Depth Shadow */
-            box-shadow: 0 30px 60px rgba(0, 71, 171, 0.1);
-            border: 1px solid rgba(0, 0, 0, 0.03);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Gold Accent Top Bar */
-        .form-col::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--satya-blue), var(--satya-gold));
-        }
-
-        .form-title-small {
-            font-family: 'Syne';
-            font-size: 26px;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-        }
-
-        .form-group {
-            position: relative;
-            margin-bottom: 30px;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 15px 20px;
-            background: #F9FAFB;
-            border: 1px solid #E5E7EB;
-            border-radius: 8px;
-            font-family: 'Manrope';
-            font-size: 16px;
-            color: var(--text-main);
-            outline: none;
-            transition: all 0.3s ease;
-        }
-
-        .form-input:focus {
-            background: #FFFFFF;
-            border-color: var(--satya-gold);
-            box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.1);
-        }
-
-        .form-label {
-            position: absolute;
-            top: 16px;
-            left: 20px;
-            font-size: 14px;
-            color: #888;
-            pointer-events: none;
-            transition: 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-
-        .form-input:focus~.form-label,
-        .form-input:valid~.form-label {
-            top: -10px;
-            left: 15px;
-            font-size: 11px;
-            color: var(--satya-blue);
-            background: white;
-            padding: 0 5px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 18px;
-            background: var(--satya-blue);
-            color: white;
-            border: none;
-            font-family: 'Syne';
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-top: 10px;
-            border-radius: 8px;
-            box-shadow: 0 10px 20px rgba(0, 71, 171, 0.2);
-        }
-
-        .submit-btn:hover {
-            background: var(--satya-gold);
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(197, 160, 89, 0.3);
-        }
-
-        /* MAP SECTION */
-        #map-section {
-            height: 450px;
-            width: 100%;
-            filter: grayscale(0%);
-            /* Full Color Map for clarity */
-        }
-
-    
-    </style>
-
 </head>
 
 <body>
-
-
-
-
-
-
-
-
-
-
-
     <!-- PREMIUM FLOATING CONTACT DOCK -->
     <div id="contact-dock">
 
@@ -552,10 +102,12 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="infrastructure.html" class="nav-link" data-text="Infrastructure"><span>Infrastructure</span></a>
+                    <a href="infrastructure.html" class="nav-link"
+                        data-text="Infrastructure"><span>Infrastructure</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="sustainability.html" class="nav-link" data-text="Sustainability"><span>Sustainability</span></a>
+                    <a href="sustainability.html" class="nav-link"
+                        data-text="Sustainability"><span>Sustainability</span></a>
                 </li>
                 <li class="nav-item">
                     <a href="contact-us.html" class="nav-link" data-text="Contact"><span>Contact</span></a>
@@ -587,42 +139,65 @@
 
 
 
+    <!-- PREMIUM ARCHITECTURAL HERO (REFINED - FIX OVERLAP) -->
+    <header id="arch-hero">
 
-
-
-
-
-
-
-
-
-
-    <!-- CONTACT HERO SECTION -->
-    <header id="contact-hero">
-
-        <!-- Background Elements -->
-        <div class="contact-hero-bg"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-spotlight"></div>
-
-        <!-- Floating Decor -->
-        <div class="floating-element fe-1"></div>
-        <div class="floating-element fe-2"></div>
-
-        <!-- Main Content -->
-        <div class="contact-content">
-            <span class="contact-tag anim-hero">24/7 Support</span>
-
-            <h1 class="contact-title anim-hero">
-                <span class="title-outline">Let's Build</span>
-                <span>The Future</span>
-            </h1>
-
-            <p class="contact-desc anim-hero">
-                Have a project in mind? We are ready to engineer the perfect aluminium solution for your needs. Reach
-                out to our experts today.
-            </p>
+        <div class="arch-bg-wrapper">
+            <!-- Using a high-quality architectural facade image -->
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                class="arch-bg-img" alt="Modern Architecture Facade">
         </div>
+
+        <!-- Gradient Overlay for readability -->
+        <div class="arch-overlay"></div>
+
+        <div class="arch-container">
+
+            <div class="arch-content-box">
+                <!-- Decorative Line -->
+                <div class="arch-line anim-reveal"></div>
+
+                <h1 class="arch-title">
+                    <span class="d-block anim-reveal">DEFINING</span>
+                    <span class="d-block text-outline anim-reveal">MODERN</span>
+                    <span class="d-block anim-reveal">SPACES</span>
+                </h1>
+
+                <p class="arch-desc anim-reveal">
+                    Precision-engineered aluminium profiles for windows, doors, facades, and curtain walls. Combining
+                    structural strength with aesthetic elegance for the skylines of tomorrow.
+                </p>
+
+                <div class="btn-group-hero anim-reveal">
+                    <a href="#catalogue" class="btn-arch btn-fill">Download Catalogue</a>
+                    <a href="#contact" class="btn-arch btn-outline">Enquire Now</a>
+                </div>
+            </div>
+
+            <!-- Specs Bar (Moved OUT of content box & Positioned Correctly) -->
+            <div class="tech-specs-bar anim-reveal">
+                <div class="spec-box">
+                    <span class="spec-val">6063</span>
+                    <span class="spec-label">Alloy Series</span>
+                </div>
+                <div class="spec-box">
+                    <span class="spec-val">T6</span>
+                    <span class="spec-label">Temper</span>
+                </div>
+                <div class="spec-box">
+                    <span class="spec-val">Micro</span>
+                    <span class="spec-label">Precision</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-down">
+            <span class="scroll-text">SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+
     </header>
 
 
@@ -631,162 +206,213 @@
 
 
 
-    <!-- MAIN CONTACT SECTION (IMPROVED) -->
-    <section id="main-contact">
-        <div class="contact-grid">
 
-            <!-- Left: Premium Info Cards -->
-            <div class="info-col">
-                <h2 class="reveal-contact">Let's Start a <br><span>Conversation.</span></h2>
 
-                <div class="info-box reveal-contact">
 
-                    <!-- Address Card -->
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-                        <div class="info-text">
-                            <h5>Headquarters</h5>
-                            <p>Plot No. 12, Industrial Area,<br>Bhiwadi, Rajasthan - 301019</p>
+    <!-- 2. PRODUCT OVERVIEW (SHARP INDUSTRIAL STYLE) -->
+    <section id="arch-overview">
+        <div class="overview-container">
+
+            <!-- Left: Text & Features -->
+            <div class="ov-text-col anim-left">
+                <span class="ov-eyebrow">Product Overview</span>
+                <h2 class="ov-title">Engineering The <br><span style="color: var(--satya-blue);">Modern Skyline</span>
+                </h2>
+                <p class="ov-desc">
+                    Our architectural aluminium profiles are the backbone of modern facades, windows, and doors.
+                    Designed for structural integrity, thermal efficiency, and aesthetic versatility.
+                </p>
+
+                <div class="feat-grid">
+                    <div class="feat-item">
+                        <div class="feat-icon"><i class="fa-solid fa-wind"></i></div>
+                        <div class="feat-text">
+                            <h4>Weather Proof</h4>
+                            <p>High resistance to wind load.</p>
                         </div>
                     </div>
-
-                    <!-- Email Card -->
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
-                        <div class="info-text">
-                            <h5>Email Us</h5>
-                            <p><a href="mailto:info@satyametal.com">info@satyametal.com</a></p>
+                    <div class="feat-item">
+                        <div class="feat-icon"><i class="fa-solid fa-temperature-half"></i></div>
+                        <div class="feat-text">
+                            <h4>Thermal Break</h4>
+                            <p>Energy efficient insulation.</p>
                         </div>
                     </div>
-
-                    <!-- Phone Card -->
-                    <div class="info-item">
-                        <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
-                        <div class="info-text">
-                            <h5>Call Us</h5>
-                            <p><a href="tel:+918477897789">+91 84778 97789</a></p>
+                    <div class="feat-item">
+                        <div class="feat-icon"><i class="fa-solid fa-crop-simple"></i></div>
+                        <div class="feat-text">
+                            <h4>Precision Cut</h4>
+                            <p>Exact dimensions.</p>
                         </div>
                     </div>
-
-                    <div class="socials">
-                        <a href="#" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                    <div class="feat-item">
+                        <div class="feat-icon"><i class="fa-solid fa-palette"></i></div>
+                        <div class="feat-text">
+                            <h4>Premium Finish</h4>
+                            <p>Anodized & Powder Coated.</p>
+                        </div>
                     </div>
+                </div>
+
+                <!-- NEW BUTTONS -->
+                <div class="overview-actions">
+                    <a href="#contact" class="btn-ov-fill">Enquire Now</a>
+                    <a href="tel:+919876543210" class="btn-ov-outline">
+                        <i class="fa-solid fa-phone"></i> Call Now
+                    </a>
                 </div>
             </div>
 
-            <!-- Right: Premium Form -->
-            <div class="form-col reveal-form">
-                <h3 class="form-title-small">Send a Message</h3>
-                <form>
-                    <div class="form-group">
-                        <input type="text" class="form-input" required>
-                        <label class="form-label">Full Name</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-input" required>
-                        <label class="form-label">Email Address</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-input" required>
-                        <label class="form-label">Phone Number</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-input" required>
-                        <label class="form-label">Company Name</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-input" required>
-                        <label class="form-label">Message</label>
-                    </div>
+            <!-- Right: SHARP STYLISH IMAGE COMPOSITION -->
+            <div class="ov-img-col anim-right">
 
-                    <button type="submit" class="submit-btn">Send Inquiry</button>
-                </form>
+                <!-- 1. Solid Back Block (Blue) -->
+                <div class="solid-back-block"></div>
+
+                <!-- 2. Gold Wireframe -->
+                <div class="wireframe-box"></div>
+
+                <!-- 3. Main Image (Sharp & Fully Visible) -->
+                <div class="sharp-img-box">
+                    <!-- Using a reliable Unsplash image for guaranteed visibility -->
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2031&auto=format&fit=crop"
+                        class="sharp-img" alt="Aluminium Facade Detail">
+
+                    <!-- Tech Overlay (Crosshair) -->
+                    <div class="tech-overlay">
+                        <div class="crosshair top-left"></div>
+                        <div class="crosshair bottom-right"></div>
+                        <span class="tech-label">6063-T6</span>
+                    </div>
+                </div>
+
+                <!-- 4. Floating Spec Card (Sharp) -->
+                <div class="sharp-spec-card">
+                    <span class="spec-label-sm">Grade</span>
+                    <span class="spec-val-lg">6063</span>
+                </div>
+
             </div>
 
         </div>
     </section>
 
-    <!-- MAP -->
-    <section id="map-section">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.669894389146!2d76.82885931507856!3d28.2192669825838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d4a23b1c1c9ef%3A0x6a1c1c1c1c1c1c1c!2sBhiwadi%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+
+
+
+
+
+
+
+    <!-- 3. TECHNICAL SPECIFICATIONS (FIXED RESPONSIVE HEADING) -->
+    <section id="arch-specs">
+
+        <!-- Background Image Wrapper -->
+        <div class="tech-bg-wrapper">
+            <!-- Blueprint Image with Fixed Parallax -->
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2031&auto=format&fit=crop"
+                class="tech-bg-img" alt="Blueprint">
+            <!-- Overlay for Text Readability -->
+            <div class="tech-bg-overlay"></div>
+        </div>
+
+        <div class="container">
+
+            <div class="specs-header">
+                <span class="specs-tag">Technical Data</span>
+                <h2 class="specs-title">Engineered to <span style="color: var(--satya-gold);">Perfection</span></h2>
+            </div>
+
+            <div class="specs-wrapper">
+
+                <!-- Left: Intro & Download -->
+                <div class="specs-info anim-specs-left">
+                    <h3 class="info-head">Material <br>Specification</h3>
+                    <p class="info-text">
+                        Our architectural profiles are extruded using primary <strong>6063 T6 Alloy</strong>, ensuring
+                        excellent corrosion resistance and surface finish quality suitable for anodizing and powder
+                        coating.
+                    </p>
+
+                    <div class="cert-badges">
+                        <span class="badge">ISO 9001:2015</span>
+                        <span class="badge">BIS Certified</span>
+                    </div>
+
+                    <a href="#" class="btn-download-gold">
+                        <span>Download Datasheet</span>
+                        <i class="fa-solid fa-file-arrow-down"></i>
+                    </a>
+                </div>
+
+                <!-- Right: The Data Table -->
+                <div class="specs-table-box anim-specs-right">
+                    <div class="table-header">
+                        <span>Property</span>
+                        <span>Value (6063-T6)</span>
+                    </div>
+
+                    <div class="table-row">
+                        <span class="t-key">Tensile Strength</span>
+                        <span class="t-val">190 - 215 MPa</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="t-key">Yield Strength</span>
+                        <span class="t-val">160 - 170 MPa</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="t-key">Elongation</span>
+                        <span class="t-val">8% - 10%</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="t-key">Hardness (Webster)</span>
+                        <span class="t-val">10 - 12 HW</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="t-key">Wall Thickness</span>
+                        <span class="t-val">> 1.2mm (Avg)</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="t-key">Standard Length</span>
+                        <span class="t-val">3660mm - 6500mm</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </section>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script> // HERO ANIMATIONS
-        const tl = gsap.timeline({ delay: 0.2 });
-
-        // 1. Tag & Text Reveal
-        tl.to(".anim-hero", {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            stagger: 0.2,
-            ease: "power3.out"
-        });
-
-        // 2. Parallax Background on Scroll
-        gsap.to(".contact-hero-bg", {
-            yPercent: 20,
-            ease: "none",
-            scrollTrigger: {
-                trigger: "#contact-hero",
-                start: "top top",
-                end: "bottom top",
-                scrub: true
-            }
-        });
-
-        // 3. Mouse Spotlight Effect (Desktop)
-        const heroSection = document.getElementById("contact-hero");
-        const spotlight = document.querySelector(".hero-spotlight");
-
-        if (window.innerWidth > 991) {
-            heroSection.addEventListener("mousemove", (e) => {
-                const rect = heroSection.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-
-                gsap.to(spotlight, {
-                    x: x,
-                    y: y,
-                    opacity: 1,
-                    duration: 0.3,
-                    ease: "power2.out"
+                // Using .from() to animate from a position, but elements start visible via CSS as fallback
+                gsap.from(".anim-specs-left", {
+                    x: -50, opacity: 0, duration: 1, ease: "power3.out",
+                    scrollTrigger: { trigger: "#arch-specs", start: "top 75%" }
                 });
 
-                // Subtle Tilt on Text
-                const title = document.querySelector(".contact-title");
-                const moveX = (e.clientX / window.innerWidth - 0.5) * 20;
-                const moveY = (e.clientY / window.innerHeight - 0.5) * 20;
-                gsap.to(title, { x: moveX, y: moveY, duration: 1 });
-            });
+                gsap.from(".anim-specs-right", {
+                    x: 50, opacity: 0, duration: 1, ease: "power3.out", delay: 0.2,
+                    scrollTrigger: { trigger: "#arch-specs", start: "top 75%" }
+                });
 
-            heroSection.addEventListener("mouseleave", () => {
-                gsap.to(spotlight, { opacity: 0, duration: 0.5 });
-            });
-        }
+                // Parallax Effect for Background Image
+                gsap.to(".tech-bg-img", {
+                    yPercent: 20,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "#arch-specs",
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                });
+            }
+        });
     </script>
 
 
@@ -812,6 +438,210 @@
 
 
 
+
+
+    <!-- 4. APPLICATIONS GALLERY (FIXED OVERFLOW & HEADING) -->
+    <section id="arch-gallery">
+        <div class="gallery-container">
+
+            <div class="gallery-header">
+                <span class="gallery-tag">Versatile Solutions</span>
+                <!-- Reduced Heading Size & Forced Single Line (on Desktop) -->
+                <h2 class="gallery-title">Designed for <span style="color: var(--satya-gold);">Every Space</span></h2>
+                <p class="gallery-desc">Versatile systems designed for the modern world.</p>
+            </div>
+
+            <!-- The Accordion -->
+            <div class="arch-accordion">
+
+                <!-- Item 1: Windows -->
+                <div class="acc-panel active" onmouseenter="activatePanel(this)">
+                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop"
+                        class="acc-img" alt="Windows">
+                    <div class="acc-overlay"></div>
+                    <div class="acc-content">
+                        <span class="acc-num">01</span>
+                        <div class="acc-text">
+                            <h3>Window Systems</h3>
+                            <p>High-performance sliding and casement profiles.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Doors -->
+                <div class="acc-panel" onmouseenter="activatePanel(this)">
+                    <img src="https://images.unsplash.com/photo-1595846519845-68e298c2edd8?q=80&w=1974&auto=format&fit=crop"
+                        class="acc-img" alt="Doors">
+                    <div class="acc-overlay"></div>
+                    <div class="acc-content">
+                        <span class="acc-num">02</span>
+                        <div class="acc-text">
+                            <h3>Door Sections</h3>
+                            <p>Heavy-duty profiles for hinged and sliding doors.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Facades -->
+                <div class="acc-panel" onmouseenter="activatePanel(this)">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                        class="acc-img" alt="Facades">
+                    <div class="acc-overlay"></div>
+                    <div class="acc-content">
+                        <span class="acc-num">03</span>
+                        <div class="acc-text">
+                            <h3>Curtain Walls</h3>
+                            <p>Structural glazing systems for high-rise stability.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Partitions -->
+                <div class="acc-panel" onmouseenter="activatePanel(this)">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
+                        class="acc-img" alt="Partitions">
+                    <div class="acc-overlay"></div>
+                    <div class="acc-content">
+                        <span class="acc-num">04</span>
+                        <div class="acc-text">
+                            <h3>Office Partitions</h3>
+                            <p>Modular systems for modern workspaces.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5: Railings -->
+                <div class="acc-panel" onmouseenter="activatePanel(this)">
+                    <img src="https://images.unsplash.com/photo-1522444195799-478538b28823?q=80&w=2070&auto=format&fit=crop"
+                        class="acc-img" alt="Railings">
+                    <div class="acc-overlay"></div>
+                    <div class="acc-content">
+                        <span class="acc-num">05</span>
+                        <div class="acc-text">
+                            <h3>Handrails</h3>
+                            <p>Safety meets style for balcony railings.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // JS for Interaction
+        function activatePanel(panel) {
+            // Desktop Hover Logic
+            if (window.innerWidth > 991) {
+                document.querySelectorAll('.acc-panel').forEach(p => p.classList.remove('active'));
+                panel.classList.add('active');
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+            // Mobile Click Logic
+            if (window.innerWidth <= 991) {
+                const panels = document.querySelectorAll('.acc-panel');
+                panels.forEach(panel => {
+                    panel.addEventListener('click', () => {
+                        panels.forEach(p => p.classList.remove('active'));
+                        panel.classList.add('active');
+                    });
+                });
+            }
+
+            // Scroll Reveal
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+                gsap.from(".acc-panel", {
+                    y: 50, opacity: 0, duration: 0.8, stagger: 0.1, ease: "power2.out",
+                    scrollTrigger: { trigger: "#arch-gallery", start: "top 75%" }
+                });
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- FINAL CTA STRIP (IMAGE BACKGROUND WITH FIXED ATTACHMENT) -->
+    <section id="arch-cta">
+        <div class="cta-overlay-dark"></div> <!-- Dark overlay for readability -->
+        <div class="cta-glow-bg"></div>
+        <div class="cta-container">
+
+            <div class="cta-grid">
+                <!-- Text Content (Left) -->
+                <div class="cta-text-col">
+                    <span class="cta-tag">Let's Collaborate</span>
+                    <h2 class="cta-title">Ready to <span style="color: #C5A059;">Build?</span></h2>
+                    <p class="cta-desc">
+                        Partner with Satya Metal Industries for precision-engineered aluminium profiles that define the
+                        future of infrastructure.
+                    </p>
+                </div>
+
+                <!-- Action Buttons (Right) -->
+                <div class="cta-action-col">
+                    <a href="contact.html" class="btn-cta-primary">
+                        Start Your Project <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="tel:+919876543210" class="btn-cta-secondary">
+                        <i class="fa-solid fa-phone"></i> Call Our Experts
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            if (typeof gsap !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Simple Reveal Animation using .from() for safety
+                gsap.from(".cta-grid", {
+                    y: 50,
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: "#arch-cta",
+                        start: "top 80%"
+                    }
+                });
+            }
+        });
+    </script>
 
 
 
