@@ -30,168 +30,6 @@
 </head>
 
 <body>
-
-
-    <!-- <div id="premium-loader">
-
-
-        <div class="bg-pulse"></div>
-
-        <div class="loader-content-wrapper">
-
-            <div class="logo-box">
-
-                <img src="assets/images/logo/nav-logo.png" alt="Satya Logo" class="loader-logo">
-                <div class="logo-shine"></div>
-            </div>
-
-
-            <div class="progress-container">
-                <div class="progress-track">
-                    <div class="progress-fill"></div>
-                </div>
-                <div class="progress-text">0%</div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", (event) => {
-            const logo = document.querySelector(".loader-logo");
-            const shine = document.querySelector(".logo-shine");
-            const fill = document.querySelector(".progress-fill");
-            const text = document.querySelector(".progress-text");
-            const track = document.querySelector(".progress-track");
-            const loader = document.querySelector("#premium-loader");
-            const bgPulse = document.querySelector(".bg-pulse");
-            const siteWrapper = document.querySelector(".site-wrapper");
-
-
-            let progress = {
-                val: 0
-            };
-
-
-            const tl = gsap.timeline();
-
-            tl
-
-                .to(bgPulse, {
-                scale: 1,
-                duration: 1.2, 
-                ease: "power2.out"
-            }, "start")
-
-
-            .fromTo(logo, {
-                    y: 50,
-                    scale: 1.2,
-                    filter: "blur(10px)",
-                    opacity: 0
-                }, {
-                    y: 0,
-                    scale: 1,
-                    filter: "blur(0px)",
-                    opacity: 1,
-                    duration: 1,
-                    ease: "expo.out"
-                } 
-                , "start+=0.2")
-
-
-            .fromTo(shine, {
-                    left: "-100%"
-                }, {
-                    left: "200%",
-                    duration: 1,
-                    ease: "power2.inOut"
-                } 
-                , "-=0.6")
-
-
-            .to([track, text], {
-                opacity: 1,
-                duration: 0.4, 
-                ease: "power2.out"
-            }, "-=0.8")
-
-
-            .to(progress, {
-                val: 100,
-                duration: 1.5, 
-                ease: "power2.inOut",
-                onUpdate: () => {
-                    let currentVal = Math.round(progress.val);
-                    text.innerText = currentVal + "%";
-                    fill.style.width = currentVal + "%";
-                }
-            }, "-=0.3")
-
-
-            .to(logo, {
-                    scale: 1.05,
-                    duration: 0.15, 
-                    ease: "back.out(1.7)"
-                })
-                .to(logo, {
-                    scale: 1,
-                    duration: 0.15,
-                    ease: "power2.out"
-                })
-
-
-            .to(loader, {
-                yPercent: -100,
-                duration: 0.8, 
-                ease: "power4.inOut",
-                delay: 0.1,
-                onStart: () => {
-
-                    if (siteWrapper) {
-                        gsap.set(siteWrapper, {
-                            visibility: "visible"
-                        });
-                        gsap.to(siteWrapper, {
-                            opacity: 1,
-                            duration: 0.5
-                        });
-                    }
-                },
-                onComplete: () => {
-
-                    document.body.style.overflow = "auto";
-                    document.documentElement.style.overflow = "auto";
-
-                    if (siteWrapper) {
-                        siteWrapper.style.height = "auto";
-                        siteWrapper.style.overflow = "visible";
-                        siteWrapper.style.pointerEvents = "all";
-                    }
-                }
-            });
-        });
-    </script> -->
-
-
-    <!-- MAIN WEBSITE WRAPPER -->
-    <!-- <div class="site-wrapper">
-
-
-    </div> -->
-
-
-
-
-
-
-
-
-
-
-
     <!-- PREMIUM FLOATING CONTACT DOCK -->
     <div id="contact-dock">
 
@@ -252,20 +90,25 @@
                     <i class="fa-solid fa-chevron-down"></i>
                     <ul class="submenu">
                         <li><a href="architectural-profiles.html">Architectural Profiles</a></li>
-                        <li><a href="architectural-profiles.html">Industrial Profiles</a></li>
-                        <li><a href="architectural-profiles.html">Solar Profiles</a></li>
-                        <li><a href="architectural-profiles.html">Automobile Profiles</a></li>
-                        <li><a href="architectural-profiles.html">Heat Sinks</a></li>
-                        <li><a href="architectural-profiles.html">Hardware Sections</a></li>
-                        <li><a href="architectural-profiles.html">AC Grill Profiles</a></li>
+                        <li><a href="door-window-profiles.html">Door Window Profiles</a></li>
+                        <li><a href="hardware-sections.html">Hardware Sections</a></li>
+                        <li><a href="ac-grill-profiles.html">AC Grill Profiles</a></li>
+                        <li><a href="industrial-profiles.html">Industrial Profiles</a></li>
+                        <li><a href="scaffolding-profiles.html">Scaffolding Profiles</a></li>
+                        <li><a href="heavy-alloy-profiles.html">Heavy Alloy Profiles</a></li>
+                        <li><a href="automobile-profiles.html">Automobile Profiles</a></li>
+                        <li><a href="busbar-profiles.html">Busbar Profiles</a></li>
+                        <li><a href="heat-sink-profiles.html">Heat-Sink Profiles</a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item">
-                    <a href="infrastructure.html" class="nav-link" data-text="Infrastructure"><span>Infrastructure</span></a>
+                    <a href="infrastructure.html" class="nav-link"
+                        data-text="Infrastructure"><span>Infrastructure</span></a>
                 </li>
                 <li class="nav-item">
-                    <a href="sustainability.html" class="nav-link" data-text="Sustainability"><span>Sustainability</span></a>
+                    <a href="sustainability.html" class="nav-link"
+                        data-text="Sustainability"><span>Sustainability</span></a>
                 </li>
                 <li class="nav-item">
                     <a href="contact-us.html" class="nav-link" data-text="Contact"><span>Contact</span></a>
@@ -453,17 +296,17 @@
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="overflow-hidden">
-                            <span class="eyebrow anim-text-reveal">Since 2012</span>
+                            <span class="eyebrow anim-text-reveal">Since 1999</span>
                         </div>
                         <h2 class="display-title">
                             <div class="overflow-hidden">
                                 <span class="d-block anim-text-reveal">
-                                    Building <span style="color: var(--satya-blue);">Strength.</span>
+                                    Creating <span style="color: var(--satya-blue);">Quality.</span>
                                 </span>
                             </div>
                             <div class="overflow-hidden">
                                 <span class="d-block anim-text-reveal">
-                                    Earning <span style="color: var(--satya-gold);">Trust.</span>
+                                    Delivering <span style="color: var(--satya-gold);">Reliability.</span>
                                 </span>
                             </div>
                         </h2>
@@ -471,8 +314,8 @@
                     <div class="col-lg-5 d-flex align-items-end justify-content-lg-end">
                         <p class="anim-fade-in"
                             style="max-width: 350px; text-align: right; color: var(--satya-gold); margin-bottom: 10px;">
-                            Satya Metal Industries transforms aluminium into future infrastructure using precision
-                            engineering and globally accepted standards.
+                            Satya Metal is a pioneer in aluminium extrusion, providing high-quality products for
+                            industrial and construction applications across India and beyond.
                         </p>
                     </div>
                 </div>
@@ -488,7 +331,7 @@
                     <img src="assets/images/banners/Satya Metals 05.jpg" class="grid-img"
                         alt="Satya Metal Factory Floor">
                     <div class="img-overlay-content">
-                        <h3 class="img-overlay-title">State of the Art<br>Facility</h3>
+                        <h3 class="img-overlay-title">Modern<br>Production Unit</h3>
                         <a href="#" class="btn-industrial" style="padding: 12px 30px; font-size: 12px;">View
                             Infrastructure</a>
                     </div>
@@ -501,8 +344,8 @@
                         OUR MISSION
                     </h3>
                     <p class="blue-desc">
-                        To redefine aluminium extrusion standards through precision engineering and sustainable
-                        manufacturing. We are innovators shaping the future frame by frame.
+                        To set new benchmarks in aluminium manufacturing by combining cutting-edge technology with
+                        sustainable practices. We aim to deliver excellence in every extrusion.
                     </p>
                     <a href="#"
                         style="color: white; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; display: flex; align-items: center; gap: 10px; position: relative; z-index: 2;">
@@ -514,19 +357,19 @@
                 <div class="grid-item-stats anim-slide-up">
                     <div class="tech-stat">
                         <div class="stat-num-wrapper">
-                            <span class="stat-num" data-count="12">0</span>
+                            <span class="stat-num" data-count="24">0</span>
                         </div>
-                        <span class="stat-txt">Years of<br>Excellence</span>
+                        <span class="stat-txt">Years of<br>Experience</span>
                     </div>
                     <div class="tech-stat">
                         <div class="stat-num-wrapper">
-                            <span class="stat-num" data-count="11">0</span>
+                            <span class="stat-num" data-count="14">0</span>
                         </div>
                         <span class="stat-txt">Extrusion<br>Presses</span>
                     </div>
                     <div class="tech-stat" style="border: none; margin-bottom: 0;">
                         <div class="stat-num-wrapper wide">
-                            <span class="stat-num" data-count="50000">0</span>
+                            <span class="stat-num" data-count="60000">0</span>
                         </div>
                         <span class="stat-txt">MT Annual<br>Capacity</span>
                     </div>
@@ -536,6 +379,7 @@
 
         </div>
     </section>
+
 
 
 
@@ -584,26 +428,26 @@
 
 
 
-    <!-- NEW HORIZONTAL PRODUCTS SHOWCASE -->
-    <!-- <section id="product-showcase">
+    <!-- PRODUCT SHOWCASE – FULL OLD WEBSITE PRODUCTS (UPDATED WITH MORE CONTENT) -->
+    <section id="product-showcase">
         <div class="products-container">
 
-
-            <div class="product-panel panel-1">
+            <!-- 1. Architectural Profiles -->
+            <div class="product-panel">
                 <div class="panel-content">
                     <div class="prod-text">
-                        <span class="prod-cat-label">01. Architecture</span>
-                        <h2 class="prod-title">Structural<br>Elegance</h2>
-                        <p class="prod-desc">High-precision aluminium profiles for windows, doors, facades, and curtain walls. Designed for aesthetics and engineered for strength.</p>
-                        <ul class="prod-specs-list">
-                            <li>Curtain Walls & Facades</li>
-                            <li>Modular Window Systems</li>
-                            <li>Luxury Door Frames</li>
-                        </ul>
-                        <a href="#" class="btn-industrial">View Catalogue</a>
+                        <span class="prod-cat-label">01. Architectural Profiles</span>
+                        <h2 class="prod-title">Architectural Profiles</h2>
+                        <p class="prod-desc">
+                            Architectural Profiles manufacture and supply a range of external roof profiles
+                            and structural decking profiles. These profiles are designed for modern applications,
+                            providing excellent strength, durability, and finish for building and façade solutions.
+                        </p>
+                        <a href="architectural-profiles.html" class="btn-industrial">View Catalogue</a>
                     </div>
                     <div class="prod-img-wrapper">
-                        <img src="https://lh5.googleusercontent.com/proxy/Dh9OJKnIZqU3tqa19r0zdBEvwdjoXlCbKbBSW6LJiqB2yUTFINWMZL_eBH68DEXyq8VU0Wsscb6qtdPoHWHchXkyfwX42ExdSWi60l7Q2ieeIYkR" class="prod-img" alt="Architecture">
+                        <img src="assets/images/services/architectural-profiles.jpg" class="prod-img"
+                            alt="Architectural Profiles">
                         <div class="blueprint-overlay">
                             <div class="blueprint-details">
                                 <h4 style="font-family:'Syne';">SPECIFICATION</h4>
@@ -614,78 +458,105 @@
                 </div>
             </div>
 
-
-            <div class="product-panel panel-2">
+            <!-- 2. Door Window Profiles -->
+            <div class="product-panel">
                 <div class="panel-content">
                     <div class="prod-text">
-                        <span class="prod-cat-label">02. Industrial</span>
-                        <h2 class="prod-title">Heavy<br>Engineering</h2>
-                        <p class="prod-desc">Robust profiles for automation, heat sinks, conveyor systems, and heavy machinery. Built to withstand extreme conditions.</p>
-                        <ul class="prod-specs-list">
-                            <li>Heat Sinks & Electronics</li>
-                            <li>Conveyor Belts</li>
-                            <li>Automotive Chassis</li>
-                        </ul>
-                        <a href="#" class="btn-industrial">View Specs</a>
+                        <span class="prod-cat-label">02. Door Window Profiles</span>
+                        <h2 class="prod-title">Door Window Profiles</h2>
+                        <p class="prod-desc">
+                            The window profile is one of the most important design features of PVC windows.
+                            Our aluminium door and window profiles are engineered to provide smooth operation,
+                            high durability, and excellent finish. Ideal for residential and commercial projects.
+                        </p>
+                        <a href="door-window-profiles.html" class="btn-industrial">View Catalogue</a>
                     </div>
                     <div class="prod-img-wrapper">
-                        <img src="assets/images/services/heavy-eng.jpg" class="prod-img" alt="Industrial">
+                        <img src="assets/images/services/door-window-profiles.jpg" class="prod-img"
+                            alt="Door Window Profiles">
                         <div class="blueprint-overlay">
                             <div class="blueprint-details">
                                 <h4 style="font-family:'Syne';">SPECIFICATION</h4>
-                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6061 T6</p>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-
-            <div class="product-panel panel-3">
+            <!-- 3. Hardware Sections -->
+            <div class="product-panel">
                 <div class="panel-content">
                     <div class="prod-text">
-                        <span class="prod-cat-label">03. Renewable</span>
-                        <h2 class="prod-title">Solar<br>Structures</h2>
-                        <p class="prod-desc">Lightweight yet durable mounting structures for solar panels. Enabling the green revolution with corrosion-resistant aluminium.</p>
-                        <ul class="prod-specs-list">
-                            <li>Module Mounting</li>
-                            <li>Roof Rails</li>
-                            <li>Ground Mounts</li>
-                        </ul>
-                        <a href="#" class="btn-industrial">Solar Solutions</a>
+                        <span class="prod-cat-label">03. Hardware Sections</span>
+                        <h2 class="prod-title">Hardware Sections</h2>
+                        <p class="prod-desc">
+                            Aluminium hardware is the planet-friendly option — featherweight to handle and
+                            super easy to transport. Our hardware sections provide strength and seamless
+                            integration for frames, industrial units, and constructions requiring reliable
+                            support components.
+                        </p>
+                        <a href="hardware-sections.html" class="btn-industrial">View Catalogue</a>
                     </div>
                     <div class="prod-img-wrapper">
-                        <img src="assets/images/services/solar-tructures.jpg" class="prod-img" alt="Solar">
+                        <img src="assets/images/services/hardware-sections.jpg" class="prod-img"
+                            alt="Hardware Sections">
                         <div class="blueprint-overlay">
                             <div class="blueprint-details">
                                 <h4 style="font-family:'Syne';">SPECIFICATION</h4>
-                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6005 T6</p>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-
-            <div class="product-panel panel-4">
+            <!-- 4. AC Grill Profiles -->
+            <div class="product-panel">
                 <div class="panel-content">
                     <div class="prod-text">
-                        <span class="prod-cat-label">04. Transport</span>
-                        <h2 class="prod-title">Future<br>Mobility</h2>
-                        <p class="prod-desc">Critical components for EVs, Railway coaches, and Aerospace. Reducing weight while maximizing safety.</p>
-                        <ul class="prod-specs-list">
-                            <li>EV Battery Casings</li>
-                            <li>Railway Interiors</li>
-                            <li>Truck Bodies</li>
-                        </ul>
-                        <a href="#" class="btn-industrial">Explore Transport</a>
+                        <span class="prod-cat-label">04. AC Grill Profiles</span>
+                        <h2 class="prod-title">AC Grill Profiles</h2>
+                        <p class="prod-desc">
+                            The purpose of the air conditioner grill is to diffuse the air from the ductwork.
+                            Our AC grill profiles are designed to ensure optimal airflow, durability, and
+                            long-lasting performance. Perfect for residential, commercial & industrial HVAC systems.
+                        </p>
+                        <a href="ac-grill-profiles.html" class="btn-industrial">View Catalogue</a>
                     </div>
                     <div class="prod-img-wrapper">
-                        <img src="assets/images/services/future-mobility.jpg" class="prod-img" alt="Transport">
-                        <div class="blueprint-overlay" style="background: rgba(0,0,0,0.7);">
+                        <img src="assets/images/services/ac-grill-profiles.jpg" class="prod-img"
+                            alt="AC Grill Profiles">
+                        <div class="blueprint-overlay">
                             <div class="blueprint-details">
                                 <h4 style="font-family:'Syne';">SPECIFICATION</h4>
-                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 7075 T6</p>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Industrial Profiles -->
+            <div class="product-panel">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">05. Industrial Profiles</span>
+                        <h2 class="prod-title">Industrial Profiles</h2>
+                        <p class="prod-desc">
+                            Durable aluminium profiles for industrial and structural applications. Suitable
+                            for automation systems, machinery, conveyor systems, and other heavy-duty
+                            applications requiring precision and long-lasting strength.
+                        </p>
+                        <a href="industrial-profiles.html" class="btn-industrial">View Catalogue</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/industrial-profiles.jpg" class="prod-img"
+                            alt="Industrial Profiles">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
                             </div>
                         </div>
                     </div>
@@ -693,13 +564,19 @@
             </div>
 
         </div>
-    </section> -->
+    </section>
+
+
+
+
+
+
 
     <!-- PRODUCT SHOWCASE – FULL OLD WEBSITE PRODUCTS (UPDATED WITH MORE CONTENT) -->
-    <section id="product-showcase">
+    <!-- <section id="product-showcase">
         <div class="products-container">
 
-            <!-- 1. Architectural Profiles -->
+           
             <div class="product-panel">
                 <div class="panel-content">
                     <div class="prod-text">
@@ -725,7 +602,7 @@
                 </div>
             </div>
 
-            <!-- 2. Door Window Profiles -->
+            
             <div class="product-panel">
                 <div class="panel-content">
                     <div class="prod-text">
@@ -750,7 +627,7 @@
                 </div>
             </div>
 
-            <!-- 3. Hardware Sections -->
+          
             <div class="product-panel">
                 <div class="panel-content">
                     <div class="prod-text">
@@ -775,7 +652,7 @@
                 </div>
             </div>
 
-            <!-- 4. AC Grill Profiles -->
+            
             <div class="product-panel">
                 <div class="panel-content">
                     <div class="prod-text">
@@ -800,7 +677,7 @@
                 </div>
             </div>
 
-            <!-- 5. Industrial Profiles -->
+          
             <div class="product-panel">
                 <div class="panel-content">
                     <div class="prod-text">
@@ -823,10 +700,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <!-- 6. Scaffolding Profiles -->
-            <!-- <div class="product-panel">
+    <!-- 6. Scaffolding Profiles -->
+    <!-- <div class="product-panel">
                 <div class="panel-content">
                     <div class="prod-text">
                         <span class="prod-cat-label">06. Scaffolding Profiles</span>
@@ -848,8 +725,8 @@
                 </div>
             </div> -->
 
-            <!-- 7. Heavy Alloy Profiles -->
-            <!-- <div class="product-panel">
+    <!-- 7. Heavy Alloy Profiles -->
+    <!-- <div class="product-panel">
                 <div class="panel-content">
                     <div class="prod-text">
                         <span class="prod-cat-label">07. Heavy Alloy Profiles</span>
@@ -871,8 +748,8 @@
                 </div>
             </div> -->
 
-            <!-- 8. Automobile Profiles -->
-            <!-- <div class="product-panel">
+    <!-- 8. Automobile Profiles -->
+    <!-- <div class="product-panel">
                 <div class="panel-content">
                     <div class="prod-text">
                         <span class="prod-cat-label">08. Automobile Profiles</span>
@@ -894,8 +771,8 @@
                 </div>
             </div> -->
 
-            <!-- 9. Busbar Profiles -->
-            <!-- <div class="product-panel">
+    <!-- 9. Busbar Profiles -->
+    <!-- <div class="product-panel">
                 <div class="panel-content">
                     <div class="prod-text">
                         <span class="prod-cat-label">09. Busbar Profiles</span>
@@ -917,8 +794,8 @@
                 </div>
             </div> -->
 
-            <!-- 10. Heat Sink Profiles -->
-            <!-- <div class="product-panel">
+    <!-- 10. Heat Sink Profiles -->
+    <!-- <div class="product-panel">
                 <div class="panel-content">
                     <div class="prod-text">
                         <span class="prod-cat-label">10. Heat Sink Profiles</span>
@@ -940,8 +817,8 @@
                 </div>
             </div> -->
 
-            <!-- 11. Solar Profiles -->
-            <!-- <div class="product-panel">
+    <!-- 11. Solar Profiles -->
+    <!-- <div class="product-panel">
                 <div class="panel-content">
                     <div class="prod-text">
                         <span class="prod-cat-label">11. Solar Profiles</span>
@@ -963,10 +840,10 @@
                     </div>
                 </div>
             </div> -->
-
+    <!-- 
         </div>
 
-    </section>
+    </section> -->
 
 
 
@@ -1105,7 +982,7 @@
 
             <div class="infra-header">
                 <span class="infra-label">The Backbone</span>
-                <h2 class="infra-title">World Class <br>Infrastructure</h2>
+                <h2 class="infra-title">State-of-the-Art <br>Infrastructure</h2>
             </div>
 
             <div class="stack-container">
@@ -1119,8 +996,8 @@
                         <div class="process-num">01</div>
                         <h3 class="process-title">Hot Top Casting</h3>
                         <p class="process-desc">
-                            Premium quality billets. Satya Metal’s automated Hot Top Casting facility ensures homogenous
-                            alloy composition, free from impurities.
+                            High-quality billets produced with precise temperature control. Satya Metal’s Hot Top
+                            Casting ensures uniform alloy composition, free from defects.
                         </p>
                         <div class="tech-tags">
                             <span class="tag">Automated</span>
@@ -1132,15 +1009,14 @@
                 <!-- CARD 2: EXTRUSION -->
                 <div class="stack-card card-2">
                     <div class="card-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop"
-                            class="card-img" alt="Extrusion Press">
+                        <img src="assets/images/backbone/extrusion-press.jpg" class="card-img" alt="Extrusion Press">
                     </div>
                     <div class="card-content">
                         <div class="process-num">02</div>
                         <h3 class="process-title" style="color: var(--satya-gold);">Precision Extrusion</h3>
                         <p class="process-desc">
-                            11 high-tonnage PLC-controlled presses (up to 4000 MT) deliver complex profiles with
-                            consistent and microscopic precision.
+                            14 high-tonnage PLC-controlled presses deliver complex profiles with exacting precision for
+                            industrial and architectural applications.
                         </p>
                         <div class="tech-tags">
                             <span class="tag" style="border-color: var(--satya-gold); color: var(--satya-gold);">4000 MT
@@ -1160,8 +1036,8 @@
                         <div class="process-num">03</div>
                         <h3 class="process-title">Surface Finishing</h3>
                         <p class="process-desc">
-                            From anodizing to powder coating, our finishing lines ensure durability. Eco-friendly
-                            chemicals deliver a lasting surface finish.
+                            From anodizing to powder coating, our finishing lines guarantee durability. Eco-friendly
+                            processes ensure a lasting, premium surface finish.
                         </p>
                         <div class="tech-tags">
                             <span class="tag">Anodizing</span>
@@ -1174,6 +1050,7 @@
 
         </div>
     </section>
+
 
 
 
@@ -1259,7 +1136,7 @@
                 </div>
 
                 <div class="sus-leaf-icon">
-                    <i class="fa-solid fa-leaf"></i> <span>Satya Metal Net Zero Commitment</span>
+                    <i class="fa-solid fa-leaf"></i> <span>Satya Metal’s Net Zero Commitment</span>
                 </div>
             </div>
 
@@ -1268,40 +1145,37 @@
 
                 <!-- Card 1 -->
                 <div class="sus-card" data-target="word-1">
-                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2013&auto=format&fit=crop"
-                        class="sus-img" alt="Green Manufacturing">
+                    <img src="assets/images/sustainability/zero-discharge.jpg" class="sus-img"
+                        alt="Green Manufacturing">
                     <div class="sus-card-overlay">
                         <h3 class="sus-card-title">Zero Discharge</h3>
                         <p class="sus-card-desc">
-                            Advanced effluent treatment plants ensure zero liquid discharge, protecting soil and water
-                            resources. Each process is engineered to reduce environmental impact and ensure regulatory
-                            compliance.
+                            Our effluent treatment plants ensure zero liquid discharge, protecting water and soil
+                            resources. Each process minimizes environmental impact while meeting compliance standards.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="sus-card" data-target="word-2">
-                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop"
-                        class="sus-img" alt="Solar Power">
+                    <img src="assets/images/sustainability/solar-power.jpg" class="sus-img" alt="Solar Power">
                     <div class="sus-card-overlay">
                         <h3 class="sus-card-title">Solar Powered</h3>
                         <p class="sus-card-desc">
-                            Nearly 30% of Satya Metal’s energy demand is fulfilled through captive solar power plants,
-                            reducing carbon emissions and strengthening sustainable manufacturing practices.
+                            Around 30% of Satya Metal’s energy comes from captive solar plants, reducing carbon
+                            footprint and promoting sustainable manufacturing practices.
                         </p>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="sus-card" data-target="word-3">
-                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070&auto=format&fit=crop"
-                        class="sus-img" alt="Recycling">
+                    <img src="assets/images/sustainability/recycling.jpg" class="sus-img" alt="Recycling">
                     <div class="sus-card-overlay">
                         <h3 class="sus-card-title">Infinite Recycling</h3>
                         <p class="sus-card-desc">
-                            Aluminium is the green metal. Satya Metal’s recycling systems process scrap efficiently,
-                            reducing mining dependency while supporting a strong circular economy.
+                            Aluminium is 100% recyclable. Satya Metal efficiently processes scrap, reducing mining
+                            dependency and supporting a circular economy.
                         </p>
                     </div>
                 </div>
@@ -1310,6 +1184,7 @@
 
         </div>
     </section>
+
 
 
 
