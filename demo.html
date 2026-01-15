@@ -44,6 +44,8 @@
             --nav-height: 95px;
             --grey: #525252;
         }
+
+       
     </style>
 
 </head>
@@ -273,123 +275,10 @@
 
 
 
-    <!-- CORE STRENGTHS (CLEAN OPEN SLIDER) -->
-    <section id="satya-core-strengths">
-        <div class="sc-container">
-
-            <div class="sc-slider-wrapper">
-
-                <!-- Prev Button -->
-                <button class="sc-nav-btn sc-prev" onclick="scPrevSlide()">
-                    <i class="fa-solid fa-arrow-left-long"></i>
-                </button>
-
-                <!-- Slider Content -->
-                <div class="sc-slider-content">
-
-                    <!-- Slide 1: Engineering -->
-                    <div class="sc-slide active">
-                        <div class="sc-icon-circle">
-                            <i class="fa-solid fa-gears"></i>
-                        </div>
-                        <p class="sc-slide-text">
-                            We don't just extrude metal, we craft <br>
-                            <span class="sc-highlight">UNMATCHED PERFECTION</span>.
-                        </p>
-                        <p class="sc-slide-desc">
-                            With 11 advanced presses and automated handling, we deliver <strong>Micron-Level
-                                Precision</strong> at massive scale, ensuring every profile fits perfectly.
-                        </p>
-                    </div>
-
-                    <!-- Slide 2: Quality -->
-                    <div class="sc-slide">
-                        <div class="sc-icon-circle">
-                            <i class="fa-solid fa-certificate"></i>
-                        </div>
-                        <p class="sc-slide-text">
-                            Quality isn't just a check, it's our <br>
-                            <span class="sc-highlight">CORE PROMISE</span>.
-                        </p>
-                        <p class="sc-slide-desc">
-                            ISO 9001:2015 certified processes. Our in-house lab with Spectrometers and UTM machines
-                            ensures every batch meets <strong>International Quality Benchmarks</strong>.
-                        </p>
-                    </div>
-
-                    <!-- Slide 3: Sustainability -->
-                    <div class="sc-slide">
-                        <div class="sc-icon-circle">
-                            <i class="fa-solid fa-leaf"></i>
-                        </div>
-                        <p class="sc-slide-text">
-                            Building a future powered by <br>
-                            <span class="sc-highlight">RESPONSIBLE INNOVATION</span>.
-                        </p>
-                        <p class="sc-slide-desc">
-                            Commitment to <strong>Zero Liquid Discharge</strong> and 30% Solar Energy use. We recycle
-                            aluminium to create a circular economy for a greener planet.
-                        </p>
-                    </div>
-
-                </div>
-
-                <!-- Next Button -->
-                <button class="sc-nav-btn sc-next" onclick="scNextSlide()">
-                    <i class="fa-solid fa-arrow-right-long"></i>
-                </button>
-
-            </div>
-
-            <!-- Progress Indicators -->
-            <div class="sc-dots">
-                <span class="sc-dot active" onclick="scGoToSlide(0)"></span>
-                <span class="sc-dot" onclick="scGoToSlide(1)"></span>
-                <span class="sc-dot" onclick="scGoToSlide(2)"></span>
-            </div>
-
-        </div>
-    </section>
 
 
-    <script>
-        // Unique Scope for Slider Logic
-        (function () {
-            let currentIdx = 0;
-            const slides = document.querySelectorAll('.sc-slide');
-            const dots = document.querySelectorAll('.sc-dot');
 
-            window.scShowSlide = function (index) {
-                slides.forEach(s => s.classList.remove('active'));
-                dots.forEach(d => d.classList.remove('active'));
 
-                if (index >= slides.length) currentIdx = 0;
-                else if (index < 0) currentIdx = slides.length - 1;
-                else currentIdx = index;
-
-                slides[currentIdx].classList.add('active');
-                dots[currentIdx].classList.add('active');
-            }
-
-            window.scNextSlide = function () { scShowSlide(currentIdx + 1); }
-            window.scPrevSlide = function () { scShowSlide(currentIdx - 1); }
-            window.scGoToSlide = function (index) { scShowSlide(index); }
-
-            // Auto Slide
-            setInterval(scNextSlide, 6000);
-
-            // GSAP Reveal
-            document.addEventListener("DOMContentLoaded", () => {
-                if (typeof gsap !== 'undefined') {
-                    gsap.registerPlugin(ScrollTrigger);
-                    gsap.from(".sc-container", {
-                        y: 50, opacity: 0, duration: 1, ease: "power3.out",
-                        scrollTrigger: { trigger: "#satya-core-strengths", start: "top 75%" }
-                    });
-                }
-            });
-        })();
-    </script>
 
 
 
@@ -444,7 +333,7 @@
                     </div>
                     <div class="col-lg-5 d-flex align-items-end justify-content-lg-end">
                         <p class="anim-fade-in"
-                            style="max-width: 350px; text-align: right; color: var(--text-main); margin-bottom: 10px; font-weight: 600;">
+                            style="max-width: 350px; text-align: right; color: var(--satya-gold); margin-bottom: 10px;">
                             Satya Metal is a pioneer in aluminium extrusion, providing high-quality products for
                             industrial and construction applications across India and beyond.
                         </p>
@@ -458,15 +347,20 @@
                 <!-- 1. Main Image (Tall) -->
                 <div class="grid-item-main-img anim-scale-up">
                     <div class="video-overlay"
-                        style="background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, transparent 100%);"></div>
-                    <img src="https://satyametal.com/img/about-img.jpg" class="grid-img"
+                        style="background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, transparent 100%);"></div>
+                    <img src="assets/images/banners/Satya Metals 05.jpg" class="grid-img"
                         alt="Satya Metal Factory Floor">
+                    <div class="img-overlay-content">
+                        <h3 class="img-overlay-title">Modern<br>Production Unit</h3>
+                        <a href="#" class="btn-industrial" style="padding: 12px 30px; font-size: 12px;">View
+                            Infrastructure</a>
+                    </div>
                 </div>
 
                 <!-- 2. Blue Content Block -->
                 <div class="grid-item-blue anim-slide-left">
                     <h3
-                        style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem; margin-bottom: 20px; position: relative; z-index: 2;">
+                        style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.8rem; margin-bottom: 20px; position: relative; z-index: 2;">
                         OUR MISSION
                     </h3>
                     <p class="blue-desc">
@@ -505,6 +399,472 @@
 
         </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- REFINED VELOCITY SCROLL SECTION -->
+    <section id="velocity-scroll-section">
+        <!-- Text duplicated to ensure full coverage without empty spaces -->
+        <div class="velocity-wrapper">
+            <div class="velocity-line" id="v-line-1">
+                ALUMINIUM EXTRUSION &nbsp;•&nbsp; PRECISION ENGINEERING &nbsp;•&nbsp; QUALITY ASSURANCE &nbsp;•&nbsp;
+                ALUMINIUM EXTRUSION &nbsp;•&nbsp; PRECISION ENGINEERING &nbsp;•&nbsp; QUALITY ASSURANCE &nbsp;•&nbsp;
+            </div>
+        </div>
+        <div class="velocity-wrapper">
+            <div class="velocity-line outline-text" id="v-line-2">
+                INDUSTRIAL SOLUTIONS &nbsp;•&nbsp; DURABLE PROFILES &nbsp;•&nbsp; STRUCTURAL STRENGTH &nbsp;•&nbsp;
+                INDUSTRIAL SOLUTIONS &nbsp;•&nbsp; DURABLE PROFILES &nbsp;•&nbsp; STRUCTURAL STRENGTH &nbsp;•&nbsp;
+            </div>
+        </div>
+        <div class="velocity-wrapper">
+            <div class="velocity-line" id="v-line-3">
+                SOLAR &nbsp;•&nbsp; AUTOMOTIVE &nbsp;•&nbsp; INFRASTRUCTURE &nbsp;•&nbsp; SOLAR &nbsp;•&nbsp; AUTOMOTIVE
+                &nbsp;•&nbsp; INFRASTRUCTURE &nbsp;•&nbsp;
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- PRODUCT SHOWCASE – FULL OLD WEBSITE PRODUCTS (UPDATED WITH MORE CONTENT) -->
+    <section id="product-showcase">
+        <div class="products-container">
+
+            <!-- 1. Architectural Profiles -->
+            <div class="product-panel">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">01. Architectural Profiles</span>
+                        <h2 class="prod-title">Architectural Profiles</h2>
+                        <p class="prod-desc">
+                            Architectural Profiles manufacture and supply a range of external roof profiles
+                            and structural decking profiles. These profiles are designed for modern applications,
+                            providing excellent strength, durability, and finish for building and façade solutions.
+                        </p>
+                        <a href="architectural-profiles.html" class="btn-industrial">View More</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/architectural-profiles.jpg" class="prod-img"
+                            alt="Architectural Profiles">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Door Window Profiles -->
+            <div class="product-panel">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">02. Door Window Profiles</span>
+                        <h2 class="prod-title">Door Window Profiles</h2>
+                        <p class="prod-desc">
+                            The window profile is one of the most important design features of PVC windows.
+                            Our aluminium door and window profiles are engineered to provide smooth operation,
+                            high durability, and excellent finish. Ideal for residential and commercial projects.
+                        </p>
+                        <a href="door-window-profiles.html" class="btn-industrial">View More</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/door-window-profiles.jpg" class="prod-img"
+                            alt="Door Window Profiles">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Hardware Sections -->
+            <div class="product-panel">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">03. Hardware Sections</span>
+                        <h2 class="prod-title">Hardware Sections</h2>
+                        <p class="prod-desc">
+                            Aluminium hardware is the planet-friendly option — featherweight to handle and
+                            super easy to transport. Our hardware sections provide strength and seamless
+                            integration for frames, industrial units, and constructions requiring reliable
+                            support components.
+                        </p>
+                        <a href="hardware-sections.html" class="btn-industrial">View More</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/hardware-sections.jpg" class="prod-img"
+                            alt="Hardware Sections">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. AC Grill Profiles -->
+            <div class="product-panel">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">04. AC Grill Profiles</span>
+                        <h2 class="prod-title">AC Grill Profiles</h2>
+                        <p class="prod-desc">
+                            The purpose of the air conditioner grill is to diffuse the air from the ductwork.
+                            Our AC grill profiles are designed to ensure optimal airflow, durability, and
+                            long-lasting performance. Perfect for residential, commercial & industrial HVAC systems.
+                        </p>
+                        <a href="ac-grill-profiles.html" class="btn-industrial">View More</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/ac-grill-profiles.jpg" class="prod-img"
+                            alt="AC Grill Profiles">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Industrial Profiles -->
+            <div class="product-panel">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">05. Industrial Profiles</span>
+                        <h2 class="prod-title">Industrial Profiles</h2>
+                        <p class="prod-desc">
+                            Durable aluminium profiles for industrial and structural applications. Suitable
+                            for automation systems, machinery, conveyor systems, and other heavy-duty
+                            applications requiring precision and long-lasting strength.
+                        </p>
+                        <a href="industrial-profiles.html" class="btn-industrial">View More</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/industrial-profiles.jpg" class="prod-img"
+                            alt="Industrial Profiles">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- PRODUCT SHOWCASE – FULL OLD WEBSITE PRODUCTS (UPDATED WITH MORE CONTENT) -->
+    <!-- <section id="product-showcase">
+        <div class="products-container">
+
+           
+            <div class="product-panel">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">01. Architectural Profiles</span>
+                        <h2 class="prod-title">Architectural<br>Extrusions</h2>
+                        <p class="prod-desc">
+                            Aluminium extrusion profiles for architectural applications combining strength, finish
+                            quality, and design versatility. Ideal for modern buildings, facades, and decorative
+                            elements, ensuring both durability and aesthetic appeal.
+                        </p>
+                        <a href="#" class="btn-industrial">View Catalogue</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/architectural-profiles.jpg" class="prod-img"
+                            alt="Architecture">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="product-panel">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">02. Door Window Profiles</span>
+                        <h2 class="prod-title">Doors & Windows</h2>
+                        <p class="prod-desc">
+                            High-quality aluminium profiles for windows and doors, engineered for long-lasting
+                            performance, smooth operation, and modern aesthetics. Perfect for residential, commercial,
+                            and high-rise constructions.
+                        </p>
+                        <a href="#" class="btn-industrial">View Catalogue</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/door-window-profiles.jpg" class="prod-img" alt="Architecture">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          
+            <div class="product-panel">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">03. Hardware Sections</span>
+                        <h2 class="prod-title">Aluminium Hardware</h2>
+                        <p class="prod-desc">
+                            Precision-engineered hardware sections to complement aluminium frames and constructions.
+                            Designed for maximum strength, reliability, and seamless integration in various industrial
+                            and residential applications.
+                        </p>
+                        <a href="#" class="btn-industrial">View Catalogue</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/hardware-sections.jpg" class="prod-img" alt="Architecture">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="product-panel">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">04. AC Grill Profiles</span>
+                        <h2 class="prod-title">Cooling & Ventilation</h2>
+                        <p class="prod-desc">
+                            Aluminium extrusions for AC grills and ventilation systems, combining lightweight design
+                            with high durability. Ensures optimal airflow, corrosion resistance, and long-term
+                            performance in residential and commercial environments.
+                        </p>
+                        <a href="#" class="btn-industrial">View Catalogue</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/ac-grill-profiles.jpg" class="prod-img" alt="Architecture">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          
+            <div class="product-panel">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">05. Industrial Profiles</span>
+                        <h2 class="prod-title">Heavy Duty Sections</h2>
+                        <p class="prod-desc">
+                            Durable aluminium profiles for industrial and structural applications. Suitable for
+                            automation systems, machinery, conveyor systems, and other heavy-duty applications requiring
+                            precision and long-lasting strength.
+                        </p>
+                        <a href="#" class="btn-industrial">View Catalogue</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/industrial-profiles.jpg" class="prod-img" alt="Architecture">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+    <!-- 6. Scaffolding Profiles -->
+    <!-- <div class="product-panel">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">06. Scaffolding Profiles</span>
+                        <h2 class="prod-title">Construction Supports</h2>
+                        <p class="prod-desc">
+                            Aluminium sections for scaffolding, providing lightweight handling, maximum stability, and safety for construction projects. Designed to withstand heavy loads and frequent usage.
+                        </p>
+                        <a href="#" class="btn-industrial">View Catalogue</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/scaffolding-profiles.jpg" class="prod-img" alt="Architecture">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+    <!-- 7. Heavy Alloy Profiles -->
+    <!-- <div class="product-panel">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">07. Heavy Alloy Profiles</span>
+                        <h2 class="prod-title">High-Strength Alloys</h2>
+                        <p class="prod-desc">
+                            Aluminium profiles in high-strength alloys suitable for industrial machinery, structural supports, and automotive components. Offers superior durability, corrosion resistance, and long-term performance.
+                        </p>
+                        <a href="#" class="btn-industrial">View Catalogue</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/heavy-alloy-profiles.jpg" class="prod-img" alt="Architecture">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+    <!-- 8. Automobile Profiles -->
+    <!-- <div class="product-panel">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">08. Automobile Profiles</span>
+                        <h2 class="prod-title">Automotive Applications</h2>
+                        <p class="prod-desc">
+                            Aluminium extrusions for automotive components, helping reduce vehicle weight while maintaining high strength and safety. Ideal for EVs, chassis, body panels, and structural supports.
+                        </p>
+                        <a href="#" class="btn-industrial">View Catalogue</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/automobile-profiles.jpg" class="prod-img" alt="Architecture">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+    <!-- 9. Busbar Profiles -->
+    <!-- <div class="product-panel">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">09. Busbar Profiles</span>
+                        <h2 class="prod-title">Electrical Distribution</h2>
+                        <p class="prod-desc">
+                            Aluminium profiles for electrical busbars, ensuring high conductivity, reliable power distribution, and resistance to oxidation. Suitable for industrial and commercial electrical installations.
+                        </p>
+                        <a href="#" class="btn-industrial">View Catalogue</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/busbar-profiles.jpg" class="prod-img" alt="Architecture">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+    <!-- 10. Heat Sink Profiles -->
+    <!-- <div class="product-panel">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">10. Heat Sink Profiles</span>
+                        <h2 class="prod-title">Thermal Management</h2>
+                        <p class="prod-desc">
+                            Aluminium extrusions optimized for heat dissipation in electronics, industrial machinery, and renewable energy applications. Ensures effective thermal regulation and longevity of equipment.
+                        </p>
+                        <a href="#" class="btn-industrial">View Catalogue</a>
+                    </div>
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/heat-sink-profiles.jpg" class="prod-img" alt="Architecture">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+    <!-- 11. Solar Profiles -->
+    <!-- <div class="product-panel">
+                <div class="panel-content">
+                    <div class="prod-text">
+                        <span class="prod-cat-label">11. Solar Profiles</span>
+                        <h2 class="prod-title">Renewable Energy</h2>
+                        <p class="prod-desc">
+                            Aluminium profiles for solar panel frames and mounting systems, providing corrosion resistance, structural stability, and durability. Designed for rooftop and ground-mounted solar installations.
+                        </p>
+                        <a href="#" class="btn-industrial">View Catalogue</a>
+                    </div>
+
+                    <div class="prod-img-wrapper">
+                        <img src="assets/images/services/solar-tructures.jpg" class="prod-img" alt="Solar Profiles">
+                        <div class="blueprint-overlay">
+                            <div class="blueprint-details">
+                                <h4 style="font-family:'Syne';">SPECIFICATION</h4>
+                                <p style="font-family:'Rajdhani'; margin:0;">Alloy: 6063 T6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+    <!-- 
+        </div>
+
+    </section> -->
+
 
 
 
@@ -558,345 +918,6 @@
 
         </div>
     </section>
-
-
-
-
-
-
-
-    <!-- REFINED VELOCITY SCROLL SECTION -->
-    <section id="velocity-scroll-section">
-        <!-- Text duplicated to ensure full coverage without empty spaces -->
-        <div class="velocity-wrapper">
-            <div class="velocity-line" id="v-line-1">
-                ALUMINIUM EXTRUSION &nbsp;•&nbsp; PRECISION ENGINEERING &nbsp;•&nbsp; QUALITY ASSURANCE &nbsp;•&nbsp;
-                ALUMINIUM EXTRUSION &nbsp;•&nbsp; PRECISION ENGINEERING &nbsp;•&nbsp; QUALITY ASSURANCE &nbsp;•&nbsp;
-            </div>
-        </div>
-        <div class="velocity-wrapper">
-            <div class="velocity-line outline-text" id="v-line-2">
-                INDUSTRIAL SOLUTIONS &nbsp;•&nbsp; DURABLE PROFILES &nbsp;•&nbsp; STRUCTURAL STRENGTH &nbsp;•&nbsp;
-                INDUSTRIAL SOLUTIONS &nbsp;•&nbsp; DURABLE PROFILES &nbsp;•&nbsp; STRUCTURAL STRENGTH &nbsp;•&nbsp;
-            </div>
-        </div>
-        <div class="velocity-wrapper">
-            <div class="velocity-line" id="v-line-3">
-                SOLAR &nbsp;•&nbsp; AUTOMOTIVE &nbsp;•&nbsp; INFRASTRUCTURE &nbsp;•&nbsp; SOLAR &nbsp;•&nbsp; AUTOMOTIVE
-                &nbsp;•&nbsp; INFRASTRUCTURE &nbsp;•&nbsp;
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- HORIZONTAL PRODUCT SHOWCASE (RESTORED VERSION) -->
-    <section id="product-showcase">
-        <div class="products-container">
-
-            <!-- 0. INTRO PANEL (Heading & One Line Content) -->
-            <div class="product-panel intro-panel">
-                <div class="intro-content">
-                    <span class="intro-tag">Our Collection</span>
-                    <h2 class="intro-title">Precision <br><span style="color: var(--satya-gold);">Products</span></h2>
-                    <div class="intro-line"></div>
-                    <p class="intro-desc">
-                        Explore our comprehensive range of high-quality aluminium extrusion profiles, engineered for
-                        versatility and durability across industries.
-                    </p>
-                    <div class="scroll-hint-right">
-                        <span>Scroll to Explore</span>
-                        <i class="fa-solid fa-arrow-right-long"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel 1: Architectural -->
-            <div class="product-panel">
-                <div class="panel-card">
-                    <div class="card-image">
-                        <img src="https://satyametal.com/img/profiles/archi.jpg"
-                            alt="Architectural">
-                        <div class="card-overlay"></div>
-                        <span class="card-num">01</span>
-                    </div>
-                    <div class="card-details">
-                        <span class="card-cat">Construction</span>
-                        <h3>Architectural Profiles</h3>
-                        <p>Architectural Profiles manufacture and supply a range of external roof profiles and
-                            structural decking profiles</p>
-                        <div class="card-specs">
-                            <span><i class="fa-solid fa-layer-group"></i> 6063 T6</span>
-                            <span><i class="fa-solid fa-wind"></i> High Load</span>
-                        </div>
-                        <a href="architectural-profiles.html" class="card-btn">View More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel 2: Industrial -->
-            <div class="product-panel">
-                <div class="panel-card">
-                    <div class="card-image">
-                        <img src="https://satyametal.com/img/profiles/door-window-profile.jpg"
-                            alt="Industrial">
-                        <div class="card-overlay"></div>
-                        <span class="card-num">02</span>
-                    </div>
-                    <div class="card-details">
-                        <span class="card-cat">Engineering</span>
-                        <h3>Door Window Profiles</h3>
-                        <p>The window profile is one of the most important design features of PVC windows.</p>
-                        <div class="card-specs">
-                            <span><i class="fa-solid fa-gears"></i> 6061 T6</span>
-                            <span><i class="fa-solid fa-dumbbell"></i> Robust</span>
-                        </div>
-                        <a href="door-window-profiles.html" class="card-btn">View More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel 3: Solar -->
-            <div class="product-panel">
-                <div class="panel-card">
-                    <div class="card-image">
-                        <img src="https://satyametal.com/img/profiles/hard-ware-section.jpg"
-                            alt="Solar">
-                        <div class="card-overlay"></div>
-                        <span class="card-num">03</span>
-                    </div>
-                    <div class="card-details">
-                        <span class="card-cat">Renewable</span>
-                        <h3>Hardware Sections</h3>
-                        <p>Aluminium hardware is the planet-friendly option Featherweight to handle, it's super easy to
-                            transport</p>
-                        <div class="card-specs">
-                            <span><i class="fa-solid fa-solar-panel"></i> 6005 T6</span>
-                            <span><i class="fa-solid fa-shield"></i> Durable</span>
-                        </div>
-                        <a href="hardware-sections.html" class="card-btn">View More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel 4: Transport -->
-            <div class="product-panel">
-                <div class="panel-card">
-                    <div class="card-image">
-                        <img src="https://satyametal.com/img/profiles/ac-grils.jpg"
-                            alt="Transport">
-                        <div class="card-overlay"></div>
-                        <span class="card-num">04</span>
-                    </div>
-                    <div class="card-details">
-                        <span class="card-cat">Automotive</span>
-                        <h3>AC Grill Profiles</h3>
-                        <p>The purpose of the air conditioner grill is to diffuse the air from the ductwork.</p>
-                        <div class="card-specs">
-                            <span><i class="fa-solid fa-truck-fast"></i> 7075 T6</span>
-                            <span><i class="fa-solid fa-feather"></i> Light</span>
-                        </div>
-                        <a href="ac-grill-profiles.html" class="card-btn">View More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel 5 (Automobile Profiles) -->
-            <div class="product-panel">
-                <div class="panel-card">
-                    <div class="card-image">
-                        <img src="https://satyametal.com/img/profiles/Automobile%20Profiles.jpg"
-                            alt="Transport">
-                        <div class="card-overlay"></div>
-                        <span class="card-num">05</span>
-                    </div>
-                    <div class="card-details">
-                        <span class="card-cat">Automotive</span>
-                        <h3>Automobile Profiles</h3>
-                        <p>Automobile Profiles can be utilized to produce engines, transmissions, suspension, wheels,
-                            brake components, frames</p>
-                        <div class="card-specs">
-                            <span><i class="fa-solid fa-truck-fast"></i> 7075 T6</span>
-                            <span><i class="fa-solid fa-feather"></i> Light</span>
-                        </div>
-                        <a href="automobile-profiles.html" class="card-btn">View More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel 6 (Heat Sink) -->
-            <div class="product-panel">
-                <div class="panel-card">
-                    <div class="card-image">
-                        <img src="https://myheatsinks.com/wp-content/uploads/2023/12/as2-scaled.jpg"
-                            alt="Transport">
-                        <div class="card-overlay"></div>
-                        <span class="card-num">06</span>
-                    </div>
-                    <div class="card-details">
-                        <span class="card-cat">Thermal</span>
-                        <h3>Heat-Sink Profiles</h3>
-                        <p>A heat sink is designed to maximize its surface area in contact with the cooling medium
-                            surrounding it, such as the air.</p>
-                        <div class="card-specs">
-                            <span><i class="fa-solid fa-truck-fast"></i> 7075 T6</span>
-                            <span><i class="fa-solid fa-feather"></i> Light</span>
-                        </div>
-                        <a href="heat-sink-profiles.html" class="card-btn">View More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel 7 (Solar Profiles) -->
-            <div class="product-panel">
-                <div class="panel-card">
-                    <div class="card-image">
-                        <img src="https://modsteel.com/wp-content/uploads/Manufacturer-steel-solar-energy-support-profile-scaled.jpg"
-                            alt="Transport">
-                        <div class="card-overlay"></div>
-                        <span class="card-num">07</span>
-                    </div>
-                    <div class="card-details">
-                        <span class="card-cat">Renewable</span>
-                        <h3>Solar Profiles</h3>
-                        <p>Our solar panel frames are crafted from high quality anodized aluminium, ensuring exceptional
-                            weather resistance and a sleek, long-lasting finish.</p>
-                        <div class="card-specs">
-                            <span><i class="fa-solid fa-solar-panel"></i> 6005 T6</span>
-                            <span><i class="fa-solid fa-shield"></i> Durable</span>
-                        </div>
-                        <a href="scaffolding-profiles.html" class="card-btn">View More</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel 8 (Solar Panel Frame) -->
-            <div class="product-panel">
-                <div class="panel-card">
-                    <div class="card-image">
-                        <img src="https://efxourbw99a.exactdn.com/wp-content/uploads/Robust-Solar-Panel-Framing-1-1024x567.jpg?strip=all&lossy=1&ssl=1"
-                            alt="Transport">
-                        <div class="card-overlay"></div>
-                        <span class="card-num">08</span>
-                    </div>
-                    <div class="card-details">
-                        <span class="card-cat">Renewable</span>
-                        <h3>Solar Panel Frame</h3>
-                        <p>Our solar panel frames are built to withstand the elements, featuring corrosion-resistant
-                            properties that guarantee the longevity of your solar system.</p>
-                        <div class="card-specs">
-                            <span><i class="fa-solid fa-solar-panel"></i> 6005 T6</span>
-                            <span><i class="fa-solid fa-shield"></i> Durable</span>
-                        </div>
-                        <a href="" class="card-btn">View More</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-
-
-
-
-    <!-- INDUSTRIES WE SERVE (UNIQUE CLASS NAMES & BRAND COLORS) -->
-    <section id="sector-showcase">
-        <div class="sector-split-wrapper">
-
-            <!-- LEFT SIDE: Main Visual Anchor -->
-            <div class="sector-visual-left">
-                <img src="https://satyametal.com/img/industries-we-serve.jpg" alt="Industrial Excellence">
-            </div>
-
-            <!-- RIGHT SIDE: The Grid (Dark Background) -->
-            <div class="sector-content-right">
-                <div class="sector-inner-wrap">
-                    <div class="sector-header">
-                        <span class="sector-tag">Market Expertise</span>
-                        <h2 class="sector-heading">Industries We <span style="color: var(--satya-gold);">Serve</span>
-                        </h2>
-                    </div>
-
-                    <div class="sector-grid">
-
-                        <!-- Box 1: Automobile -->
-                        <div class="sector-card">
-                            <i class="fa-solid fa-car sector-icon"></i>
-                            <h4 class="sector-name">Automobile</h4>
-                        </div>
-
-                        <!-- Box 2: Bus Body -->
-                        <div class="sector-card">
-                            <i class="fa-solid fa-bus sector-icon"></i>
-                            <h4 class="sector-name">Bus Body</h4>
-                        </div>
-
-                        <!-- Box 3: Railways -->
-                        <div class="sector-card">
-                            <i class="fa-solid fa-train sector-icon"></i>
-                            <h4 class="sector-name">Railways</h4>
-                        </div>
-
-                        <!-- Box 4: Engineerings -->
-                        <div class="sector-card">
-                            <i class="fa-solid fa-gears sector-icon"></i>
-                            <h4 class="sector-name">Engineerings</h4>
-                        </div>
-
-                        <!-- Box 5: Construction -->
-                        <div class="sector-card">
-                            <i class="fa-solid fa-building sector-icon"></i>
-                            <h4 class="sector-name">Construction</h4>
-                        </div>
-
-                        <!-- Box 6: Insulation -->
-                        <div class="sector-card">
-                            <i class="fa-solid fa-temperature-arrow-down sector-icon"></i>
-                            <h4 class="sector-name">Insulation</h4>
-                        </div>
-
-                        <!-- Box 7: Electrical -->
-                        <div class="sector-card">
-                            <i class="fa-solid fa-bolt sector-icon"></i>
-                            <h4 class="sector-name">Electrical</h4>
-                        </div>
-
-                        <!-- Box 8: Medical -->
-                        <div class="sector-card">
-                            <i class="fa-solid fa-heart-pulse sector-icon"></i>
-                            <h4 class="sector-name">Medical</h4>
-                        </div>
-
-                        <!-- Box 9: Many Industries -->
-                        <div class="sector-card">
-                            <i class="fa-solid fa-layer-group sector-icon"></i>
-                            <h4 class="sector-name">Many Industries</h4>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-
-
-
 
 
 
@@ -1823,40 +1844,32 @@
 
 
 
-
-
-
     <script>
-        document.addEventListener("DOMContentLoaded", (event) => {
-            if (typeof gsap !== 'undefined') {
-                gsap.registerPlugin(ScrollTrigger);
+        // Only run on Desktop (>991px) for horizontal scroll
+        if (window.innerWidth > 991) {
+            const raceContainer = document.querySelector(".products-container");
 
-                // Desktop Horizontal Scroll Logic
-                if (window.innerWidth > 991) {
-                    const raceContainer = document.querySelector(".products-container");
-
-                    function getScrollAmount() {
-                        let raceWidth = raceContainer.scrollWidth;
-                        return -(raceWidth - window.innerWidth);
-                    }
-
-                    const tween = gsap.to(raceContainer, {
-                        x: getScrollAmount,
-                        ease: "none",
-                    });
-
-                    ScrollTrigger.create({
-                        trigger: "#product-showcase",
-                        start: "top top",
-                        end: () => `+=${getScrollAmount() * -1}`,
-                        pin: true,
-                        animation: tween,
-                        scrub: 1,
-                        invalidateOnRefresh: true,
-                    });
-                }
+            // Get total scroll amount needed (Total Width - One Screen Width)
+            function getScrollAmount() {
+                let raceWidth = raceContainer.scrollWidth;
+                return -(raceWidth - window.innerWidth);
             }
-        });
+
+            const tween = gsap.to(raceContainer, {
+                x: getScrollAmount,
+                ease: "none",
+            });
+
+            ScrollTrigger.create({
+                trigger: "#product-showcase",
+                start: "top top",
+                end: () => `+=${getScrollAmount() * -1}`, // Scroll distance matching width
+                pin: true,
+                animation: tween,
+                scrub: 1,
+                invalidateOnRefresh: true,
+            });
+        }
     </script>
 
 
